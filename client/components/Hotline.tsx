@@ -14,10 +14,10 @@ const Hotline = () => {
         </div>
       </div>
       <div className="fixed z-10 left-[20px] bottom-[20%]">
-        <div>
+        {/* <div>
           <Image src={"/zaloIcon.svg"} alt="zalo-icon" />
           <Image src={"/mapPinIcon.svg"} alt="mapPinIcon" />
-        </div>
+        </div> */}
       </div>
     </section>
   );
