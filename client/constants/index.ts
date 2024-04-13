@@ -52,7 +52,19 @@ export const listAbout :listAboutProps[]  = [
 ]
 export const listCard : CardProps[]= [
     {
-        title :'Vệ sinh căn hộ',
+        title :'Vệ sinh công nghiệp ',
+        content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
+    },
+    {
+        title :'Vệ sinh sau xây dựng ',
+        content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
+    },
+    {
+        title :'Vệ sinh nhà phố ',
+        content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
+    },
+    {
+        title :'Vệ sinh trường học',
         content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
     },
     {
@@ -60,19 +72,7 @@ export const listCard : CardProps[]= [
         content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
     },
     {
-        title :'Vệ sinh căn hộ',
-        content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
-    },
-    {
-        title :'Vệ sinh căn hộ',
-        content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
-    },
-    {
-        title :'Vệ sinh căn hộ',
-        content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
-    },
-    {
-        title :'Vệ sinh căn hộ',
+        title :'Vệ sinh định kỳ',
         content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
     },
     

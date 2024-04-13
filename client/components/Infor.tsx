@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 const Infor = () => {
   return (
-    <div className="px-6 max-md:py-8 flex bg-[#f2f2f294] justify-center py-16">
+    <section className="px-6 max-md:py-8 flex bg-[#f2f2f294] justify-center py-16">
       <div className="grid grid-cols-2 w-[90%] mx-auto max-xl:w-[100%] max-lg:grid-cols-1">
         <div className="max-md:hidden">
           <h2 className="text-4xl text-redTheme max-md:text-2xl font-bold">
@@ -52,7 +52,7 @@ const Infor = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

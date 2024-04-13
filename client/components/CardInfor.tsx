@@ -7,8 +7,8 @@ const { Meta } = Card;
 const CardInfor = ({ title, content }: CardProps) => {
   return (
     <Card
+      className="w-[400px]"
       hoverable
-      style={{ width: 400, marginTop: "30px" }}
       cover={
         <Image
           src={"/banner.png"}
@@ -20,9 +20,7 @@ const CardInfor = ({ title, content }: CardProps) => {
       }
     >
       <Meta
-        title={
-          <span className="text-redTheme text-2xl uppercase">{title}</span>
-        }
+        title={<h3 className="text-redTheme text-2xl uppercase">{title}</h3>}
         description={
           <span className="text-lg text-black font-medium">
             {content.length > 200 ? content.slice(0, 200) + "..." : content}

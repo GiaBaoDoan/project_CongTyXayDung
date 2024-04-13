@@ -5,7 +5,7 @@ import Title from "./Title";
 
 const About = () => {
   return (
-    <div className="px-6 py-16 flex flex-col items-center">
+    <section className="px-6 py-16 flex flex-col items-center">
       <div className="flex">
         <div className="grid grid-cols-4 max-lg:grid-cols-2 max-lg:mx-5 max-sm:grid-cols-1">
           {listAbout.map((item) => {
@@ -29,7 +29,7 @@ const About = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

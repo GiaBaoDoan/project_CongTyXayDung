@@ -1,1 +1,10 @@
-GET http://localhost:5000/test
+GET http://localhost:5000/api/blogs
+
+###
+POST http://localhost:5000/api/auth/signIn 
+content-Type: application/json
+
+{
+    "username" : "Admin",
+    "password" :"Admin@123"
+}

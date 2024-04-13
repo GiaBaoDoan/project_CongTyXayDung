@@ -5,7 +5,7 @@ import React from "react";
 
 const Menu = () => {
   return (
-    <div className="flex items-center flex-1 justify-between max-xl:hidden">
+    <section className="flex items-center flex-1 justify-between max-xl:hidden">
       <div className="flex justify-center flex-1">
         {listMenu.map((item) => {
           return (
@@ -30,7 +30,7 @@ const Menu = () => {
           </span>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

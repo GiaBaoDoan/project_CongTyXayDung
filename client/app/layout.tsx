@@ -6,6 +6,7 @@ export const metadata: Metadata = {
 };
 import "./globals.css";
 import { Footer, Navbar, RightSideMenu } from "@/components";
+import Hotline from "@/components/Hotline";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,6 +18,7 @@ export default function RootLayout({
         <Navbar />
         <RightSideMenu />
         {children}
+        <Hotline />
         <Footer />
       </body>
     </html>

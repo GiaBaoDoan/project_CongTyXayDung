@@ -7,7 +7,7 @@ import React, { useState } from "react";
 const RightSideMenu = () => {
   const { isOpen, isOpenMenu } = store();
   return (
-    <div className="xl:hidden">
+    <section className="xl:hidden">
       <div
         className={` ${
           isOpen ? "translate-x-[0]" : "translate-x-[-1200px]"
@@ -33,7 +33,7 @@ const RightSideMenu = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
