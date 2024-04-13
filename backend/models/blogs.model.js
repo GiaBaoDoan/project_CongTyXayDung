@@ -6,6 +6,18 @@ const blogsSchema = new Schema(
       type: String,
       require: true,
     },
+    image: {
+      type: String,
+      require: false,
+    },
+    title: {
+      type: String,
+      require: true,
+    },
+    userId: {
+      type: String,
+      require: true,
+    },
   },
   {
     timestamps: true,

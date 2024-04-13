@@ -25,7 +25,6 @@ const connect = async () => {
 app.use("/api/blogs", verifyToken, BlogRoutes);
 app.use("/api/auth", authRoute);
 
-app.gte;
 // config error
 app.use((err, req, res, next) => {
   const errorStatus = err.message || 500;

@@ -3,3 +3,4 @@ export const getBlogs = (req, res, next) => {
     return res.send("Đây là bài viết mới nhất");
   }
 };
+export const addNewBlogs = async (req, res, next) => {};
