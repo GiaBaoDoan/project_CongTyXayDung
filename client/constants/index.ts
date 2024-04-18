@@ -1,5 +1,4 @@
-import { CardProps, listAboutProps, listMenuProps } from "@/types"
-
+import { CardProps, listMenuProps } from "@/types"
 export const listMenu :listMenuProps[] = [
     {
         title : 'trang chủ',
@@ -10,8 +9,9 @@ export const listMenu :listMenuProps[] = [
         link : '/gioi-thieu'
     },
     {
-        title : 'dịch vụ',
-        link : '/dich-vu'
+        title : 'danh mục dịch vụ',
+        link : '/dich-vu',
+        
     },
     {
         title : 'tin tức',
@@ -22,32 +22,84 @@ export const listMenu :listMenuProps[] = [
         link : '/lien-he'
     }
 ]
+export const newsModel = [
+    {
+        img: '/post1.jpg',
+        title :'Vệ sinh chung cư sau xây dựng, bạn cần phải thực hiện những công việc nào đầu tiên?',
+        modelCotent : 'Chung cư khi bàn giao đến khách hàng hay chủ căn hộ nhận nhà cần phải được'
+    },
+    {
+        img: '/may-hut-bui.jpg',
+        title :'Lựa chọn dịch vụ vệ sinh văn phòng ưng ý, văn phòng lúc nào cũng luôn như mới',
+        modelCotent : 'Văn phòng là nơi mà chúng ta làm việc, dành rất nhiều thời gian ở đó. Khói bụi, vi'
+    },
+    {
+        img: '/post3.jpg',
+        title :'Điểm mạnh của dịch vụ vệ sinh trường học của là gì?',
+        modelCotent : 'Trường học là nơi có diện tích rộng, nhiều chi tiết cần vệ sinh khác nhau. Khi muốn'
+    },
+    {
+        img: '/post4.jpg',
+        title :'Lý do vì sao bạn nên tìm đến dịch vụ vệ sinh công nghiệp?',
+        modelCotent : 'Đây là lý do đầu tiên giải thích tại sao bạn nên lựa chọn dịch vụ vệ sinh công'
+    },
+    {
+        img: '/post5.jpg',
+        title :'Dọn dẹp văn phòng, nhà xưởng chưa bao giờ dễ dàng đến thế',
+        modelCotent : 'Dọn dẹp văn phòng, nhà xưởng là những công việc khá tốn thời gian và sức lực.'
+    },
+    {
+        img: '/post6.jpg',
+        title :'Tất tần tật những điều thú vị về dịch vụ lau kính nhà cao tầng',
+        modelCotent : 'Hầu hết ngày nay các tòa nhà cao tầng đặc biệt trung tâm thương mại, tòa nhà'
+    },
+    {
+        img: '/post7.jpg',
+        title :'Bạn cần chuẩn bị những dụng cụ nào khi quyết định tổng vệ sinh nhà cửa?',
+        modelCotent : 'Vệ sinh nhà cửa mỗi ngày là cách tốt nhất để giúp môi trường sống luôn được trong'
+    },
+    {
+        img: '/post8.jpg',
+        title :'Giúp việc nhà theo tháng – Sự lựa chọn hoàn hảo của những người bận rộn',
+        modelCotent : 'Công việc quá bận rộn khiến bạn không có nhiều thời gian làm việc nhà, ngôi nhà'
+    },
+   
+]
+
 export const listBanner = ['/banner.png','/banner1.png','/banner2.png']
-export const listAbout :listAboutProps[]  = [
+export const listAbout   = [
     {
-        icon : "/best-friend.png",
-        title : "Hóa chất An Toàn",
-        content  :"Trong quá trình vệ sinh, những dung dịch được sử dùng đều là những chất tẩy rửa an toàn tuyệt đối."
+        icon : "/about6.png",
+        title : "Vệ sinh nhà ở",
+        
 
     },
     {
-        icon : "/professional-services.png",
-        title : "Hóa chất An Toàn",
-        content  :"Trong quá trình vệ sinh, những dung dịch được sử dùng đều là những chất tẩy rửa an toàn tuyệt đối."
+        icon : "/about2.png",
+        title : "Vệ sinh công nghiệp",
 
     },
     {
-         icon :  "/professional-services.png",
-        title : "Hóa chất An Toàn",
-        content  :"Trong quá trình vệ sinh, những dung dịch được sử dùng đều là những chất tẩy rửa an toàn tuyệt đối."
+        icon : "/about3.png",
+        title : "Đánh bóng sàn",
 
     },
     {
-         icon :  "/professional-services.png",
-        title : "Hóa chất An Toàn",
-        content  :"Trong quá trình vệ sinh, những dung dịch được sử dùng đều là những chất tẩy rửa an toàn tuyệt đối."
+        icon : "/about4.png",
+        title : "Vệ sinh bệnh viện",
 
     },
+    {
+        icon : "/about5.png",
+        title : "Vệ sinh văn phòng",
+
+    },
+    {
+        icon : "/about1.png",
+        title : "Vệ sinh theo giờ",
+
+    },
+  
 
 ]
 export const listCard : CardProps[]= [
@@ -76,5 +128,27 @@ export const listCard : CardProps[]= [
         content : 'Vệ sinh công nghiệp là dịch vụ tổng vệ sinh, làm sạch sâu các vết bẩn bằng máy móc, thiết bị, dụng cụ hiện đại, hóa chất chuyên dụng cùng những phương pháp tối ưu, những quy trình xử lý hiện đại. Thường phù hợp với các cơ sở như trung tâm thương mại, tòa nhà cao tầng, cơ sở sản xuất, xí nghiệp, nhà máy, chung cư, trường học, bệnh viện, và các khu công cộng khác. Tiến Phát chuyên cung cấp dịch vụ vệ sinh công nghiệp uy tín, với đội ngũ nhân viên dày dặn về tay nghề được đào tạo chuyên nghiệp và hệ thống máy móc hiện đại, công ty chúng tôi cam kết cung cấp dịch vụ vệ sinh công nghiệp với chất lượng cao nhất.'
     },
     
+]
+export const listService =[
+    {
+        img:'/about1.png',
+        title :'Giúp việc theo giờ',
+        content :"Giúp việc nhà theo giờ gồm các công việc như nấu ăn, dọn dẹp nhà cửa, rửa bát, hỗ trợ chăm sóc trẻ… Khung giờ làm sẽ tùy theo khách hàng đăng ký khi phát sinh nhu cầu."
+    },
+    {
+        img:'/about5.png',
+        title :'Vệ sinh công nghiệp',
+        content :"Đây là dịch vụ vệ sinh dành cho các tòa nhà, khu đô thị, văn phòng, hộ gia đình sau khi xây dựng. Người giúp việc chuyên nghiệp, đáp ứng tiêu chuẩn Singapore, có tinh thần trách nhiệm cao."
+    },
+    {
+        img:'/about6.png',
+        title :'Giúp việc theo ngày',
+        content :"Giúp việc nhà 8 – 9 tiếng từ sáng đến tối, không ở lại, khung giờ tùy theo khách hàng đăng ký. Các công việc sẽ bao gồm nấu ăn, rửa bát, dọn dẹp, chăm sóc trẻ và những yêu cầu khác từ khách hàng."
+    },
+    {
+        img:'/about2.png',
+        title :'Sữa chữa nhà cửa',
+        content :"Các gia đình có thời gian dài gắn bó trong ngôi nhà, muốn có một cái nhìn mới mẻ, cần cải tạo lại không gian, hay đơn giản là muốn cuộc sống trở nên tươi mới hơn. Đến với Tapvu247 khách hàng sẽ luôn được đáp ứng tận tình các yêu cầu về tư vấn sửa chữa nhà một cách tốt nhất"
+    },
 ]
 export const phoneNumber = '0393 500 993'

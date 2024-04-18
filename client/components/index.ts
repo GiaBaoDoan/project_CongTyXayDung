@@ -3,7 +3,13 @@ import Footer from './Footer'
 import Menu from "./Menu";
 import RightSideMenu from "./RightSideMenu";
 import About from "./About";
-import Title from "./Title";
-import Infor from "./Infor";
+import Commit from "./Commit";
+import Map from './Map';
+import Model from "./Model";
+import Hotline from "./Hotline";
 import CardInfor from "./CardInfor";
-export {Navbar,CardInfor,Footer,Menu,RightSideMenu,About,Title,Infor}
+import News from "./News";
+import Banner from './Banner'
+import BannerInfor from "./BannerInfor";
+import Button from './Button'
+export {Navbar,CardInfor,BannerInfor,Footer,Button,Map,Hotline,News,Banner,Commit,Model,Menu,RightSideMenu,About}

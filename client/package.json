@@ -10,10 +10,17 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.6",
+    "@next/font": "^14.2.1",
+    "animate.css": "^4.1.1",
     "antd": "^5.16.1",
+    "axios": "^1.6.8",
+    "google-map-react": "^2.2.1",
+    "leaflet": "^1.9.4",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-leaflet": "^4.2.1",
+    "swiper": "^11.1.1",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

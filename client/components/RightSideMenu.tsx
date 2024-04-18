@@ -18,9 +18,10 @@ const RightSideMenu = () => {
           className="px-5 py-8 text-2xl cursor-pointer"
         />
         <div className="flex-col flex">
-          {listMenu.map((item) => {
+          {listMenu.map((item, index) => {
             return (
               <Link
+                key={index}
                 href={item.link}
                 className="hover:bg-[rgba(0,0,0,0.2)] hover:text-redTheme transition-all"
               >

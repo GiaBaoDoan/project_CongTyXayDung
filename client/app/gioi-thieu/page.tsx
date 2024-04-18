@@ -1,158 +1,156 @@
+import { listService, phoneNumber } from "@/constants";
+import Image from "next/image";
 import React from "react";
 
 const GioiThieu = () => {
   return (
-    <>
-      <div className="mx-20">
-        <div className="w-full mb-6 introduction__image">
-          <img
-            src="https://jobsgo.vn/blog/wp-content/uploads/2023/03/Kieu-van-phong-hien-dai.jpg"
-            className="w-full object-cover h-80"
-          />
-        </div>
-        <div className="w-full mb-6 text-center introduction__title">
-          <h2 className="text-2xl font-bold">CÔNG TY XÂY DỰNG TRẦN LÊ</h2>
-        </div>
-        <div className="w-full mb-6 text-justify introduction__content">
-          <div className="introduction__history">
-            <h3 className="text-xl font-bold mb-4">
-              LỊCH SỬ VÀ PHÁT TRIỂN CỦA CÔNG TY TRẦN LÊ
-            </h3>
-            <p className="leading-8 indent-8 italic text-lg">
-              <strong>Công ty XÂY DỰNG TRẦN LÊ</strong> được thành lập vào năm
-              2018 bởi ông <strong>LÊ THÀNH VIỆT</strong>, là người tâm huyết và
-              kinh nghiệm sâu rộng trong ngành
-              <strong>XÂY DỰNG, VỆ SINH CÔNG NGHIỆP VÀ ĐIỆN LẠNH</strong>. Từ
-              khi bắt đầu hoạt động, chúng tôi đã không ngừng nâng cao chất
-              lượng dịch vụ và mở rộng phạm vi hoạt động của mình.
-            </p>
-            <p className="leading-8 indent-8 italic text-lg">
-              Qua các năm, công ty đã xây dựng được một danh tiếng vững chắc
-              trong ngành với sự cam kết về chất lượng và uy tín. Sứ mệnh của
-              chúng tôi là không chỉ làm việc với khách hàng mà còn tạo ra một
-              môi trường làm việc tích cực cho đội ngũ nhân viên của mình.
+    <section>
+      <Image
+        src="/banner-gioi-thieu.jpg"
+        alt="banner-gioi-thieu"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+      <div className="p-12 px-5 flex pb-24 max-lg:flex-col lg:space-x-10 max-lg:space-y-10">
+        <div className="left-content space-y-5">
+          <h3 className="text-4xl max-xl:text-3xl max-md:text-2xl max-sm:text-lg font-bold text-center">
+            TẦM NHÌN VÀ SỨ MỆNH
+          </h3>
+          <div className="border-l-[3px] px-10 border-greenTheme">
+            <p className="text-center">
+              <span className="text-greenTheme font-medium text-4xl max-sm:text-lg max-xl:text-3xl max-md:text-2xl">
+                <i>“Mang đến không gian xanh”</i>
+              </span>
             </p>
           </div>
-          <ul>
-            <ol>
-              <h4 className="text-xl font-bold mb-3 mt-5">DỊCH VỤ:</h4>
-              <p className="leading-8 indent-8 italic text-lg">
-                <strong>1. Vệ Sinh Công Nghiệp:</strong> Chúng tôi cung cấp các
-                dịch vụ vệ sinh chuyên nghiệp cho các doanh nghiệp, tổ chức và
-                cơ sở sản xuất. Dưới đây là một số dịch vụ nổi bật của chúng
-                tôi:
-              </p>
-              <ul className="pl-10 italic">
-                <ol>
-                  <p className="leading-8 indent-8 text-lg">
-                    <strong>Vệ sinh công nghiệp:</strong> Chúng tôi cung cấp các
-                    dịch vụ vệ sinh cho các nhà máy, nhà xưởng và cơ sở sản
-                    xuất, đảm bảo môi trường làm việc an toàn và vệ sinh.
-                  </p>
-                  <p className="leading-8 indent-8 text-lg">
-                    <strong>Vệ sinh văn phòng và tòa nhà:</strong> Đội ngũ nhân
-                    viên có kỹ năng cao của chúng tôi sẽ đảm bảo văn phòng và
-                    tòa nhà của bạn luôn sạch sẽ, gọn gàng và tiêu chuẩn vệ sinh
-                    cao nhất. Vệ sinh công nghiệp: Chúng tôi cung cấp các dịch
-                    vụ vệ sinh cho các nhà máy, nhà xưởng và cơ sở sản xuất, đảm
-                    bảo môi trường làm việc an toàn và vệ sinh.
-                  </p>
-                  <p className="leading-8 indent-8 text-lg">
-                    <strong>Vệ sinh sau xây dựng và tái thiết kế:</strong> Sau
-                    khi hoàn thành công trình xây dựng hoặc tái thiết kế, chúng
-                    tôi sẽ đảm bảo rằng không gian của bạn sẽ sạch sẽ và sẵn
-                    sàng cho việc sử dụng.
-                  </p>
-                </ol>
-              </ul>
-            </ol>
-            <ol>
-              <p className="leading-8 indent-8 italic text-lg">
-                <strong>2. Dịch vụ điện lạnh:</strong> Chúng tôi cung cấp các
-                giải pháp điện lạnh toàn diện cho các doanh nghiệp và cá nhân.
-                Dưới đây là một số dịch vụ mà chúng tôi cung cấp:
-              </p>
-              <ul>
-                <ol>
-                  <p className="leading-8 indent-8 pl-8 italic text-lg">
-                    <strong>
-                      Lắp đặt và bảo trì hệ thống điều hòa không khí:
-                    </strong>
-                    Đội ngũ kỹ thuật viên chuyên nghiệp của chúng tôi sẽ đảm bảo
-                    rằng hệ thống điều hòa của bạn hoạt động một cách hiệu quả
-                    và liên tục.
-                  </p>
-                  <p className="leading-8 indent-8 pl-8 italic text-lg">
-                    <strong>Sửa chữa và bảo dưỡng hệ thống lạnh:</strong> Chúng
-                    tôi cung cấp các dịch vụ sửa chữa và bảo dưỡng định kỳ để
-                    đảm bảo hệ thống lạnh của bạn luôn hoạt động ổn định.
-                  </p>
-                  <p className="leading-8 indent-8 pl-8 italic text-lg ">
-                    <strong>Tư vấn và thiết kế hệ thống điện lạnh:</strong>{" "}
-                    Chúng tôi có đội ngũ chuyên gia có kinh nghiệm sẵn lòng tư
-                    vấn và thiết kế các hệ thống điện lạnh phù hợp với nhu cầu
-                    cụ thể của khách hàng
-                  </p>
-                </ol>
-              </ul>
-            </ol>
-            <ol>
-              <h4 className="text-xl font-bold mb-3 mt-5">
-                Năng Lực và Công Nghệ:
-              </h4>
-              <p className="leading-8 indent-8 italic text-lg">
-                Chúng tôi không chỉ sở hữu một đội ngũ nhân viên tài năng và
-                giàu kinh nghiệm mà còn sử dụng những công nghệ mới nhất và hiện
-                đại nhất trong quá trình cung cấp dịch vụ. Điều này giúp chúng
-                tôi cung cấp các giải pháp vệ sinh và điện lạnh hiệu quả hơn,
-                giảm thiểu thời gian và chi phí cho khách hàng.
-              </p>
-            </ol>
-            <ol>
-              <h4 className="text-xl font-bold mb-3 mt-5">
-                Định Hướng Tương Lai:
-              </h4>
-              <p className="leading-8 indent-8 italic text-lg">
-                Với mục tiêu trở thành đối tác tin cậy và uy tín nhất trong lĩnh
-                vực vệ sinh công nghiệp và điện lạnh, chúng tôi không ngừng đầu
-                tư vào phát triển nguồn nhân lực và nâng cao chất lượng dịch vụ.
-                Chúng tôi cũng luôn tìm kiếm cơ hội mở rộng hoạt động và hợp tác
-                với các đối tác chiến lược để phát triển bền vững và thịnh
-                vượng.
-              </p>
-            </ol>
-            <ol>
-              <h4 className="text-xl font-bold mb-3 mt-5">
-                Văn Hóa Doanh Nghiệp:
-              </h4>
-              <p className="leading-8 indent-8 italic text-lg">
-                Văn hóa doanh nghiệp của chúng tôi được xây dựng trên nền tảng
-                của sự minh bạch, trung thực và tôn trọng. Chúng tôi luôn tạo
-                điều kiện cho sự phát triển cá nhân và sự hài lòng của nhân
-                viên, đồng thời đảm bảo một môi trường làm việc an toàn và tích
-                cực.
-              </p>
-            </ol>
-            <ol>
-              <h4 className="text-xl font-bold mb-3 mt-5">CAM KẾT:</h4>
-              <p className="leading-8 indent-8 italic text-lg">
-                <strong> - Chất lượng</strong> Chúng tôi cam kết cung cấp các
-                dịch vụ chất lượng cao nhất, đáp ứng mọi yêu cầu của khách hàng.{" "}
-              </p>
-              <p className="leading-8 indent-8 italic text-lg">
-                <strong> - Tận Tâm:</strong> Đội ngũ nhân viên của chúng tôi
-                luôn tận tâm và chu đáo, luôn sẵn sàng hỗ trợ khách hàng mọi
-                lúc, mọi nơi.
-              </p>
-              <p className="leading-8 indent-8 italic text-lg">
-                <strong> - Hiệu Quả:</strong> Chúng tôi luôn nỗ lực để đảm bảo
-                rằng mọi dự án được hoàn thành một cách hiệu quả và đúng hẹn.
-              </p>
-            </ol>
-          </ul>
+        </div>
+        <div className="right-content lg:w-[90%] space-y-5">
+          <p className="text-2xl  max-xl:text-xl max-sm:text-base">
+            <span className="text-2xl max-xl:text-xl max-sm:text-lg font-bold">
+              Công ty Trần Lê
+            </span>{" "}
+            ra đời với mong muốn mang đến một không gian sống sạch sẽ, trong
+            lành, thoải mái và hạnh phúc cho các gia đình. Không những thế, với
+            các dịch vụ vệ sinh văn phòng, chúng tôi còn hướng đến sự tiện nghi
+            và thành công cho các công ty…
+          </p>
+          <p className="text-2xl  max-xl:text-xl max-sm:text-base">
+            <span className="text-2xl max-xl:text-xl max-sm:text-lg font-bold">
+              Công ty Trần Lê
+            </span>{" "}
+            với sứ mệnh nỗ lực từng ngày trong việc trở thành đơn vị cung cấp
+            các dịch vụ dọn dẹp hàng đầu trên thị trường cùng những giải pháp
+            linh hoạt và toàn diện nhất. nhất.
+          </p>
         </div>
       </div>
-    </>
+      {/* main service */}
+      <div
+        style={{ backgroundColor: "rgb(246, 246, 247)" }}
+        className="p-12 pb-24 px-5"
+      >
+        <h3 className="text-4xl uppercase text-center max-lg:text-2xl max-md:text-lg font-bold">
+          Các dịch vụ chính
+        </h3>
+        <div className="sevice-cards grid grid-cols-4 mt-10 max-lg:grid-cols-2 max-md:grid-cols-1 gap-10">
+          {listService.map((item, index) => {
+            return (
+              <div key={index} className="flex flex-col space-y-5 items-center">
+                <Image
+                  src={item.img}
+                  alt="service-1"
+                  width={150}
+                  height={100}
+                  className="max-xl:w-[120px] max-md:w-[100px] max-sm:w-[80px]"
+                />
+                <div className="title space-y-5">
+                  <h4 className="text-4xl max-xl:text-2xl max-sm:text-xl font-bold text-center">
+                    {item.title}
+                  </h4>
+                  <p className="text-2xl max-xl:text-xl max-sm:text-base text-center">
+                    {item.content}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      {/* content service */}
+      <section className="p-12 px-5 space-y-5 pb-24">
+        <div className="title space-y-3">
+          <h3 className="font-bold text-2xl max-xl:text-xl max-md:text-lg max-sm:text-base uppercase">
+            NHỮNG CAM KẾT CỦA Công ty Trần Lê DÀNH CHO KHÁCH HÀNG
+          </h3>
+          <p className="text-2xl max-xl:text-xl max-md:text-lg max-sm:text-base">
+            Luôn đặt sự hài lòng của khách hàng lên hàng đầu, chúng tôi cung cấp
+            các dịch vụ với những cam kết sau:
+          </p>
+        </div>
+        <div className="space-y-5">
+          <ul className="list-disc px-5">
+            <li>
+              <p className="text-2xl max-xl:text-xl max-md:text-lg max-sm:text-basse">
+                Người giúp việc nhà tại Công try Trần Lê đạt tiêu chuẩn, đáng
+                tin cậy và có đầy đủ hồ sơ, thông tin cá nhân. Tất cả đều được
+                đào tạo bài bản và được quản lý bởi đơn vị Công try Trần Lê, một
+                trong những đơn vị tuyển chọn và đào tạo người giúp việc uy tín
+                nhất hiện nay.
+              </p>
+            </li>
+          </ul>
+          <p className="text-2xl max-xl:text-xl max-md:text-lg max-sm:text-base">
+            <i>Người giúp việc đáng tin cậy, được đào tạo bài bản</i>
+          </p>
+          <ul className="text-2xl max-xl:text-xl max-md:text-lg max-sm:text-base list-disc px-5 space-y-5">
+            <li>
+              <p>
+                Đội ngũ nhân viên tư vấn và chăm sóc khách hàng giàu kinh
+                nghiệm, chuyên nghiệp và tận tâm, hỗ trợ khách hàng tối đa trong
+                việc lựa chọn dịch vụ phù hợp cũng như giải đáp các vấn đề phát
+                sinh trong quá trình sử dụng dịch vụ.
+              </p>
+            </li>
+            <li>
+              <p>
+                Công try Trần Lê tìm người giúp việc nhanh chóng sau khi khách
+                hàng đăng ký theo nhu cầu. Chúng tôi còn cung cấp ứng dụng đầy
+                đủ thông tin về dịch vụ và người giúp việc, giúp cho khách hàng
+                chủ động chọn lựa và đánh giá một cách tiện lợi.
+              </p>
+            </li>
+            <li>
+              <p>
+                Đảm bảo luôn giữ cho ngôi nhà sạch sẽ và không có mầm bệnh với
+                chế độ khử trùng giết chết 99% virus, vi khuẩn. Hơn nữa, chúng
+                tôi còn sử dụng công nghệ hàng đầu với dịch lọc HEPA và khăn lau
+                bằng sợi nhỏ để giảm tình trạng ô nhiễm chéo.
+              </p>
+            </li>
+            <li>
+              <p>
+                Bất cứ dịch vụ nào Tapvu 247 cũng đều tiến hành theo quy trình
+                khoa học, logic. Các dịch vụ vệ sinh, lau kính, sửa chữa… đảm
+                bảo thực hiện trong thời gian nhanh chóng mà vẫn hiệu quả cao,
+                không làm ảnh hưởng nhiều đến việc sinh hoạt và công việc của
+                khách hàng.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div className="end">
+          <p className="text-2xl max-xl:text-xl max-md:text-lg max-sm:text-base mt-10">
+            <span className="font-bold">Công ty Trần Lê</span> sẽ là lựa chọn lý
+            tưởng cho các gia đình, các văn phòng công ty mong muốn được tận
+            hưởng một môi trường sạch sẽ, thoải mái. Liên hệ ngay với chúng tôi
+            qua số hotline {phoneNumber} để được tư vấn nhanh chóng và chi tiết
+            nhất.
+          </p>
+        </div>
+      </section>
+    </section>
   );
 };
 

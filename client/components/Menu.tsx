@@ -1,35 +1,101 @@
 import { listMenu } from "@/constants";
-import { UserOutlined } from "@ant-design/icons";
+import { ConfigProvider, Popover } from "antd";
 import Link from "next/link";
 import React from "react";
-
+const contentService = [
+  {
+    link: "/dich-vu-ve-sinh-nha-o",
+    title: "Dịch vụ vệ sinh nhà ở",
+  },
+  {
+    link: "/ve-sinh-theo-gio",
+    title: "Dịch vụ vệ sinh theo giờ",
+  },
+  {
+    link: "/ve-sinh-benh-vien",
+    title: "Dịch vụ vệ sinh bệnh viện",
+  },
+  {
+    link: "/ve-sinh-van-phong",
+    title: "Dịch vụ vệ sinh văn phòng ",
+  },
+  {
+    link: "/ve-sinh-cong-nghiep",
+    title: "Dịch vụ vệ sinh công nghiệp",
+  },
+  {
+    link: "/danh-bong-san",
+    title: "Dịch vụ đánh bóng sàn ",
+  },
+];
+const content = (
+  <div className="flex flex-col space-y-2 !p-[0] !w-[400px]">
+    {contentService.map((item, index) => {
+      return (
+        <Link key={index} href={item.link}>
+          <div
+            key={index}
+            className="hover:bg-gray-100 cursor-pointer transition-all p-3"
+          >
+            <p className="text-2xl">{item.title}</p>
+          </div>
+        </Link>
+      );
+    })}
+  </div>
+);
 const Menu = () => {
   return (
-    <section className="flex items-center flex-1 justify-between max-xl:hidden">
-      <div className="flex justify-center flex-1">
+    <section className="flex items-center justify-between max-xl:hidden">
+      <ul className="flex justify-center space-x-6">
         {listMenu.map((item) => {
-          return (
-            <Link
-              className="uppercase rounded-3xl cursor-pointer hover:bg-redTheme transition-all xl:p-5 p-3 xl:text-xl text-base text-white font-medium"
-              href={item.link}
-            >
-              {item.title}
-            </Link>
+          return item.link === "/dich-vu" ? (
+            <li>
+              <ConfigProvider
+                theme={{
+                  token: {
+                    borderRadius: 0,
+                    padding: 0,
+                  },
+                }}
+              >
+                <Popover placement="bottom" content={content}>
+                  <Link
+                    className="capitalize flex text-2xl rounded-3xl cursor-pointer transition-all text-[#272727 ]  font-bold"
+                    href={item.link}
+                  >
+                    {item.title}
+                    <svg
+                      color="gray"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-chevron-down"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </Link>
+                </Popover>
+              </ConfigProvider>
+            </li>
+          ) : (
+            <li>
+              <Link
+                className="capitalize rounded-3xl cursor-pointer transition-all text-[#272727 ] text-2xl  font-bold"
+                href={item.link}
+              >
+                {item.title}
+              </Link>
+            </li>
           );
         })}
-      </div>
-      <div>
-        <div className="text-white font-bold text-xl">
-          <UserOutlined className="mr-2" />
-          <span className="hover:bg-redTheme cursor-pointer rounded-3xl transition-all p-5 text-xl text-white font-medium">
-            ĐĂNG NHẬP
-          </span>
-          <span>/</span>
-          <span className="hover:bg-redTheme rounded-3xl cursor-pointer transition-all p-5 text-xl text-white font-medium">
-            ĐĂNG KÝ
-          </span>
-        </div>
-      </div>
+      </ul>
     </section>
   );
 };

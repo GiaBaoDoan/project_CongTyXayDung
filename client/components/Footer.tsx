@@ -1,188 +1,117 @@
 "use client";
 import React from "react";
 import {
-  EnvironmentOutlined,
-  WhatsAppOutlined,
-  MailOutlined,
   FacebookOutlined,
-  InstagramOutlined,
   PhoneOutlined,
-  YoutubeOutlined,
+  TwitterOutlined,
+  GooglePlusOutlined,
 } from "@ant-design/icons";
-import { Button, Col, Form, Input, InputNumber, Row } from "antd";
-import TextArea from "antd/es/input/TextArea";
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
-  const handleFinish = (values: any) => {
-    console.log("Received values:", values);
-  };
   return (
-    <footer>
-      <div className="footer p-20 border">
-        <Row gutter={[16, 16]} justify="space-between">
-          <Col xxl={6} xl={6} lg={6} md={6} sm={24} xs={24}>
-            <ul className="footer__info">
-              <li className="footer__logo pb-5 text-lg font-bold">
-                <h2 className="text-xl text-redTheme">
-                  CÔNG TY XÂY DỰNG TRẦN LÊ
-                </h2>
+    <footer
+      className="p-12 h-[70vh] px-5 pb-24 max-lg:h-[100vh] text-[#c0c0c0]"
+      style={{
+        backgroundSize: "cover",
+        background:
+          "url('https://vesinhcongnghiep.giaodienwebmau.com/wp-content/uploads/2019/05/bg-footer.jpg')",
+      }}
+    >
+      <div className="grid grid-cols-4 max-lg:grid-cols-1 gap-10 ">
+        <div className="flex flex-col space-y-5">
+          <Image src={"/logo.png"} alt="logo" width={70} height={20}></Image>
+          <p className="text-2xl max-sm:text-base">
+            Là đơn vị có thâm niên trong ngành vệ sinh công nghiệp, chúng tôi
+            tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với nhưng kinh
+            nghiệm đó giúp chúng tôi rút ngắn được thời gian thic ông cũng như
+            công đoạn vì vậy giá thành luôn được đàm bảo tốt nhất
+          </p>
+        </div>
+        <div className="flex space-y-5 flex-col max-lg:hidden">
+          <h3 className="text-2xl text-white font-bold">Hỗ trợ</h3>
+          <ul className="space-y-5 pl-5 list-disc">
+            <li className="text-xl">
+              <Link href={"/"}>Liên hệ</Link>
+            </li>
+            <li className="text-xl">
+              <Link href={"/"}>Câu hỏi thường gặp</Link>
+            </li>
+            <li className="text-xl">
+              <Link href={"/"}>Điều khoản sử dụng</Link>
+            </li>
+            <li className="text-xl">
+              <Link href={"/"}>Chính sách bảo mật</Link>
+            </li>
+            <li className="text-xl">
+              <Link href={"/"}>Giải quyết khiếu nại</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="flex space-y-5 flex-col max-lg:hidden">
+          <h3 className="text-2xl text-white font-bold">Giới thiệu chung</h3>
+          <ul className="space-y-5 pl-5 list-disc">
+            <li className="text-xl">
+              <Link href={"/"}>Vệ sinh văn phòng</Link>
+            </li>
+            <li className="text-xl">
+              <Link href={"/"}>Vệ sinh công nghiệp</Link>
+            </li>
+            <li className="text-xl">
+              <Link href={"/"}>Lau kính nhà cao tầng</Link>
+            </li>
+            <li className="text-xl">
+              <Link href={"/"}>Sửa chữa nhà cửa</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="flex space-y-5 flex-col">
+          <h3 className="text-2xl text-white font-bold max-sm:text-lg">
+            Thông tin liên hệ
+          </h3>
+          <div>
+            <ul className="space-y-3 pl-5 break-words list-disc">
+              <li className="text-xl max-sm:text-base">
+                <Link href={"/"}>
+                  <p>Email: info.giuseart.com@gmail.com</p>
+                </Link>
               </li>
-              <li className="footer__address text-lg mb-4">
-                <p className="text-lg flex items-center space-x-3 font-medium hover:text-redTheme transition-all">
-                  <EnvironmentOutlined className="text-2xl" />
-                  <span className="text-lg">
-                    {" "}
-                    1/40/37A Thanh Đa, Phường 27, Quận Bình Thạnh, Thành phố Hồ
-                    Chí Minh
-                  </span>
-                </p>
-              </li>
-              <li className="footer__phone text-lg pb-4">
-                <a
-                  className="text-lg hover:text-redTheme space-x-3"
-                  href="tel:0318 372 190<"
-                >
-                  <WhatsAppOutlined className="text-2xl font-medium transition-all" />{" "}
-                  <span className="text-lg font-medium">0318.372.190</span>
-                </a>
-              </li>
-              <li className="footer__email text-lg ">
-                <p className="text-lg flex items-center space-x-3 font-medium hover:text-redTheme transition-all">
-                  <MailOutlined className="text-2xl" />
-                  <span className="text-lg">xaydungtranle@gmail.com</span>
-                </p>
+              <li className="text-xl max-sm:text-base">
+                <Link href={"/"}>
+                  <p>Website: giuseart.com / ninhbinhweb.com</p>
+                </Link>
               </li>
             </ul>
-          </Col>
-          <Col xxl={6} xl={6} lg={6} md={6} sm={24} xs={24}>
-            <div className="footer__contactform">
-              <h4 className="title-menu pb-4 text-xl text-redTheme font-bold">
-                <a role="button">THÔNG TIN LIÊN HỆ</a>
-              </h4>
-              <Form
-                name="nest-messages"
-                onFinish={handleFinish}
-                style={{ maxWidth: 600 }}
-              >
-                <Form.Item name={["user", "name"]} rules={[{ required: true }]}>
-                  <Input className="p-4 text-lg" placeholder="Họ và tên..." />
-                </Form.Item>
-                <Form.Item name={["user", "phone"]}>
-                  <Input
-                    className="p-4 text-lg"
-                    placeholder="Số điện thoại..."
-                  />
-                </Form.Item>
-                <Form.Item name={["user", "contact-content"]}>
-                  <TextArea
-                    rows={4}
-                    className="text-lg"
-                    placeholder="Nội dung liên hệ..."
-                  />
-                </Form.Item>
-                <Form.Item>
-                  <Button
-                    className="text-xl inline-flex items-center justify-center bg-redTheme w-full p-5 text-white"
-                    htmlType="submit"
-                  >
-                    Gửi liên hệ đến chúng tôi
-                  </Button>
-                </Form.Item>
-              </Form>
-            </div>
-          </Col>
-          <Col xxl={6} xl={6} lg={6} md={6} sm={24} xs={24}>
-            <div className="footer__social">
-              <h4 className="title-menu pb-4 text-redTheme text-xl font-bold">
-                <a>VỀ CHÚNG TÔI</a>
-              </h4>
-              <ul className="list-menu space-y-2">
-                <li className="li-menu text-lg">
-                  <a className="text-lg font-medium" href="/">
-                    Trang chủ
-                  </a>
-                </li>
-                <li className="li-menu text-lg">
-                  <a className="text-lg font-medium" href="/gioi-thieu">
-                    Giới thiệu
-                  </a>
-                </li>
-                <li className="li-menu text-lg">
-                  <a className="text-lg font-medium" href="/dich-vu">
-                    Dịch vụ
-                  </a>
-                </li>
-                <li className="li-menu text-lg">
-                  <a className="text-lg font-medium" href="/lien-he">
-                    Liên hệ
-                  </a>
-                </li>
-              </ul>
-              <div className="social-icon text-lg space-x-5 mt-[24px]">
-                <a href="#">
-                  <div
-                    style={{
-                      borderRadius: "50%",
-                      padding: "5px 8px",
-                      background: "#0866FF",
-                      display: "inline-block",
-                    }}
-                  >
-                    <FacebookOutlined
-                      style={{ fontSize: "24px", color: "white" }}
-                    />
-                  </div>
-                </a>
-
-                <a href="#">
-                  <div
-                    style={{
-                      borderRadius: "50%",
-                      padding: "5px 8px",
-                      background: "#E4405F",
-                      display: "inline-block",
-                    }}
-                  >
-                    <InstagramOutlined
-                      style={{ fontSize: "24px", color: "white" }}
-                    />
-                  </div>
-                </a>
-                <a href="#">
-                  <div
-                    style={{
-                      borderRadius: "50%",
-                      padding: "5px 8px",
-                      background: "green",
-                      display: "inline-block",
-                    }}
-                  >
-                    <PhoneOutlined
-                      style={{ fontSize: "24px", color: "white" }}
-                    />
-                  </div>
-                </a>
-                <a href="#">
-                  <div
-                    style={{
-                      borderRadius: "50%",
-                      padding: "5px 8px",
-                      background: "red",
-                      display: "inline-block",
-                    }}
-                  >
-                    <YoutubeOutlined
-                      style={{ fontSize: "24px", color: "white" }}
-                    />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </div>
-      <div className="flex justify-center items-center p-4 border bg-slate-200">
-        <p>Copyright © 2024 CÔNG TY XÂY DỰNG TRẦN LÊ - design by TIVATECH.VN</p>
+          </div>
+          <div className="">
+            <p className="text-greenTheme font-bold text-2xl max-sm:text-base">
+              Holine: 0972.939.830
+            </p>
+            <ul className="flex space-x-5 mt-5">
+              <li>
+                <Link href={"/"}>
+                  <FacebookOutlined style={{ fontSize: "30px" }} />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"}>
+                  <TwitterOutlined style={{ fontSize: "30px" }} />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"}>
+                  <PhoneOutlined style={{ fontSize: "30px" }} />
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"}>
+                  <GooglePlusOutlined style={{ fontSize: "30px" }} />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
   );
