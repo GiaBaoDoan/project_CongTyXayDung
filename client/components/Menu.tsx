@@ -1,33 +1,8 @@
-import { listMenu } from "@/constants";
+import { contentService, listMenu } from "@/constants";
 import { ConfigProvider, Popover } from "antd";
 import Link from "next/link";
 import React from "react";
-const contentService = [
-  {
-    link: "/dich-vu-ve-sinh-nha-o",
-    title: "Dịch vụ vệ sinh nhà ở",
-  },
-  {
-    link: "/ve-sinh-theo-gio",
-    title: "Dịch vụ vệ sinh theo giờ",
-  },
-  {
-    link: "/ve-sinh-benh-vien",
-    title: "Dịch vụ vệ sinh bệnh viện",
-  },
-  {
-    link: "/ve-sinh-van-phong",
-    title: "Dịch vụ vệ sinh văn phòng ",
-  },
-  {
-    link: "/ve-sinh-cong-nghiep",
-    title: "Dịch vụ vệ sinh công nghiệp",
-  },
-  {
-    link: "/danh-bong-san",
-    title: "Dịch vụ đánh bóng sàn ",
-  },
-];
+
 const content = (
   <div className="flex flex-col space-y-2 !p-[0] !w-[400px]">
     {contentService.map((item, index) => {

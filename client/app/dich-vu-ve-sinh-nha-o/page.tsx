@@ -21,17 +21,17 @@ const VeSinhNhaO = () => {
             <h1 className="uppercase font-bold text-5xl">
               Dịch vụ vệ sinh nhà ở
             </h1>
-            <p className="text-3xl max-sm:text-base font-medium">
+            <p className="text-3xl max-sm:text-lg font-medium">
               Máy móc hiện đại
             </p>
-            <p className="text-3xl max-sm:text-base font-medium">
+            <p className="text-3xl max-sm:text-lg font-medium">
               Tuyệt đó uy tín
             </p>
-            <p className="text-3xl max-sm:text-base font-medium">
+            <p className="text-3xl max-sm:text-lg font-medium">
               Trách nhiệm cao với công việc, lau dọn sạch sẽ
             </p>
             <Button
-              styleButton="p-2 px-5 text-2xl max-sm:text-base rounded-full"
+              styleButton="p-2 px-5 text-2xl max-sm:text-lg rounded-full"
               content={`Gọi ngay: ${phoneNumber}`}
             ></Button>
           </div>
@@ -42,7 +42,7 @@ const VeSinhNhaO = () => {
           <h2 className="text-4xl font-bold max-sm:text-xl max-md:text-3xl">
             Dịch vụ dọn dẹp nhà ở chuyên nghiệp
           </h2>
-          <p className="text-2xl max-sm:text-base">
+          <p className="text-2xl max-sm:text-lg">
             <i>
               Quý khách đang phân vân muốn tìm một đơn vị chuyên cung cấp dịch
               vụ giúp việc tại nhà? Trên thị trường hiện xuất hiện rất nhiều đơn
@@ -82,11 +82,11 @@ const VeSinhNhaO = () => {
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
-                <h3 className="text-3xl max-sm:text-base font-bold text-greenTheme">
+                <h3 className="text-3xl max-sm:text-lg font-bold text-greenTheme">
                   Giúp việc nhà có bề dày kinh nghiệm
                 </h3>
               </div>
-              <p className="text-2xl max-sm:text-base">
+              <p className="text-2xl max-sm:text-lg">
                 <span className="font-bold">Trần Lê {""}</span>
                 luôn có những nhân viên với bề dày kinh nghiệm trong việc dọn
                 dẹp nhà cửa chắc chắn có thể làm hài lòng Quý khách trong quá
@@ -94,10 +94,10 @@ const VeSinhNhaO = () => {
                 không ngừng được đào tạo, nâng cao kỹ thuật nghiệp vụ đảm bảo
                 mang đến cho Quý khách chất lượng dịch vụ tốt nhất.
               </p>
-              <p className="text-greenTheme text-2xl max-sm:text-base">
+              <p className="text-greenTheme text-2xl max-sm:text-lg">
                 <i>“Dịch vụ giúp việc nhà hiện đang trở nên cực kỳ phổ biến”</i>
               </p>
-              <p className="text-2xl max-sm:text-base">
+              <p className="text-2xl max-sm:text-lg">
                 Hầu hết, các gia đình đều tin tưởng lựa chọn dịch vụ của chúng
                 tôi vì đội ngũ giúp việc nhà của công ty luôn mang đến sự hài
                 lòng cho khách hàng. Cùng với đó, Quý khách hoàn toàn yên tâm về
@@ -135,11 +135,11 @@ const VeSinhNhaO = () => {
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
-                <h3 className="text-3xl max-sm:text-base font-bold text-greenTheme">
+                <h3 className="text-3xl max-sm:text-lg font-bold text-greenTheme">
                   Công nghệ hàng đầu
                 </h3>
               </div>
-              <p className="text-2xl max-sm:text-base">
+              <p className="text-2xl max-sm:text-lg">
                 Các dịch vụ giúp việc nhà do công ty chúng tôi cung cấp đều sử
                 dụng những công nghệ làm sạch hàng đầu. Chính vì vậy, khách hàng
                 hoàn toàn yên tâm khi sử dụng dịch vụ của chúng tôi. Trần lê
@@ -148,10 +148,10 @@ const VeSinhNhaO = () => {
                 chất tẩy rửa có độ an toàn cao, không làm ảnh hưởng đến không
                 khí hay quá trình sinh hoạt của gia đình Quý khách.
               </p>
-              <p className="text-greenTheme text-2xl max-sm:text-base">
+              <p className="text-greenTheme text-2xl max-sm:text-lg">
                 <i>“Dọn dẹp nhanh chóng đảm bảo làm hài lòng khách hàng”</i>
               </p>
-              <p className="text-2xl max-sm:text-base">
+              <p className="text-2xl max-sm:text-lg">
                 Bên cạnh đó, Trần lê còn sử dụng khăn lau sợi nhỏ để giảm ô
                 nhiễm chéo nhằm đảm bảo mang đến cho Quý khách môi trường trong
                 lành nhất có thể. Chúng tôi thực hiện dọn dẹp vệ sinh tại nhà
@@ -189,16 +189,16 @@ const VeSinhNhaO = () => {
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
-                <h3 className="text-3xl max-sm:text-base font-bold text-greenTheme">
+                <h3 className="text-3xl max-sm:text-lg font-bold text-greenTheme">
                   Dịch vụ đa dạng
                 </h3>
               </div>
-              <p className="text-2xl max-sm:text-base">
+              <p className="text-2xl max-sm:text-lg">
                 Trần lê cung cấp các dịch vụ giúp việc nhà đa dạng, với các hình
                 thức khác nhau để khách hàng có thể tùy ý lựa chọn sao cho thuận
                 tiện nhất có thể. Các dịch vụ do Trần lê cung cấp bao gồm:
               </p>
-              <p className="text-2xl max-sm:text-base">
+              <p className="text-2xl max-sm:text-lg">
                 <ul className="px-5 space-y-5 list-disc">
                   <li>
                     <span>Dọn dẹp tại nhà theo giờ</span>
@@ -215,23 +215,23 @@ const VeSinhNhaO = () => {
           </div>
         </div>
         <div className="pt-10 ">
-          <div className="text-2xl max-sm:text-base space-y-10">
+          <div className="text-2xl max-sm:text-lg space-y-10">
             <p>
               Tùy thuộc vào mô hình sinh hoạt gia đình, Quý khách có thể lựa
               chọn các dịch vụ phù hợp. Nếu không có quá nhiều yêu cầu thì dịch
               vụ giúp việc nhà theo giờ đáng để cho Quý khách lựa chọn vì vừa
               tiết kiệm chi phí lại không tốn quá nhiều thời gian.
             </p>
-            <p className="text-2xl max-sm:text-base font-bold">
+            <p className="text-2xl max-sm:text-lg font-bold">
               <i>“Chất lượng dịch vụ làm hài lòng khách hàng”</i>
             </p>
-            <p className="text-2xl max-sm:text-base ">
+            <p className="text-2xl max-sm:text-lg ">
               Sử dụng dịch vụ dọn dẹp Trần lê Quý khách có thể hoàn toàn yên tâm
               về không gian nhà. Chúng tôi cam kết mang đến cho Quý khách không
               gian xanh lý tưởng để sinh hoạt gia đình và thực hiện bất kỳ hoạt
               động nào.
             </p>
-            <p className="text-2xl max-sm:text-base">
+            <p className="text-2xl max-sm:text-lg">
               Hãy liên hệ ngay Trần lê khi Quý khách có nhu cầu sử dụng, vui
               lòng gọi: <span className="font-bold">{phoneNumber}</span>
             </p>

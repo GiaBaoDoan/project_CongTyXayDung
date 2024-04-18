@@ -151,4 +151,30 @@ export const listService =[
         content :"Các gia đình có thời gian dài gắn bó trong ngôi nhà, muốn có một cái nhìn mới mẻ, cần cải tạo lại không gian, hay đơn giản là muốn cuộc sống trở nên tươi mới hơn. Đến với Tapvu247 khách hàng sẽ luôn được đáp ứng tận tình các yêu cầu về tư vấn sửa chữa nhà một cách tốt nhất"
     },
 ]
+export const contentService = [
+    {
+      link: "/dich-vu-ve-sinh-nha-o",
+      title: "Dịch vụ vệ sinh nhà ở",
+    },
+    {
+      link: "/ve-sinh-theo-gio",
+      title: "Dịch vụ vệ sinh theo giờ",
+    },
+    {
+      link: "/ve-sinh-benh-vien",
+      title: "Dịch vụ vệ sinh bệnh viện",
+    },
+    {
+      link: "/ve-sinh-van-phong",
+      title: "Dịch vụ vệ sinh văn phòng ",
+    },
+    {
+      link: "/ve-sinh-cong-nghiep",
+      title: "Dịch vụ vệ sinh công nghiệp",
+    },
+    {
+      link: "/danh-bong-san",
+      title: "Dịch vụ đánh bóng sàn ",
+    },
+  ];
 export const phoneNumber = '0393 500 993'
