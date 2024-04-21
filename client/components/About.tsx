@@ -8,9 +8,9 @@ const About = () => {
     <section className="px-10 max-lg:px-5 max-sm:px-2 py-20 gap-10 grid grid-cols-2 max-lg:grid-cols-1">
       <div className="left">
         <div className="grid grid-cols-3 max-lg:grid-cols-2 gap-5">
-          {listAbout.map((item) => {
+          {listAbout.map((item, i) => {
             return (
-              <div className="border cursor-pointer hover:text-greenTheme hover:translate-y-[-10px] transition-all flex flex-col space-y-5 p-6 max-sm:px-[10px] justify-center items-center rounded-xl border-greenTheme">
+              <div key={i} className="border cursor-pointer hover:text-greenTheme hover:translate-y-[-10px] transition-all flex flex-col space-y-5 p-6 max-sm:px-[10px] justify-center items-center rounded-xl border-greenTheme">
                 <Image
                   src={item.icon}
                   width={120}
