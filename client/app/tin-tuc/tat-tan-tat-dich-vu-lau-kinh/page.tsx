@@ -4,7 +4,7 @@ const DieuThuViDichVuLauKinh = () => {
   return (
     <section>
       <div className="space-y-5 border-b pb-5 border-gray-200">
-        <p className="text-2xl">
+        <p className="text-xl max-sm:text-base">
           <span className="text-greenTheme">Trang chủ » Tin tức »</span>Tất tần
           tật những điều thú vị về dịch vụ lau kính nhà cao tầng
         </p>
@@ -13,7 +13,7 @@ const DieuThuViDichVuLauKinh = () => {
         </h1>
       </div>
       <div className="mt-10 space-y-5">
-        <p className="text-2xl">
+        <p className="text-xl max-sm:text-base">
           Hầu hết ngày nay các tòa nhà cao tầng đặc biệt trung tâm thương mại,
           tòa nhà văn phòng luôn sử dụng kính như một cách tăng tính thẩm mỹ cho
           công trình. Việc vệ sinh kính tại các tòa nhà này không phải bất cứ ai
@@ -22,7 +22,7 @@ const DieuThuViDichVuLauKinh = () => {
           đặc biệt ở các thành phố lớn. Nếu bạn cũng quan tâm đến dịch vụ này,
           hãy cùng khám phá những điều thú vị ngay tại bài viết sau.
         </p>
-        <p className="text-2xl">
+        <p className="text-xl max-sm:text-base">
           Dịch vụ lau kính nhà cao tầng là một trong những dịch vụ cực kỳ phát
           triển đặc biệt ở các thành phố lớn, những khu vực tập trung đông nhà
           cao tầng dành cho văn phòng và trung tâm thương mại. Nhu cầu tạo ra

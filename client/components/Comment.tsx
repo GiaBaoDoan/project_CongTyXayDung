@@ -4,8 +4,8 @@ const { TextArea } = Input;
 const Comment = () => {
   return (
     <section className="py-10">
-      <div className="text-2xl">
-        <div className="mt-10">
+      <div className="text-xl max-sm:text-base">
+        <div className="mt-10 max-lg:mt-2">
           <Form
             name="basic"
             style={{
@@ -14,13 +14,14 @@ const Comment = () => {
             }}
             initialValues={{ remember: true }}
             autoComplete="off"
+            className="max-sm:!p-3"
           >
-            <h3 className="font-bold text-2xl">Trả lời</h3>
-            <p className="text-2xl">
+            <h3 className="font-bold text-xl">Trả lời</h3>
+            <p className="text-xl mt-2">
               Email của bạn sẽ không được hiển thị công khai. Các trường bắt
               buộc được đánh dấu *
             </p>
-            <div className="grid grid-cols-1 mt-10">
+            <div className="grid grid-cols-1 mt-10 max-lg:mt-2">
               <Form.Item
                 name={"Bình luận"}
                 rules={[
@@ -29,19 +30,19 @@ const Comment = () => {
               >
                 <TextArea
                   placeholder="Bình luận"
-                  className="!text-2xl placeholder-gray-600 !h-[200px]"
+                  className="text-xl max-sm:text-base placeholder-gray-600 !h-[200px]"
                   autoSize={{ minRows: 3, maxRows: 5 }}
                 />
               </Form.Item>
             </div>
-            <div className="grid grid-cols-3 gap-5 mt-10">
+            <div className="grid grid-cols-3 max-lg:grid-cols-1 lg:gap-5 mt-10 max-lg:mt-2">
               <Form.Item
                 name="địa chỉ"
                 rules={[{ required: true, message: "Vui lòng nhập địa chỉ!" }]}
               >
                 <Input
                   placeholder="Địa chỉ"
-                  className="p-4 text-2xl placeholder-gray-600"
+                  className="p-4 max-sm:py-2 text-xl max-sm:text-base placeholder-gray-600"
                 />
               </Form.Item>
               <Form.Item
@@ -54,7 +55,7 @@ const Comment = () => {
                 ]}
               >
                 <Input
-                  className="p-4 text-2xl placeholder-gray-600"
+                  className="p-4 max-sm:py-2 text-xl max-sm:text-base placeholder-gray-600"
                   placeholder="Số điện thoại"
                 />
               </Form.Item>
@@ -72,12 +73,12 @@ const Comment = () => {
                 ]}
               >
                 <Input
-                  className="p-4 text-2xl placeholder-gray-600"
+                  className="p-4 max-sm:py-2 text-xl max-sm:text-base placeholder-gray-600"
                   placeholder="Địa chỉ email..."
                 />
               </Form.Item>
             </div>
-            <button className="text-2xl mt-10 rounded font-bold uppercase bg-greenTheme text-white p-4">
+            <button className="text-xl max-sm:text-base mt-10 max-lg:mt-2 rounded font-bold uppercase bg-greenTheme text-white p-4 max-sm:py-2">
               Phản hồi
             </button>
           </Form>

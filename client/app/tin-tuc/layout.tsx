@@ -14,8 +14,8 @@ import React, { ReactNode } from "react";
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <section className="px-5 py-10">
-      <div className="flex justify-between space-y-5 space-x-10">
-        <div className="w-full">
+      <div className="flex justify-between max-lg:flex-col space-y-5 lg:space-x-10">
+        <div className="w-full !text-xl">
           {children}
           <div className="soicals space-y-5 mt-5">
             <ul className="flex space-x-5">
@@ -50,7 +50,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
             <p className="text-2xl text-greenTheme font-bold">
               Có thể bạn quan tâm:
             </p>
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-10">
               {newsModel.slice(0, 5).map((item, index) => {
                 return (
                   <Link
@@ -65,7 +65,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
                       height={150}
                       className="w-full"
                     />
-                    <p className="text-2xl text-left font-bold">{item.title}</p>
+                    <p className="text-xl max-sm:text-base text-left font-bold">
+                      {item.title}
+                    </p>
                   </Link>
                 );
               })}
