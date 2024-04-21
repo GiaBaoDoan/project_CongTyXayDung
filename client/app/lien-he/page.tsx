@@ -2,26 +2,24 @@
 import { phoneNumber } from "@/constants";
 import React from "react";
 import { Form, Input } from "antd";
-import { Map } from "@/components";
 const { TextArea } = Input;
 const Contact = () => {
   return (
     <section className="flex px-10 py-20 gap-10">
-      <Map />
       <div className="left-section flex-1 space-y-5">
         <div className="space-y-5">
-          <h2 className="text-4xl font-bold ">Thông tin liên hệ</h2>
+          <h2 className="text-3xl font-bold ">Thông tin liên hệ</h2>
           <p className="text-2xl font-semibold ">
             CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VỆ SINH CÔNG NGHIỆP
           </p>
-          <p className="text-2xl">
+          <p className="text-xl">
             Là đơn vị có thâm niên trong ngành vệ sinh công nghiệp, chúng tôi
             tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với nhưng kinh
             nghiệm đó giúp chúng tôi rút ngắn được thời gian thic ông cũng như
             công đoạn vì vậy giá thành luôn được đàm bảo tốt nhất
           </p>
         </div>
-        <ul className="space-y-5 list-disc px-5 text-2xl">
+        <ul className="space-y-5 list-disc px-5 text-xl">
           <li>
             <span>
               {" "}

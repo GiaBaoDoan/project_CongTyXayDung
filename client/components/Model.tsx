@@ -3,7 +3,7 @@ import React from "react";
 const listLeftModelDemo = [
   {
     img: "/icon-sach-se.jpg",
-    title: "Sach sẽ",
+    title: "Sạch sẽ",
     content:
       "Chúng tôi giữ cho ngôi nhà của quý khách lấp lánh sạch sẽ và không có mầm bệnh. Chế độ khử trùng của chúng tôi giết chết 99% vi khuẩn thông thường",
   },
@@ -43,10 +43,10 @@ const Model = () => {
                   className="max-sm:w-[70px]"
                   alt={item.title}
                 />
-                <h3 className="text-3xl max-sm:text-xl font-bold">
+                <h3 className="text-2xl max-sm:text-xl font-bold">
                   {item.title}
                 </h3>
-                <div className="content text-2xl max-sm:text-lg  text-center">
+                <div className="content text-xl max-sm:text-lg  text-center">
                   {item.content}
                 </div>
               </div>
@@ -77,10 +77,10 @@ const Model = () => {
                   className="max-sm:w-[70px]"
                   alt={item.title}
                 />
-                <h3 className="text-3xl max-sm:text-xl font-bold">
+                <h3 className="text-2xl max-sm:text-xl font-bold">
                   {item.title}
                 </h3>
-                <div className="content text-2xl max-sm:text-lg  text-center">
+                <div className="content text-xl max-sm:text-lg  text-center">
                   {item.content}
                 </div>
               </div>

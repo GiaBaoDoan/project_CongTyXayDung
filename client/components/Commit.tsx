@@ -24,18 +24,18 @@ const Commit = () => {
   return (
     <section
       style={{ backgroundColor: "rgb(246, 246, 247)" }}
-      className="px-10 max-lg:px-5   py-20"
+      className="px-10 max-lg:px-5 py-20"
     >
       <div className="title">
-        <h2 className="text-4xl font-bold text-center max-sm:text-xl">
+        <h2 className="text-3xl font-bold text-center max-sm:text-xl">
           TIÊU CHÍ HOẠT ĐỘNG
         </h2>
-        <p className="text-center text-3xl max-sm:text-xl">
+        <p className="text-center text-2xl max-sm:text-base">
           Chúng tôi hoạt động với những tiêu chí rất cụ thể để giữ chữ tín với
           khác hàng.
         </p>
       </div>
-      <div className="grid grid-cols-3 max-lg:grid-cols-1  gap-10 mt-10">
+      <div className="grid grid-cols-3 max-lg:grid-cols-1  gap-10 mt-12">
         {listCarddemo.map((item, index) => {
           return (
             <div
@@ -52,10 +52,10 @@ const Commit = () => {
                 alt={item.title}
               />
               <div className="bg-white h-full px-5 space-y-5 py-12">
-                <h3 className="text-3xl max-sm:text-xl font-bold text-center">
+                <h3 className="text-2xl max-sm:text-lg font-bold text-center">
                   {item.title}
                 </h3>
-                <p className="text-2xl max-sm:text-lg text-center">
+                <p className="text-xl max-sm:text-base text-center">
                   {item.content}
                 </p>
               </div>

@@ -10,7 +10,6 @@ const open_sans = Open_Sans({
 });
 import "./globals.css";
 import { Footer, Navbar, RightSideMenu, Hotline } from "@/components";
-
 export default function RootLayout({
   children,
 }: Readonly<{

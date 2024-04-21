@@ -18,7 +18,7 @@ const About = () => {
                   alt="icon"
                   className="max-sm:w-[70px]"
                 />
-                <p className="text-2xl max-sm:text-base ">{item.title}</p>
+                <p className="text-xl max-sm:text-base">{item.title}</p>
               </div>
             );
           })}
@@ -26,8 +26,8 @@ const About = () => {
       </div>
       <div className="right">
         <div className="flex flex-col space-y-5  justify-between">
-          <h2 className="text-4xl font-bold max-sm:text-2xl ">Về chúng tôi</h2>
-          <p className="text-2xl  max-sm:text-base">
+          <h2 className="text-3xl font-bold max-sm:text-xl">Về chúng tôi</h2>
+          <p className="text-xl  max-sm:text-base">
             Là đơn vị có thâm niên trong ngành vệ sinh công nghiệp, chúng tôi
             tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với nhưng kinh
             nghiệm đó giúp chúng tôi rút ngắn được thời gian thi công cũng như

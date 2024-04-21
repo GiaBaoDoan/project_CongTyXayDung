@@ -26,46 +26,53 @@ export const newsModel = [
     {
         img: '/post1.jpg',
         title :'Vệ sinh chung cư sau xây dựng, bạn cần phải thực hiện những công việc nào đầu tiên?',
-        modelCotent : 'Chung cư khi bàn giao đến khách hàng hay chủ căn hộ nhận nhà cần phải được'
+        modelCotent : 'Chung cư khi bàn giao đến khách hàng hay chủ căn hộ nhận nhà cần phải được',
+        link : '/ve-sinh-sau-xay-dung'
     },
     {
         img: '/may-hut-bui.jpg',
         title :'Lựa chọn dịch vụ vệ sinh văn phòng ưng ý, văn phòng lúc nào cũng luôn như mới',
-        modelCotent : 'Văn phòng là nơi mà chúng ta làm việc, dành rất nhiều thời gian ở đó. Khói bụi, vi'
+        modelCotent : 'Văn phòng là nơi mà chúng ta làm việc, dành rất nhiều thời gian ở đó. Khói bụi, vi',
+        link :'/lua-chon-dich-vu-ve-sinh-van-phong'
     },
     {
-        img: '/post3.jpg',
+        img: '/post6.jpg',
         title :'Điểm mạnh của dịch vụ vệ sinh trường học của là gì?',
-        modelCotent : 'Trường học là nơi có diện tích rộng, nhiều chi tiết cần vệ sinh khác nhau. Khi muốn'
+        modelCotent : 'Trường học là nơi có diện tích rộng, nhiều chi tiết cần vệ sinh khác nhau. Khi muốn',
+        link : "/diem-manh-cua-ve-sinh-truong-hoc"
     },
     {
         img: '/post4.jpg',
         title :'Lý do vì sao bạn nên tìm đến dịch vụ vệ sinh công nghiệp?',
-        modelCotent : 'Đây là lý do đầu tiên giải thích tại sao bạn nên lựa chọn dịch vụ vệ sinh công'
+        modelCotent : 'Đây là lý do đầu tiên giải thích tại sao bạn nên lựa chọn dịch vụ vệ sinh công',
+        link  :"/ly-do-nen-ve-sinh-cong-nghiep"
     },
     {
         img: '/post5.jpg',
         title :'Dọn dẹp văn phòng, nhà xưởng chưa bao giờ dễ dàng đến thế',
-        modelCotent : 'Dọn dẹp văn phòng, nhà xưởng là những công việc khá tốn thời gian và sức lực.'
+        modelCotent : 'Dọn dẹp văn phòng, nhà xưởng là những công việc khá tốn thời gian và sức lực.',
+        link : "/don-dep-van-phong-nha-xuong"
     },
     {
-        img: '/post6.jpg',
+        img: '/post3.jpg',
         title :'Tất tần tật những điều thú vị về dịch vụ lau kính nhà cao tầng',
-        modelCotent : 'Hầu hết ngày nay các tòa nhà cao tầng đặc biệt trung tâm thương mại, tòa nhà'
+        modelCotent : 'Hầu hết ngày nay các tòa nhà cao tầng đặc biệt trung tâm thương mại, tòa nhà',
+        link : "/tat-tan-tat-dich-vu-lau-kinh"
     },
     {
         img: '/post7.jpg',
         title :'Bạn cần chuẩn bị những dụng cụ nào khi quyết định tổng vệ sinh nhà cửa?',
-        modelCotent : 'Vệ sinh nhà cửa mỗi ngày là cách tốt nhất để giúp môi trường sống luôn được trong'
+        modelCotent : 'Vệ sinh nhà cửa mỗi ngày là cách tốt nhất để giúp môi trường sống luôn được trong',
+        link : "/ban-can-chuan-bi-gi-khi-tong-ve-sinh"
     },
     {
         img: '/post8.jpg',
         title :'Giúp việc nhà theo tháng – Sự lựa chọn hoàn hảo của những người bận rộn',
-        modelCotent : 'Công việc quá bận rộn khiến bạn không có nhiều thời gian làm việc nhà, ngôi nhà'
+        modelCotent : 'Công việc quá bận rộn khiến bạn không có nhiều thời gian làm việc nhà, ngôi nhà',
+        link : "/giup-viec-nha-theo-thang"
     },
    
 ]
-
 export const listBanner = ['/banner.png','/banner1.png','/banner2.png']
 export const listAbout   = [
     {
@@ -154,15 +161,15 @@ export const listService =[
 export const contentService = [
     {
       link: "/dich-vu-ve-sinh-nha-o",
-      title: "Dịch vụ vệ sinh nhà ở",
+      title: "Dịch vệ sinh lau kính",
     },
     {
       link: "/ve-sinh-theo-gio",
-      title: "Dịch vụ vệ sinh theo giờ",
+      title: "Dịch vụ vệ sinh pin mặt trời",
     },
     {
       link: "/ve-sinh-benh-vien",
-      title: "Dịch vụ vệ sinh bệnh viện",
+      title: "Dịch vụ sửa chữa & vệ sinh thiết bị điện lạnh",
     },
     {
       link: "/ve-sinh-van-phong",
@@ -173,7 +180,7 @@ export const contentService = [
       title: "Dịch vụ vệ sinh công nghiệp",
     },
     {
-      link: "/danh-bong-san",
+      link: "/ve-sinh-danh-bong-san",
       title: "Dịch vụ đánh bóng sàn ",
     },
   ];

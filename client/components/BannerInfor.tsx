@@ -4,13 +4,13 @@ import React from "react";
 
 const BannerInfor = () => {
   return (
-    <section className="px-10 max-lg:px-5  max-lg:flex-col  py-10 bg-greenTheme max-lg:space-y-5 flex justify-between items-start">
+    <section className="px-10 max-lg:px-5 max-lg:flex-col  py-10 bg-greenTheme max-lg:space-y-5 flex justify-between items-start">
       <div className="left">
         <div className="space-y-2">
-          <h2 className="font-bold text-4xl text-white max-sm:text-2xl">
+          <h2 className="font-bold text-3xl text-white max-sm:text-2xl">
             Bạn cần tư vấn dịch vụ dọn dẹp vệ sinh của chúng tôi?
           </h2>
-          <p className="text-white text-3xl  font-light  max-sm:text-lg">
+          <p className="text-white text-2xl font-light max-sm:text-lg">
             Cách nhanh nhất, vui lòng liên hệ trực tiếp với tư vấn viên qua một
             trong các kênh sau:
           </p>
@@ -25,7 +25,7 @@ const BannerInfor = () => {
               src={"/icon-chat-zalo.png"}
               alt="icon-zalo"
             ></Image>
-            <span className="text-3xl max-sm:text-base font-light text-white">
+            <span className="text-2xl max-sm:text-base font-light text-white">
               Chat Zalo
             </span>
           </div>
@@ -36,7 +36,7 @@ const BannerInfor = () => {
               src={"/icon-chat-messenger.png"}
               alt="icon-message"
             ></Image>
-            <span className="text-3xl max-sm:text-base font-light text-white">
+            <span className="text-2xl max-sm:text-base font-light text-white">
               Chat Message
             </span>
           </div>
@@ -47,7 +47,7 @@ const BannerInfor = () => {
               src={"/phone-icon.png"}
               alt="icon-phonenumber"
             ></Image>
-            <span className="text-3xl max-sm:text-base font-light text-white">
+            <span className="text-2xl max-sm:text-base font-light text-white">
               {phoneNumber}
             </span>
           </div>

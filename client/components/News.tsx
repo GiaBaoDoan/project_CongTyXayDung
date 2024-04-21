@@ -26,10 +26,10 @@ const News = () => {
                     alt="post-news-1 "
                   />
                 </div>
-                <h3 className="font-bold text-2xl max-md:text-xl max-sm:text-[15px] max-sm:leading-[22px] hover:text-greenTheme">
+                <h3 className="font-bold text-xl max-md:text-xl max-sm:text-[15px] max-sm:leading-[22px] hover:text-greenTheme">
                   {item.title}
                 </h3>
-                <p className="font-normal max-lg:hidden text-2xl hover:text-greenTheme">
+                <p className="font-normal max-lg:hidden text-xl hover:text-greenTheme">
                   {item.modelCotent}
                 </p>
               </div>

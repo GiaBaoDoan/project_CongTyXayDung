@@ -33,12 +33,12 @@ const VeSinhCongNghiep = () => {
         className="w-full h-auto"
       />
       <section className="px-5 py-20">
-        <div className="flex max-lg:flex-col space-y-5 items-center">
+        <div className="flex max-lg:flex-col lg:space-x-10 space-y-5 items-center">
           <div>
-            <h2 className="text-4xl max-sm:text-2xl font-bold ">
+            <h2 className="text-2xl max-sm:text-lg font-bold ">
               Dịch vụ vệ sinh công nghiệp uy tín
             </h2>
-            <p className="text-2xl max-sm:text-lg mt-5">
+            <p className="text-xl max-sm:text-lg mt-5">
               Tran Le là địa chỉ chuyên cung cấp dịch vụ vệ sinh công nghiệp
               chuyên nghiệp, giá rẻ nhận được nhiều sự lựa chọn của khách hàng.
               Dịch vụ mang tới nhiều ưu điểm với đội ngũ nhân viên chuyên
@@ -74,10 +74,10 @@ const VeSinhCongNghiep = () => {
           className="px-5 py-20 space-y-5"
           style={{ backgroundColor: "rgb(246, 246, 247)" }}
         >
-          <h2 className="text-4xl max-sm:text-2xl font-bold">
+          <h2 className="text-2xl max-sm:text-lg font-bold">
             TẠI SAO PHẢI DÙNG DỊCH VỤ VỆ SINH CÔNG NGHIỆP?
           </h2>
-          <p className="text-2xl max-sm:text-lg">
+          <p className="text-xl max-sm:text-lg">
             Việc sử dụng dịch vụ vệ sinh công nghiệp là rất cần thiết, bởi dịch
             vụ mang lại rất nhiều lợi ích cho khách hàng, cho doanh nghiệp sử
             dụng như:
@@ -85,34 +85,34 @@ const VeSinhCongNghiep = () => {
           <div>
             <ul className="px-5 space-y-5 list-disc">
               <li>
-                <p className="text-2xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-lg">
                   Giúp không gian nhà xưởng được sạch sẽ hơn.
                 </p>
               </li>
               <li>
-                <p className="text-2xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-lg">
                   Thời gian vệ sinh nhanh chóng bởi nhân viên chuyên nghiệp,
                   trang thiết bị hiện đại.
                 </p>
               </li>
               <li>
-                <p className="text-2xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-lg">
                   Tiết kiệm được chi phí cho doanh nghiệp.
                 </p>
               </li>
               <li>
-                <p className="text-2xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-lg">
                   Mang lại hiệu quả làm việc cao hơn cho nhân viên.
                 </p>
               </li>
               <li>
-                <p className="text-2xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-lg">
                   Bảo vệ sức khỏe cho nhân viên, tạo không gian làm việc thoáng
                   mát.
                 </p>
               </li>
               <li>
-                <p className="text-2xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-lg">
                   Đảm bảo an toàn cho người sử dụng bì những biện pháp vệ sinh
                   đều hiện đại và đảm bảo tiêu chuẩn.
                 </p>
@@ -137,10 +137,10 @@ const VeSinhCongNghiep = () => {
                   loading="lazy"
                   className="w-[150px] h-[150px] max-lg:w-[100px] max-lg:h-[100px] max-sm:w-[80px] max-sm:h-[80px]"
                 />
-                <h3 className="text-3xl max-sm:text-lg text-greenTheme font-bold text-center text-themeGreen">
+                <h3 className="text-2xl max-sm:text-lg text-greenTheme font-bold text-center text-themeGreen">
                   {item.title}
                 </h3>
-                <p className="text-2xl max-sm:text-lg text-center">
+                <p className="text-xl max-sm:text-lg text-center">
                   {item.content}
                 </p>
               </div>

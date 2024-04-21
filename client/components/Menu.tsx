@@ -12,7 +12,7 @@ const content = (
             key={index}
             className="hover:bg-gray-100 cursor-pointer transition-all p-3"
           >
-            <p className="text-2xl">{item.title}</p>
+            <p className="text-xl">{item.title}</p>
           </div>
         </Link>
       );
@@ -36,7 +36,7 @@ const Menu = () => {
               >
                 <Popover placement="bottom" content={content}>
                   <Link
-                    className="capitalize flex text-2xl rounded-3xl cursor-pointer transition-all text-[#272727 ]  font-bold"
+                    className="capitalize flex text-xl rounded-3xl cursor-pointer transition-all text-[#272727 ]  font-bold"
                     href={item.link}
                   >
                     {item.title}
@@ -62,7 +62,7 @@ const Menu = () => {
           ) : (
             <li>
               <Link
-                className="capitalize rounded-3xl cursor-pointer transition-all text-[#272727 ] text-2xl  font-bold"
+                className="capitalize rounded-3xl cursor-pointer transition-all text-[#272727 ] text-xl  font-bold"
                 href={item.link}
               >
                 {item.title}
