@@ -5,7 +5,9 @@ import Link from "next/link";
 const ListNews = () => {
   return (
     <section>
-      <h2 className="font-bold text-2xl text-greenTheme">Bài viết mới nhất</h2>
+      <h2 className="font-bold text-2xl max-sm:text-lg text-greenTheme">
+        Bài viết mới nhất
+      </h2>
       <div className="border space-y-7 mt-5 p-5">
         {newsModel.map((item, index) => {
           return (

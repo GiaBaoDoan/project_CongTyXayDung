@@ -5,7 +5,7 @@ import { Form, Input } from "antd";
 const { TextArea } = Input;
 const Contact = () => {
   return (
-    <section className="flex max-lg:flex-col px-5 py-20 gap-10">
+    <section className="flex max-lg:flex-col px-5 py-10 gap-10">
       <div className="left-section space-y-5 flex-1">
         <div className="space-y-5">
           <h2 className="text-3xl font-bold max-sm:text-xl">

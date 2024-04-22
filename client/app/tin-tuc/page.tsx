@@ -10,7 +10,7 @@ const Tintuc = () => {
           <span className="text-greenTheme">Trang chủ </span>
           {">>"} Tin tức
         </p>
-        <h2 className="text-2xl text-greenTheme max-sm:text-xl">
+        <h2 className="text-2xl text-greenTheme font-bold max-sm:text-lg">
           Category Archives: Tin tức
         </h2>
         <div className="max-sm:text-base text-xl">

@@ -14,10 +14,10 @@ const Comment = () => {
             }}
             initialValues={{ remember: true }}
             autoComplete="off"
-            className="max-sm:!p-3"
+            className="max-sm:p-5"
           >
-            <h3 className="font-bold text-xl">Trả lời</h3>
-            <p className="text-xl mt-2">
+            <h3 className="font-bold text-xl max-sm:text-lg">Trả lời</h3>
+            <p className="text-xl mt-2 max-sm:text-base">
               Email của bạn sẽ không được hiển thị công khai. Các trường bắt
               buộc được đánh dấu *
             </p>
@@ -25,7 +25,14 @@ const Comment = () => {
               <Form.Item
                 name={"Bình luận"}
                 rules={[
-                  { required: true, message: "Vui lòng nhập bình luận!" },
+                  {
+                    required: true,
+                    message: (
+                      <p className="my-2 text-lg max-sm:text-base">
+                        Vui lòng nhập bình luận!
+                      </p>
+                    ),
+                  },
                 ]}
               >
                 <TextArea
@@ -38,7 +45,16 @@ const Comment = () => {
             <div className="grid grid-cols-3 max-lg:grid-cols-1 lg:gap-5 mt-10 max-lg:mt-2">
               <Form.Item
                 name="địa chỉ"
-                rules={[{ required: true, message: "Vui lòng nhập địa chỉ!" }]}
+                rules={[
+                  {
+                    required: true,
+                    message: (
+                      <p className="my-2 text-lg max-sm:text-base">
+                        Vui lòng nhập địa chỉ!
+                      </p>
+                    ),
+                  },
+                ]}
               >
                 <Input
                   placeholder="Địa chỉ"
@@ -50,7 +66,11 @@ const Comment = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Vui lòng nhập số điện thoại thoại!",
+                    message: (
+                      <p className="my-2 text-lg max-sm:text-base">
+                        Vui lòng nhập số điện thoại thoại!
+                      </p>
+                    ),
                   },
                 ]}
               >
@@ -64,11 +84,19 @@ const Comment = () => {
                 rules={[
                   {
                     type: "email",
-                    message: "Email không hợp lệ",
+                    message: (
+                      <p className="my-2 text-lg max-sm:text-base">
+                        Email không hợp lệ
+                      </p>
+                    ),
                   },
                   {
                     required: true,
-                    message: "Vui lòng nhập email",
+                    message: (
+                      <p className="my-2 text-lg max-sm:text-base">
+                        Vui lòng nhập email
+                      </p>
+                    ),
                   },
                 ]}
               >

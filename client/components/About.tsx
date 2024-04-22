@@ -10,7 +10,11 @@ const About = () => {
         <div className="grid grid-cols-3 max-lg:grid-cols-2 gap-5">
           {listAbout.map((item, i) => {
             return (
-              <div key={i} className="border cursor-pointer hover:text-greenTheme hover:translate-y-[-10px] transition-all flex flex-col space-y-5 p-6 max-sm:px-[10px] justify-center items-center rounded-xl border-greenTheme">
+              <Link
+                key={i}
+                href={item.link}
+                className="border cursor-pointer hover:text-greenTheme hover:translate-y-[-10px] transition-all flex flex-col space-y-5 p-6 max-sm:px-[10px] justify-center items-center rounded-xl border-greenTheme"
+              >
                 <Image
                   src={item.icon}
                   width={120}
@@ -18,8 +22,10 @@ const About = () => {
                   alt="icon"
                   className="max-sm:w-[70px]"
                 />
-                <p className="text-xl max-sm:text-base">{item.title}</p>
-              </div>
+                <p className="text-xl text-center max-sm:text-base">
+                  {item.title}
+                </p>
+              </Link>
             );
           })}
         </div>

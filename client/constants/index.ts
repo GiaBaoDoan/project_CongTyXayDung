@@ -20,6 +20,10 @@ export const listMenu :listMenuProps[] = [
     {
         title : 'liên hệ',
         link : '/lien-he'
+    },
+    {
+        title : 'đăng nhập',
+        link : '/dang-nhap'
     }
 ]
 export const newsModel = [
@@ -77,31 +81,34 @@ export const listBanner = ['/banner.png','/banner1.png','/banner2.png']
 export const listAbout   = [
     {
         icon : "/about6.png",
-        title : "Vệ sinh nhà ở",
-        
-
+        link: "/dich-vu-ve-sinh-lau-kinh",
+        title : "Vệ sinh lau kính",
     },
     {
         icon : "/about2.png",
-        title : "Vệ sinh công nghiệp",
+        link: "/ve-sinh-pin-mat-troi",
+        title: "Dịch vụ vệ sinh pin mặt trời",
 
     },
-    {
+    {   link: "/ve-sinh-sua-chua-ve-sinh-thiet-bi-dien-lanh",
         icon : "/about3.png",
-        title : "Đánh bóng sàn",
+        title: "Dịch vụ sửa chữa & vệ sinh thiết bị điện lạnh",
 
     },
-    {
+    {  
+        link: "/ve-sinh-cong-nghiep",
         icon : "/about4.png",
         title : "Vệ sinh bệnh viện",
 
     },
-    {
+    {    
+        link: "/ve-sinh-cong-nghiep",
         icon : "/about5.png",
         title : "Vệ sinh văn phòng",
 
     },
-    {
+    {  
+        link: "/ve-sinh-danh-bong-san",
         icon : "/about1.png",
         title : "Vệ sinh theo giờ",
 
@@ -160,15 +167,15 @@ export const listService =[
 ]
 export const contentService = [
     {
-      link: "/dich-vu-ve-sinh-nha-o",
+      link: "/dich-vu-ve-sinh-lau-kinh",
       title: "Dịch vệ sinh lau kính",
     },
     {
-      link: "/ve-sinh-theo-gio",
+      link: "/ve-sinh-pin-mat-troi",
       title: "Dịch vụ vệ sinh pin mặt trời",
     },
     {
-      link: "/ve-sinh-benh-vien",
+      link: "/ve-sinh-sua-chua-ve-sinh-thiet-bi-dien-lanh",
       title: "Dịch vụ sửa chữa & vệ sinh thiết bị điện lạnh",
     },
     {
@@ -181,7 +188,7 @@ export const contentService = [
     },
     {
       link: "/ve-sinh-danh-bong-san",
-      title: "Dịch vụ đánh bóng sàn ",
+      title: "Dịch vụ đánh bóng sàn",
     },
   ];
 export const phoneNumber = '0393 500 993'
