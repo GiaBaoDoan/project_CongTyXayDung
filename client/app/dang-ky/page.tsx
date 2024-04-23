@@ -1,10 +1,16 @@
 "use client";
+import { singUpApi } from "@/api/api";
 import { Form, Input } from "antd";
-import Image from "next/image";
+import axios from "axios";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const DangKy = () => {
+  const [inputs, setInputs] = useState({
+    email: "",
+    name: "",
+    password: "",
+  });
   return (
     <section className="py-10 flex justify-center">
       <Form
@@ -24,7 +30,7 @@ const DangKy = () => {
           </h2>
           <div className="mt-5">
             <Form.Item
-              name="username"
+              name="name"
               rules={[
                 {
                   required: true,
@@ -37,6 +43,7 @@ const DangKy = () => {
               ]}
             >
               <Input
+                onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Tên đăng nhập"
               />
@@ -63,6 +70,9 @@ const DangKy = () => {
               ]}
             >
               <Input
+                onChange={(e) =>
+                  setInputs({ ...inputs, email: e.target.value })
+                }
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Email"
               />
@@ -81,6 +91,9 @@ const DangKy = () => {
               ]}
             >
               <Input
+                onChange={(e) =>
+                  setInputs({ ...inputs, password: e.target.value })
+                }
                 type="password"
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Mật khẩu"
@@ -88,7 +101,20 @@ const DangKy = () => {
             </Form.Item>
           </div>
         </div>
-        <button className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 ">
+        <button
+          onClick={async () => {
+            const res = await axios.post(
+              "https://api.xaydungtranle.vn/account/signup/",
+              {
+                body: inputs,
+                headers: {
+                  "Content-Type": "application/json;charset=utf-8",
+                },
+              }
+            );
+          }}
+          className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
+        >
           <span> Đăng ký</span>
           <span>
             <svg

@@ -1,9 +1,27 @@
 "use client";
+import { base_url } from "@/constants/baseUrl";
 import { Form, Input } from "antd";
-import Image from "next/image";
+import axios from "axios";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 const DangNhap = () => {
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
+  const Test = async () => {
+    try {
+      const res = await axios.get("https://api.xaydungtranle.vn/heath/");
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    Test();
+  }, []);
+
   return (
     <section className="py-10 flex justify-center">
       <Form
@@ -44,6 +62,9 @@ const DangNhap = () => {
               ]}
             >
               <Input
+                onChange={(e) =>
+                  setInputs({ ...inputs, email: e.target.value })
+                }
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Email"
               />
@@ -62,6 +83,9 @@ const DangNhap = () => {
               ]}
             >
               <Input
+                onChange={(e) =>
+                  setInputs({ ...inputs, password: e.target.value })
+                }
                 type="password"
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Mật khẩu"
@@ -69,7 +93,10 @@ const DangNhap = () => {
             </Form.Item>
           </div>
         </div>
-        <button className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 ">
+        <button
+          // onClick={() => singInApi(inputs)}
+          className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
+        >
           <span>Đăng nhập</span>
           <span>
             <svg

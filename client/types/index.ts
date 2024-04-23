@@ -20,3 +20,10 @@ export type ButtonProps = {
     content : string,
     styleButton? : string
 } 
+export type SingInProps = {
+    email  : string,
+    password : string,
+}
+export type SingUpProps  = SingInProps & {
+  name : string
+}
