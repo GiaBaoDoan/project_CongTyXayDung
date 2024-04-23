@@ -112,6 +112,8 @@ const DangKy = () => {
                 },
               }
             );
+
+            console.log(res.data)
           }}
           className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
         >
