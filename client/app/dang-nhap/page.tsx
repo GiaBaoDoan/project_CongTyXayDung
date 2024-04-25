@@ -3,24 +3,26 @@ import { base_url } from "@/constants/baseUrl";
 import { Form, Input } from "antd";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 const DangNhap = () => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
   });
-  const Test = async () => {
-    try {
-      const res = await axios.get("https://api.xaydungtranle.vn/heath/");
-      console.log(res.data);
-    } catch (err) {
-      console.log(err);
+  const router = useRouter();
+  const signIn = async () => {
+    const res = await axios.post(`${base_url}/account/signin`, inputs);
+    console.log(res.data);
+    if (res.data.code === 200) {
+      // router.push("/");
+      localStorage.setItem("user", JSON.stringify(res.data.data));
+      return toast.success("Đăng nhập thành công");
+    } else {
+      return toast.error("Tài khoản hoặc mật khẩu chưa đúng !!");
     }
   };
-  useEffect(() => {
-    Test();
-  }, []);
-
   return (
     <section className="py-10 flex justify-center">
       <Form
@@ -93,7 +95,7 @@ const DangNhap = () => {
           </div>
         </div>
         <button
-          // onClick={() => singInApi(inputs)}
+          onClick={signIn}
           className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
         >
           <span>Đăng nhập</span>

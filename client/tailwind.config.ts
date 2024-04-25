@@ -11,9 +11,7 @@ const config: Config = {
       colors : {
           greenTheme : '#27a449'
       },
-      backgroundColor :  {
-        greenTheme : '#27a449'
-      }
+    
       
      
     },

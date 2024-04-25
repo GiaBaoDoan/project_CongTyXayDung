@@ -10,6 +10,8 @@ const open_sans = Open_Sans({
 });
 import "./globals.css";
 import { Footer, Navbar, RightSideMenu, Hotline } from "@/components";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,6 +23,7 @@ export default function RootLayout({
         <Navbar />
         <RightSideMenu />
         {children}
+        <ToastContainer />
         <Hotline />
         <Footer />
       </body>

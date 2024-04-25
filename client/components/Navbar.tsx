@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Menu from "./Menu";
-import "animate.css";
 import { store } from "@/store";
 import Link from "next/link";
 import { MenuOutlined } from "@ant-design/icons";
@@ -27,7 +26,9 @@ const Navbar = () => {
         <div className="top-header bg-gray-200">
           <div className="container-top-header px-10 max-lg:px-5 py-2 ">
             <div className="flex justify-between max-lg:justify-center">
-              <p className="text-xl max-sm:text-lg">Công ty vệ sinh xây dựng Trần lê </p>
+              <p className="text-xl max-sm:text-lg">
+                Công ty vệ sinh xây dựng Trần lê{" "}
+              </p>
               <div className="flex max-lg:hidden">
                 <ul className="flex space-x-2">
                   <li className="border-r border">
@@ -49,7 +50,9 @@ const Navbar = () => {
                           <rect width="20" height="16" x="2" y="4" rx="2" />
                           <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                         </svg>
-                        <span className="text-xl">info.vesinhcongnghiep@gmail.com</span>
+                        <span className="text-xl">
+                          info.vesinhcongnghiep@gmail.com
+                        </span>
                       </span>
                     </a>
                   </li>
@@ -87,14 +90,22 @@ const Navbar = () => {
           } max-lg:px-5 w-full sticky bg-white py-5 duration-500 transition-all  flex items-center justify-between`}
         >
           <Link href={"/"}>
-            <Image src={"/logo.png"} width={80} height={8} className="max-md:w-[60px] max-sm:w-[50px]" alt="logo" />
+            <Image
+              src={"/logo.png"}
+              width={80}
+              height={8}
+              className="max-md:w-[60px] max-sm:w-[50px]"
+              alt="logo"
+            />
           </Link>
           {/* screens > 1280px => show this menu */}
           <Menu />
           {/* screens =< 1280px => show this menu */}
           <div onClick={() => isOpenMenu(true)} className="xl:hidden">
             <div className="flex items-center space-x-3 cursor-pointer border-redTheme rounded-md border py-1 px-2">
-              <span className="text-redTheme text-xl max-sm:text-lg font-medium">MENU</span>
+              <span className="text-redTheme text-xl max-sm:text-lg font-medium">
+                MENU
+              </span>
               <MenuOutlined className="text-redTheme font-extrabold" />
             </div>
           </div>

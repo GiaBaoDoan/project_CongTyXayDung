@@ -1,28 +1,54 @@
-import { contentService, listMenu } from "@/constants";
+"use client";
+import { contentService, listMenu, userData } from "@/constants";
+import { base_url } from "@/constants/baseUrl";
 import { ConfigProvider, Popover } from "antd";
+import axios from "axios";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
-const content = (
-  <div className="flex flex-col space-y-2 !p-[0] !w-[400px]">
-    {contentService.map((item, index) => {
-      return (
-        <Link key={index} href={item.link}>
-          <div
-            key={index}
-            className="hover:bg-gray-100 cursor-pointer transition-all p-3"
-          >
-            <p className="text-xl">{item.title}</p>
-          </div>
-        </Link>
-      );
-    })}
-  </div>
-);
 const Menu = () => {
+  const router = useRouter();
+  
+  const content = (
+    <div className="flex flex-col space-y-2 !w-[400px]">
+      {contentService.map((item, index) => {
+        return (
+          <Link key={index} href={item.link}>
+            <div
+              key={index}
+              className="hover:bg-gray-100 cursor-pointer transition-all p-3"
+            >
+              <p className="text-xl">{item.title}</p>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  );
+  const userInfo = (
+    <div>
+      <p className="text-xl hover:bg-gray-100 cursor-pointer transition-all p-3 ">
+        <Link href={"/thong-tin-ca-nhan"}>Xem trang cá nhân</Link>
+      </p>
+      <p className="hover:bg-gray-100 text-xl cursor-pointer transition-all p-3">
+        <button
+          onClick={async () => {
+            await axios.post(`${base_url}/account/logout`);
+            toast.success("Đăng xuất thành công !!");
+            localStorage.removeItem("user");
+            router.push("/dang-nhap");
+          }}
+        >
+          Đăng xuất
+        </button>
+      </p>
+    </div>
+  );
   return (
     <section className="flex items-center justify-between max-xl:hidden">
-      <ul className="flex justify-center space-x-6">
+      <ul className="flex justify-center space-x-6 items-center">
         {listMenu.map((item, i) => {
           return item.link === "/dich-vu" ? (
             <li key={i}>
@@ -70,6 +96,43 @@ const Menu = () => {
             </li>
           );
         })}
+        {userData() ? (
+          <li>
+            <Popover
+              className="flex items-center space-x-2 cursor-pointer"
+              placement="bottom"
+              content={userInfo}
+            >
+              <p className="capitalize bg-slate-200  items-center p-3 rounded-full cursor-pointer transition-all text-[#272727 ] text-xl  font-bold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-user"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </p>
+              <span className="text-xl">{userData().name}</span>
+            </Popover>
+          </li>
+        ) : (
+          <li>
+            <Link
+              className="capitalize rounded-3xl cursor-pointer transition-all text-[#272727 ] text-xl  font-bold"
+              href={"/dang-nhap"}
+            >
+              Đăng nhập
+            </Link>
+          </li>
+        )}
       </ul>
     </section>
   );

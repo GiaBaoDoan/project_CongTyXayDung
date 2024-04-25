@@ -1,4 +1,9 @@
 import { CardProps, listMenuProps } from "@/types"
+export const userData = () => {
+    if (typeof window !== undefined) {
+      return JSON.parse(localStorage.getItem("user") || '""');
+    }
+  };
 export const listMenu :listMenuProps[] = [
     {
         title : 'trang chủ',
@@ -21,10 +26,8 @@ export const listMenu :listMenuProps[] = [
         title : 'liên hệ',
         link : '/lien-he'
     },
-    {
-        title : 'đăng nhập',
-        link : '/dang-nhap'
-    }
+    
+    
 ]
 export const newsModel = [
     {

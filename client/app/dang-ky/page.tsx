@@ -1,16 +1,28 @@
 "use client";
-import { singUpApi } from "@/api/api";
+import { base_url } from "@/constants/baseUrl";
 import { Form, Input } from "antd";
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const DangKy = () => {
+  const router = useRouter();
   const [inputs, setInputs] = useState({
     email: "",
     name: "",
     password: "",
   });
+  const singUpApi = async () => {
+    const res = await axios.post(`${base_url}/account/signup`, inputs);
+    if (res.data.code === 200) {
+      toast.success("Đăng kí thành công");
+      router.push("/xac-minh");
+      return localStorage.setItem("user", JSON.stringify(res.data.data));
+    } else if (res.data.code === 400)
+      return toast.error("email đã được đăng kí !!");
+  };
   return (
     <section className="py-10 flex justify-center">
       <Form
@@ -102,20 +114,7 @@ const DangKy = () => {
           </div>
         </div>
         <button
-          onClick={async () => {
-            const res = await axios.post(
-              "https://api.xaydungtranle.vn/account/signup/",
-              {
-                body: inputs,
-                headers: {
-                  "Content-Type": "application/json;charset=utf-8",
-                  "Access-Control-Allow-Origin": "",
-                },
-              }
-            );
-
-            console.log(res.data);
-          }}
+          onClick={() => singUpApi()}
           className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
         >
           <span> Đăng ký</span>
