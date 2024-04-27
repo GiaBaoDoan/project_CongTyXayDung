@@ -17,7 +17,7 @@ const validatorPassword = (password: string) => {
   });
 };
 
-const DoiMatKhau = () => {
+const ChangePassword = () => {
   const oldPassRef = useRef<null | InputRef>(null);
   const newPassRef = useRef<null | InputRef>(null);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -118,22 +118,34 @@ const DoiMatKhau = () => {
     </form>
   );
 };
-const DoiTenDangNhap = () => {
-  const [name, setName] = useState("");
+const ChangeName = () => {
+  const nameRef = useRef<null | InputRef>(null);
 
-  const changeName = async () => {
-    const res = await instance.put(`/account/changeName`, { name });
-    console.log(res.data);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!nameRef?.current?.input?.value) {
+      return toast.error("Bạn cần nhập tên mới");
+    }
+    const res = await instance.put(
+      `/account/changeName/`,
+      {
+        name: nameRef?.current?.input?.value,
+      },
+      {
+        withCredentials: true,
+      },
+    );
     if (res.data.code === 200) {
-      localStorage.setItem("user", res.data.data);
-      toast.success("Cập nhật thành công!!");
-      return;
+      toast.success("Cập nhật tên thành công!!");
+      window.location.href = "thong-tin-ca-nhan";
+    } else {
+      return toast.error("Đã xảy ra lỗi trong quá trình cập nhập");
     }
   };
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Form.Item
-        name="newPassword"
+        name="newName"
         rules={[
           {
             required: true,
@@ -144,21 +156,19 @@ const DoiTenDangNhap = () => {
         ]}
       >
         <Input
-          onChange={(e) => setName(e.target.value)}
           type="text"
+          name="newName"
+          ref={nameRef}
           className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
-          placeholder="Tên đăng nhập mới"
+          placeholder="Tên mới"
         />
       </Form.Item>
 
       <button
-        onClick={changeName}
-        disabled={!name.length ? true : false}
-        className={`p-2 px-3 text-xl bg-greenTheme text-white ${
-          !name.length ? "cursor-no-drop opacity-20" : ""
-        }`}
+        type="submit"
+        className={`p-2 px-3 text-xl bg-greenTheme text-white`}
       >
-        Lưu thay đổi
+        Xác nhận
       </button>
     </form>
   );
@@ -166,11 +176,11 @@ const DoiTenDangNhap = () => {
 const data = [
   {
     label: "Đổi mật khẩu",
-    content: <DoiMatKhau />,
+    content: <ChangePassword />,
   },
   {
     label: "Đổi tên đăng nhập",
-    content: <DoiTenDangNhap />,
+    content: <ChangeName />,
   },
 ];
 
