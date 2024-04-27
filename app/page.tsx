@@ -1,6 +1,5 @@
 "use client";
-import { About, Commit, Model, News, Banner, BannerInfor } from "@/components";
-import { useEffect } from "react";
+import { About, Banner, BannerInfor, Commit, Model, News } from "@/components";
 export default function Home() {
   return (
     <main className="">

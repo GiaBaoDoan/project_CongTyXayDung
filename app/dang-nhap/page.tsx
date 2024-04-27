@@ -37,23 +37,35 @@ const DangNhap = () => {
         className="space-y-7 w-[500px] max-sm:w-[320px]"
       >
         <div className="">
-          <h2 className="text-2xl max-sm:text-lg text-center font-bold">Đăng nhập tài khoản</h2>
+          <h2 className="text-2xl max-sm:text-lg text-center font-bold">
+            Đăng nhập tài khoản
+          </h2>
           <div className="mt-5">
             <Form.Item
               name="email"
               rules={[
                 {
                   type: "email",
-                  message: <p className="text-lg my-2 max-sm:text-base">Email không hợp lệ *</p>,
+                  message: (
+                    <p className="text-lg my-2 max-sm:text-base">
+                      Email không hợp lệ *
+                    </p>
+                  ),
                 },
                 {
                   required: true,
-                  message: <p className="text-lg my-2 max-sm:text-base">Vui lòng nhập email *</p>,
+                  message: (
+                    <p className="text-lg my-2 max-sm:text-base">
+                      Vui lòng nhập email *
+                    </p>
+                  ),
                 },
               ]}
             >
               <Input
-                onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
+                onChange={(e) =>
+                  setInputs({ ...inputs, email: e.target.value })
+                }
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Email"
               />
@@ -63,12 +75,18 @@ const DangNhap = () => {
               rules={[
                 {
                   required: true,
-                  message: <p className="text-lg my-2 max-sm:text-base">Vui lòng nhập mật khẩu *</p>,
+                  message: (
+                    <p className="text-lg my-2 max-sm:text-base">
+                      Vui lòng nhập mật khẩu *
+                    </p>
+                  ),
                 },
               ]}
             >
               <Input
-                onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
+                onChange={(e) =>
+                  setInputs({ ...inputs, password: e.target.value })
+                }
                 type="password"
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Mật khẩu"
@@ -105,7 +123,10 @@ const DangNhap = () => {
           <div className="text-xl max-sm:text-base text-center">
             <p className=" ">
               Quên mật khẩu?{" "}
-              <Link className="hover:text-greenTheme text-greenTheme" href={"/quen-mat-khau"}>
+              <Link
+                className="hover:text-greenTheme text-greenTheme"
+                href={"/quen-mat-khau"}
+              >
                 Xác thực
               </Link>
             </p>
@@ -115,7 +136,10 @@ const DangNhap = () => {
             <p>
               {" "}
               Tạo tài khoản mới?{" "}
-              <Link className="hover:text-greenTheme text-greenTheme" href={"/dang-ky"}>
+              <Link
+                className="hover:text-greenTheme text-greenTheme"
+                href={"/dang-ky"}
+              >
                 Đăng ký
               </Link>
             </p>{" "}

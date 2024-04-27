@@ -1,55 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @keyframes slideDown {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
+  from {
+    transform: translateY(-100%);
   }
+  to {
+    transform: translateY(0);
+  }
+}
 .header-fixed {
-      .is-sticky {
-        position: fixed;
-        z-index: 20;
-        top:0;
-        width: 100%;
-        transition: 0.3s all;
-        animation: slideDown 0.35s ease-out;
-      }
+  .is-sticky {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    width: 100%;
+    transition: 0.3s all;
+    animation: slideDown 0.35s ease-out;
+  }
 }
 .banner {
-    .swiper-button-next,.swiper-button-prev {
-        color: white;
-        font-weight: 800;
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white;
+    font-weight: 800;
+  }
+  .swiper-pagination-bullet-active {
+    width: 20px;
+    height: 20px;
+    background: white !important;
+  }
+  .swiper-pagination-bullet {
+    width: 20px;
+    background: white !important;
+    height: 20px;
+  }
+  .swiper-button-next {
+    &:hover {
+      color: #27a449;
+      transition: all 0.3s;
     }
-    .swiper-pagination-bullet-active {
-        width: 20px;
-        height: 20px;
-        background: white !important;
+  }
+  .swiper-button-prev {
+    &:hover {
+      color: #27a449;
+      transition: all 0.3s;
     }
-    .swiper-pagination-bullet {
-        width: 20px;
-        background: white !important;
-        height: 20px;
-    }   
-    .swiper-button-next {
-        &:hover {
-            color : #27a449;
-            transition: all 0.3s;
-        }
-    }
-    .swiper-button-prev {
-        &:hover {
-            color : #27a449;
-            transition: all 0.3s;
-        }
-    }
+  }
 }

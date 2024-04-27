@@ -1,16 +1,68 @@
 "use client";
-import { userData } from "@/constants";
-import newRequest, { base_url } from "@/constants/baseUrl";
-import { Form, Input, RadioChangeEvent, Tabs } from "antd";
-import axios from "axios";
-import React, { useState } from "react";
+import { _redirect } from "@/action";
+import { instance } from "@/config";
+import { Form, Input, InputRef, Tabs } from "antd";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
+import { isStrongPassword } from "validator";
 type TabPosition = "left" | "right" | "top" | "bottom";
+
+const validatorPassword = (password: string) => {
+  return isStrongPassword(password, {
+    minLength: 8,
+    minLowercase: 0,
+    minNumbers: 0,
+    minSymbols: 0,
+    minUppercase: 0,
+  });
+};
+
 const DoiMatKhau = () => {
+  const oldPassRef = useRef<null | InputRef>(null);
+  const newPassRef = useRef<null | InputRef>(null);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!oldPassRef.current || !newPassRef.current) {
+      return toast.error("Đã xảy ra lỗi trong quá trình render");
+    }
+    const oldPass = oldPassRef.current.input?.value;
+    const newPass = newPassRef.current.input?.value;
+    if (!oldPass || !newPass) {
+      return toast.error("Vui lòng nhập nội dung của form");
+    }
+    if (!validatorPassword(oldPass) || !validatorPassword(newPass)) {
+      return toast.error("Mật khẩu không hợp lệ");
+    }
+
+    try {
+      const res = await instance.put(
+        "/account/changePassword/",
+        {
+          oldPassword: oldPass,
+          newPassword: newPass,
+        },
+        {
+          withCredentials: true,
+        },
+      );
+
+      console.log(res);
+
+      if (res.data.code === 200) {
+        return toast.success("Đổi mật khẩu thành công");
+      } else if (res.data.code === 401) {
+        return toast.error("Sai mật khẩu");
+      } else {
+        return toast.error("Đã xảy ra lỗi không xác định");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <Form.Item
-        name="password"
+        name="oldPassword"
         rules={[
           {
             required: true,
@@ -23,7 +75,12 @@ const DoiMatKhau = () => {
         ]}
       >
         <Input
-          type="oldPassword"
+          ref={oldPassRef}
+          autoComplete="old-password"
+          maxLength={32}
+          minLength={8}
+          type="password"
+          name="oldPassword"
           className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
           placeholder="Mật khẩu cũ"
         />
@@ -42,21 +99,30 @@ const DoiMatKhau = () => {
         ]}
       >
         <Input
+          ref={newPassRef}
+          name="newPassword"
+          autoComplete="new-password"
+          maxLength={32}
+          minLength={8}
           type="password"
           className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
           placeholder="Mật khẩu mới"
         />
       </Form.Item>
-      <button className="p-2 px-3 text-xl bg-greenTheme text-white">
-        Tên đăng
+      <button
+        type="submit"
+        className="p-2 px-3 text-xl bg-greenTheme text-white"
+      >
+        Xác nhận
       </button>
-    </div>
+    </form>
   );
 };
 const DoiTenDangNhap = () => {
   const [name, setName] = useState("");
+
   const changeName = async () => {
-    const res = await axios.put(`${base_url}/account/changeName`, { name });
+    const res = await instance.put(`/account/changeName`, { name });
     console.log(res.data);
     if (res.data.code === 200) {
       localStorage.setItem("user", res.data.data);
@@ -65,7 +131,7 @@ const DoiTenDangNhap = () => {
     }
   };
   return (
-    <div>
+    <form>
       <Form.Item
         name="newPassword"
         rules={[
@@ -94,7 +160,7 @@ const DoiTenDangNhap = () => {
       >
         Lưu thay đổi
       </button>
-    </div>
+    </form>
   );
 };
 const data = [
@@ -110,6 +176,19 @@ const data = [
 
 const ThongTinCaNhan = () => {
   const [tabPosition, setTabPosition] = useState<TabPosition>("left");
+  const [user, setUser] = useState<any>();
+  useEffect(() => {
+    (async () => {
+      const res = await instance.get("/account/", {
+        withCredentials: true,
+      });
+      if (res.data.code === 200) {
+        setUser(res.data.data);
+      } else {
+        _redirect("/dang-nhap");
+      }
+    })();
+  }, []);
   return (
     <section className="py-10 flex justify-center space-x-3 h-[600px]">
       <div
@@ -125,7 +204,7 @@ const ThongTinCaNhan = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1.2"
+              strokeWidth="1.2"
               strokeLinecap="round"
               strokeLinejoin="round"
               className="lucide lucide-user"
@@ -137,8 +216,8 @@ const ThongTinCaNhan = () => {
           <div>
             <h3 className="text-2xl text-center font-bold">Hồ sơ</h3>
             <div className="space-y-2 mt-2">
-              <p className="text-xl">Tên đăng nhập : {userData().name}</p>
-              <p className="text-xl">Email : {userData().email}</p>
+              <p className="text-xl">Tên đăng nhập : {user?.name}</p>
+              <p className="text-xl">Email : {user?.email}</p>
             </div>
           </div>
         </div>
@@ -149,7 +228,7 @@ const ThongTinCaNhan = () => {
       >
         <div className="pl-10 pb-5 space-y-3 ">
           <h2 className="text-2xl font-bold ">Thông tin cá nhân</h2>
-          <p className="text-xl">Xin chào, {userData().name} !</p>
+          <p className="text-xl">Xin chào, {user?.name} !</p>
           <p className="text-xl flex items-center space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
