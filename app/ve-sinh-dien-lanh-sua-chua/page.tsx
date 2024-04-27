@@ -2,29 +2,20 @@ import { phoneNumber } from "@/constants";
 import Image from "next/image";
 import React from "react";
 
-const VeSinhTheoGio = () => {
+const VeSinhDienLanh = () => {
   return (
     <main>
-      <div className="banner relative">
-        <Image
-          src={"/banner1.jpg"}
-          alt="ve-sinh-lau-chui"
-          sizes="100vw"
-          width={0}
-          height={0}
-          className="w-full h-auto"
-        />
-      </div>
-      <section className="pt-10  pb-32 px-5">
+      <div className="banner relative flex justify-center"></div>
+      <section className="pt-10 pb-32 px-5">
         <div className="pt-10">
           <div className={`flex gap-10 max-lg:flex-col flex-row-reverse mt-10`}>
             <div className="image w-full">
               <Image
-                src={"/post1.jpg"}
-                alt="about"
-                width={400}
-                height={200}
-                className="w-full h-full object-cover"
+                src={"/ve-sinh-may-lanh.jpg"}
+                alt="ve-sinh-may-lanh"
+                width={500}
+                height={300}
+                className=""
               />
             </div>
             <div className="content space-y-7">
@@ -45,29 +36,32 @@ const VeSinhTheoGio = () => {
                   <path d="m9 12 2 2 4-4" />
                 </svg>
                 <h3 className="text-2xl max-sm:text-xl font-bold text-greenTheme">
-                  Dịch vụ giúp việc hằng ngày chuyên nghiệp, uy tín tại Trần lê
+                  Quy trình vệ sinh máy lạnh
                 </h3>
               </div>
               <p className="text-xl max-sm:text-base">
                 <i>
                   {" "}
-                  Cuộc sống bận rộn khiến cho Quý khách không có thời gian để
-                  chăm sóc nhà cửa, Quý khách đang băn khoăn không biết nên lựa
-                  chọn dịch vụ giúp việc ở đâu? Vậy Quý khách có thể tham khảo
-                  dịch vụ giúp việc hằng ngày tại Trần lê . Chắc chắn với sự
-                  chuyên nghiệp, uy tín của dịch vụ này sẽ khiến Quý khách hài
-                  lòng.
+                  Ngày nay máy lạnh, máy điều hòa là thiết bị phổ biến và không
+                  thể thiếu trong cuộc sống hiện đại của chúng ta. Với khả năng
+                  làm mát không chỉ trong các ngày hè nóng bức mà còn cả trong
+                  mùa đông, máy lạnh giúp chúng ta tạo ra một môi trường thoải
+                  mái và dễ chịu. Tuy nhiên, nếu không được vệ sinh và bảo dưỡng
+                  đúng cách, đúng định kỳ thì máy lạnh có thể trở thành một
+                  nguồn gây ô nhiễm không khí và gây hại cho sức khỏe của gia
+                  đình bạn. Vì vậy việc định kỳ vệ sinh máy lạnh trong quá trình
+                  sử dụng là rất cần thiết. Hãy để dịch vụ vệ sinh máy lạnh của
+                  Phúc Hưng đồng hành cùng gia đình bạn. Chúng tôi Công Ty Phúc
+                  Hưng làm dịch vụ cho bạn nếu bạn muốn sử dụng dịch vụ vệ sinh
+                  máy lạnh thật chất lượng. Dịch vụ của Phúc Hưng bao gồm nhiều
+                  công đoạn, từ kiểm tra gas, làm sạch bộ lọc, ống dẫn nước, vệ
+                  sinh bên trong và bên ngoài đơn vị nén, sửa chữa các bộ phận
+                  cần thiết và kiểm tra lại hệ thống hoạt động sau khi hoàn
+                  thành. Ngoài ra,Phúc Hưng còn có thể cung cấp thêm các dịch vụ
+                  khác như bảo dưỡng định kỳ, sửa chữa và thay thế linh kiện khi
+                  cần thiết từ máy lạnh dân dụng đến máy lạnh công nghiệp tòa
+                  nhà.
                 </i>
-              </p>
-
-              <p className="text-xl max-sm:text-base">
-                Mặc dù trên thị trường hiện nay có rất nhiều địa chỉ cung cấp
-                dịch vụ{" "}
-                <span className="font-bold">
-                  giúp việc theo giờ, giúp việc nhà.
-                </span>{" "}
-                Tuy nhiên, Trần lê là một đơn vị được đông đảo khách hàng tin
-                tưởng lựa chọn bởi:
               </p>
             </div>
           </div>
@@ -103,12 +97,19 @@ const VeSinhTheoGio = () => {
                 </h3>
               </div>
               <p className="text-xl max-sm:text-base">
-                Là một đơn vị uy tín có nhiều năm kinh nghiệm trong lĩnh vực
-                giúp việc gia đình nên khi sử dụng dịch vụ giúp việc nhà khách
-                hàng có thể hoàn toàn yên tâm về tính chuyên nghiệp của Trần lê
-                ở tất cả mọi khâu như: Tiếp nhận thông tin khách hàng, tư vấn
-                dịch vụ, quy trình thực hiện các công việc khi dọn dẹp nhà cho
-                khách hàng…
+                1.Tiếp nhận thông tin: Khách hàng liên hệ với Phúc Hưng qua số
+                hotline để yêu cầu vệ sinh máy lạnh. Phúc Hưng tiếp nhận thông
+                tin yêu cầu từ khách hàng, ghi lại các thông tin cần thiết như
+                địa chỉ, số điện thoại, mô tả sự cố của máy lạnh. <br /> 2.Kiểm
+                tra báo giá: Kiểm tra tình trạng hoạt động của thiết bị, đưa ra
+                giải pháp vệ sinh và báo giá ( triển khai hợp đồng) theo khung
+                giá quy định của công ty. <br /> 3.Tiến hành: Tiến hành vệ sinh
+                máy lạnh theo đúng yêu cầu kỹ thuật sau khi khách hàng đã đồng ý
+                khung giá <br /> 4.Bàn giao thanh toán: Kiểm tra vận hành máy
+                lạnh trước khi bàn giao, dán tem bảo hành và viết phiếu thanh
+                toán cho khách hàng <br /> 5.Bảo hành hậu mãi: Chế độ bảo hành
+                dài hạn sau khi vệ sinh, có nhiều chế độ ưu đãi dành cho khách
+                hàng cũ
               </p>
               <p className="font-bold text-xl max-sm:text-base">
                 Đội ngũ giúp việc chuyên nghiệp, nhiệt tình
@@ -207,4 +208,4 @@ const VeSinhTheoGio = () => {
   );
 };
 
-export default VeSinhTheoGio;
+export default VeSinhDienLanh;

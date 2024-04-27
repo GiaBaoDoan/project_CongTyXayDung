@@ -3,6 +3,5 @@ import axios from "axios";
 
 const newRequest = axios.create({
   baseURL: "https://api.xaydungtranle.vn",
-
 });
 export default newRequest;

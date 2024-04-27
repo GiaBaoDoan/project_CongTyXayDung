@@ -10,16 +10,16 @@ const VeSinhNhaO = () => {
         <Image
           src={"/banner2.jpg"}
           alt="ve-sinh-lau-chui"
-          sizes="100vw"
+          sizes="100"
           width={0}
           height={0}
-          className="w-full h-auto"
+          className="w-auto"
         />
 
         <div className="main-title max-lg:hidden absolute top-1/2 -translate-y-1/2 right-[50px] ">
           <div className="space-y-5">
             <h1 className="uppercase font-bold text-5xl">
-              Dịch vụ vệ sinh nhà ở
+              Dịch vụ vệ sinh lau kính
             </h1>
             <p className="text-2xl max-sm:text-lg font-medium">
               Máy móc hiện đại
@@ -40,7 +40,7 @@ const VeSinhNhaO = () => {
       <section className="pt-10  pb-32 px-5">
         <div className="space-y-5">
           <h2 className="text-2xl font-bold max-sm:text-xl max-md:text-2xl">
-            Dịch vụ dọn dẹp nhà ở chuyên nghiệp
+            Dịch vụ xử lý vệ sinh kính chuyên nghiệp
           </h2>
           <p className="text-xl max-sm:text-base">
             <i>
@@ -58,7 +58,7 @@ const VeSinhNhaO = () => {
           <div className={`flex gap-10 max-lg:flex-col mt-10`}>
             <div className="image w-full">
               <Image
-                src={"/giup-viec-nha-1024x683.jpg"}
+                src={"/ve-sinh-kinh-1.png"}
                 alt="about"
                 width={400}
                 height={200}
@@ -83,7 +83,7 @@ const VeSinhNhaO = () => {
                   <path d="m9 12 2 2 4-4" />
                 </svg>
                 <h3 className="text-2xl max-sm:text-lg font-bold text-greenTheme">
-                  Giúp việc nhà có bề dày kinh nghiệm
+                  Dụng cụ và hóa chất sử dụng trong vệ sinh kính
                 </h3>
               </div>
               <p className="text-xl max-sm:text-base">
@@ -98,11 +98,26 @@ const VeSinhNhaO = () => {
                 <i>“Dịch vụ giúp việc nhà hiện đang trở nên cực kỳ phổ biến”</i>
               </p>
               <p className="text-xl max-sm:text-base">
-                Hầu hết, các gia đình đều tin tưởng lựa chọn dịch vụ của chúng
-                tôi vì đội ngũ giúp việc nhà của công ty luôn mang đến sự hài
-                lòng cho khách hàng. Cùng với đó, Quý khách hoàn toàn yên tâm về
-                độ sạch sẽ. Nếu không đúng như mong muốn, các Quý khách có thể
-                yêu cầu nhân viên công ty làm lại.
+                Trong mỗi dịch vụ lau kính, nhân viên Vệ Sinh Năm Sao sẽ được
+                trang bị các loại công cụ và hóa chất như sau:
+                <ul className="list-disc px-5">
+                  <li>
+                    Cây gạt kính chất lượng cao. Nếu cây gạt kính không đạt
+                    chuẩn có thể khiến việc lau kính không
+                  </li>
+                  <li>Nước lau kính chuyên dụng.</li>
+                  <li>Bùi nhùi để xoa lên kính.</li>
+                  <li>Chất tẩy rửa chuyên dụng để lau sạch kính bị oxi hóa.</li>
+                  <li>
+                    <li>Khăn mềm.</li>
+                    <li>Thang, ghế dùng để lau kính trên cao.</li>
+                    <li>
+                      Dây đu, dây an toàn, đồ bảo hộ và một số giấy tờ chứng
+                      nhận hành nghề đu dây đã được đào tạo và giấy chứng nhận
+                      an toàn.
+                    </li>
+                  </li>
+                </ul>
               </p>
             </div>
           </div>
@@ -111,7 +126,7 @@ const VeSinhNhaO = () => {
           >
             <div className="image w-full">
               <Image
-                src={"/lau-cui.jpg"}
+                src={"/ve-sinhlau-kinh-2.png"}
                 alt="about"
                 width={400}
                 height={200}
@@ -136,17 +151,27 @@ const VeSinhNhaO = () => {
                   <path d="m9 12 2 2 4-4" />
                 </svg>
                 <h3 className="text-2xl max-sm:text-lg font-bold text-greenTheme">
-                  Công nghệ hàng đầu
+                  Vì sao cần thuê dịch vụ lau kính chuyên nghiệp?
                 </h3>
               </div>
               <p className="text-xl max-sm:text-base">
-                Các dịch vụ giúp việc nhà do công ty chúng tôi cung cấp đều sử
-                dụng những công nghệ làm sạch hàng đầu. Chính vì vậy, khách hàng
-                hoàn toàn yên tâm khi sử dụng dịch vụ của chúng tôi. Trần lê
-                luôn sử dụng các thiết bị hiện đại hàng đầu, đảm bảo mang đến
-                cho Quý khách chất lượng dịch vụ tốt nhất. Chúng tôi sử dụng các
-                chất tẩy rửa có độ an toàn cao, không làm ảnh hưởng đến không
-                khí hay quá trình sinh hoạt của gia đình Quý khách.
+                Việc vệ sinh kính sạch sẽ, sáng bóng giúp tăng giá trị và độ
+                sang trọng của công trình xây dựng nhìn từ bên ngoài vào cũng
+                như bảo vệ và phục hồi hệ cửa khỏi tác động môi trường.
+                <br />
+                <br />
+                Thực tế, nhiều người tự vệ sinh kính, lan can, cầu thang định kỳ
+                hoặc hàng ngày. Với khối lượng công việc ít, hệ cửa kính ít, bạn
+                có thể thực hiện các biện pháp lau kính bằng nước xịt, chanh,
+                giấm… với giấy báo và cần gạt hay khăn mềm. Tự vệ sinh kính tại
+                nhà tiết kiệm chi phí và có thể thực hiện thường xuyên.
+                <br />
+                <br />
+                Tuy nhiên, với các công trình lắp đặt nhiều cửa kính, cửa sổ ở
+                tầng cao như nhà biệt thự, căn hộ chung cư cao tầng… cần phải có
+                các trang thiết bị chuyên dụng. Chưa kể tại khách sạn, trung tâm
+                thương mại cao tầng việc lau kính mặt ngoài sạch sẽ toàn bộ sẽ
+                rất khó và nguy hiểm.
               </p>
               <p className="text-greenTheme text-xl max-sm:text-base">
                 <i>“Dọn dẹp nhanh chóng đảm bảo làm hài lòng khách hàng”</i>
@@ -165,8 +190,9 @@ const VeSinhNhaO = () => {
           <div className={`flex gap-10 max-lg:flex-col mt-10`}>
             <div className="image w-full">
               <Image
-                src={"/giup-viec-nha-co-be-day-kinh-nghiem.jpg"}
+                src={"/dich-vu-lau-kinh-3.jpg"}
                 alt="about"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-[100%] h-auto object-cover"
@@ -190,26 +216,27 @@ const VeSinhNhaO = () => {
                   <path d="m9 12 2 2 4-4" />
                 </svg>
                 <h3 className="text-2xl max-sm:text-lg font-bold text-greenTheme">
-                  Dịch vụ đa dạng
+                  Vì sao cần thuê dịch vụ lau kính chuyên nghiệp?
                 </h3>
               </div>
               <p className="text-xl max-sm:text-base">
-                Trần lê cung cấp các dịch vụ giúp việc nhà đa dạng, với các hình
-                thức khác nhau để khách hàng có thể tùy ý lựa chọn sao cho thuận
-                tiện nhất có thể. Các dịch vụ do Trần lê cung cấp bao gồm:
-              </p>
-              <p className="text-xl max-sm:text-base">
-                <ul className="px-5 space-y-5 list-disc">
-                  <li>
-                    <span>Dọn dẹp tại nhà theo giờ</span>
-                  </li>
-                  <li>
-                    <span>Dọn dẹp tại nhà theo ngày</span>
-                  </li>
-                  <li>
-                    <span>Dọn dẹp theo yêu cầu khách hàng</span>
-                  </li>
-                </ul>
+                Việc vệ sinh kính sạch sẽ, sáng bóng giúp tăng giá trị và độ
+                sang trọng của công trình xây dựng nhìn từ bên ngoài vào cũng
+                như bảo vệ và phục hồi hệ cửa khỏi tác động môi trường.
+                <br />
+                <br />
+                Thực tế, nhiều người tự vệ sinh kính, lan can, cầu thang định kỳ
+                hoặc hàng ngày. Với khối lượng công việc ít, hệ cửa kính ít, bạn
+                có thể thực hiện các biện pháp lau kính bằng nước xịt, chanh,
+                giấm… với giấy báo và cần gạt hay khăn mềm. Tự vệ sinh kính tại
+                nhà tiết kiệm chi phí và có thể thực hiện thường xuyên.
+                <br />
+                <br />
+                Tuy nhiên, với các công trình lắp đặt nhiều cửa kính, cửa sổ ở
+                tầng cao như nhà biệt thự, căn hộ chung cư cao tầng… cần phải có
+                các trang thiết bị chuyên dụng. Chưa kể tại khách sạn, trung tâm
+                thương mại cao tầng việc lau kính mặt ngoài sạch sẽ toàn bộ sẽ
+                rất khó và nguy hiểm.
               </p>
             </div>
           </div>
@@ -217,23 +244,23 @@ const VeSinhNhaO = () => {
         <div className="pt-10 ">
           <div className="text-xl max-sm:text-base space-y-10">
             <p>
-              Tùy thuộc vào mô hình sinh hoạt gia đình, Quý khách có thể lựa
-              chọn các dịch vụ phù hợp. Nếu không có quá nhiều yêu cầu thì dịch
-              vụ giúp việc nhà theo giờ đáng để cho Quý khách lựa chọn vì vừa
-              tiết kiệm chi phí lại không tốn quá nhiều thời gian.
-            </p>
-            <p className="text-xl max-sm:text-base font-bold">
-              <i>“Chất lượng dịch vụ làm hài lòng khách hàng”</i>
-            </p>
-            <p className="text-xl max-sm:text-base ">
-              Sử dụng dịch vụ dọn dẹp Trần lê Quý khách có thể hoàn toàn yên tâm
-              về không gian nhà. Chúng tôi cam kết mang đến cho Quý khách không
-              gian xanh lý tưởng để sinh hoạt gia đình và thực hiện bất kỳ hoạt
-              động nào.
+              Kính được làm chùi sạch sẽ, sáng bóng định kỳ sẽ mang lại cho công
+              trình xây dựng sự thông thoáng, không gian sống rộng và tính thẩm
+              mỹ cao. Dịch vụ lau kính chuyên nghiệp của Năm Sao sẽ hỗ trợ mọi
+              khách hàng làm sạch cửa kính{" "}
+              <span className="text-greenTheme">
+                NHANH CHÓNG - AN TOÀN - HIỆU QUẢ.
+              </span>
             </p>
             <p className="text-xl max-sm:text-base">
-              Hãy liên hệ ngay Trần lê khi Quý khách có nhu cầu sử dụng, vui
-              lòng gọi: <span className="font-bold">{phoneNumber}</span>
+              Mọi thông tin chi tiết vui lòng liên hệ với{" "}
+              <span className="font-bold">{phoneNumber}</span>
+            </p>
+            <p className="text-xl max-sm:text-base">
+              Công ty trần lê sẵn sàng đáp ứng các nhu cầu{" "}
+              <span className="uppercase  text-greenTheme">
+                vệ sinh-dọn dẹp-sữa chữa
+              </span>
             </p>
           </div>
         </div>

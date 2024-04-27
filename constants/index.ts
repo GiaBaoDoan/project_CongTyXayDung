@@ -88,7 +88,7 @@ export const listAbout   = [
         title: "Dịch vụ vệ sinh pin mặt trời",
 
     },
-    {   link: "/ve-sinh-sua-chua-ve-sinh-thiet-bi-dien-lanh",
+    {   link: "/ve-sinh-dien-lanh-sua-chua",
         icon : "/about3.png",
         title: "Dịch vụ sửa chữa & vệ sinh thiết bị điện lạnh",
 
