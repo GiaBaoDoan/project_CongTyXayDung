@@ -1,14 +1,21 @@
 "use client";
-import { userData } from "@/constants";
-import newRequest, { base_url } from "@/constants/baseUrl";
-import { Form, Input, RadioChangeEvent, Tabs } from "antd";
-import axios from "axios";
-import React, { useState } from "react";
+import { instance } from "@/config";
+import { userStore } from "@/store";
+import { Form, Input, Tabs } from "antd";
+import React, { ChangeEvent, useState } from "react";
 import { toast } from "react-toastify";
 type TabPosition = "left" | "right" | "top" | "bottom";
 const DoiMatKhau = () => {
+  const [changePassword, setChangePassword] = useState({
+    oldPassword: "",
+    newPassword: "",
+  });
+  const handelOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setChangePassword({ ...changePassword, [name]: value });
+  };
   return (
-    <div>
+    <Form>
       <Form.Item
         name="password"
         rules={[
@@ -23,7 +30,9 @@ const DoiMatKhau = () => {
         ]}
       >
         <Input
-          type="oldPassword"
+          onChange={handelOnChange}
+          type="password"
+          name="oldPassword"
           className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
           placeholder="Mật khẩu cũ"
         />
@@ -42,22 +51,22 @@ const DoiMatKhau = () => {
         ]}
       >
         <Input
+          name="newPassword"
           type="password"
           className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
           placeholder="Mật khẩu mới"
         />
       </Form.Item>
       <button className="p-2 px-3 text-xl bg-greenTheme text-white">
-        Tên đăng
+        Tên đăng nhập
       </button>
-    </div>
+    </Form>
   );
 };
 const DoiTenDangNhap = () => {
   const [name, setName] = useState("");
   const changeName = async () => {
-    const res = await axios.put(`${base_url}/account/changeName`, { name });
-    console.log(res.data);
+    const res = await instance.put(`/account/changeName/`, { name });
     if (res.data.code === 200) {
       localStorage.setItem("user", res.data.data);
       toast.success("Cập nhật thành công!!");
@@ -65,7 +74,7 @@ const DoiTenDangNhap = () => {
     }
   };
   return (
-    <div>
+    <Form>
       <Form.Item
         name="newPassword"
         rules={[
@@ -94,7 +103,7 @@ const DoiTenDangNhap = () => {
       >
         Lưu thay đổi
       </button>
-    </div>
+    </Form>
   );
 };
 const data = [
@@ -109,6 +118,7 @@ const data = [
 ];
 
 const ThongTinCaNhan = () => {
+  const { user } = userStore();
   const [tabPosition, setTabPosition] = useState<TabPosition>("left");
   return (
     <section className="py-10 flex justify-center space-x-3 h-[600px]">
@@ -125,7 +135,7 @@ const ThongTinCaNhan = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1.2"
+              strokeWidth="1.2"
               strokeLinecap="round"
               strokeLinejoin="round"
               className="lucide lucide-user"
@@ -137,8 +147,8 @@ const ThongTinCaNhan = () => {
           <div>
             <h3 className="text-2xl text-center font-bold">Hồ sơ</h3>
             <div className="space-y-2 mt-2">
-              <p className="text-xl">Tên đăng nhập : {userData().name}</p>
-              <p className="text-xl">Email : {userData().email}</p>
+              <p className="text-xl">Tên đăng nhập : {user.name} </p>
+              <p className="text-xl">Email : {user.email} </p>
             </div>
           </div>
         </div>
@@ -149,7 +159,7 @@ const ThongTinCaNhan = () => {
       >
         <div className="pl-10 pb-5 space-y-3 ">
           <h2 className="text-2xl font-bold ">Thông tin cá nhân</h2>
-          <p className="text-xl">Xin chào, {userData().name} !</p>
+          <p className="text-xl">Xin chào, {user.name} !</p>
           <p className="text-xl flex items-center space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"

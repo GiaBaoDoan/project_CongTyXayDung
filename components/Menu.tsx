@@ -5,27 +5,27 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { instance } from "@/config";
+import { userStore } from "@/store";
 
 const Menu = () => {
-  const [user, setUser] = useState<any>();
+  const { setUser, user } = userStore();
   useEffect(() => {
     (async () => {
-      const user = await instance.get("/account/", {
-        withCredentials: true,
-      });
+      const user = await instance.get("/account/");
       if (user.data.code === 200) {
         setUser(user.data.data);
-        console.log(user.data?.data);
       }
     })();
   }, []);
-
   const content = (
     <div className="flex flex-col space-y-2 !w-[400px]">
       {contentService.map((item, index) => {
         return (
           <Link key={index} href={item.link}>
-            <div key={index} className="hover:bg-gray-100 cursor-pointer transition-all p-3">
+            <div
+              key={index}
+              className="hover:bg-gray-100 cursor-pointer transition-all p-3"
+            >
               <p className="text-xl">{item.title}</p>
             </div>
           </Link>
@@ -41,9 +41,17 @@ const Menu = () => {
       <p className="hover:bg-gray-100 text-xl cursor-pointer transition-all p-3">
         <button
           onClick={async () => {
-            await instance.post(`/account/logout/`, null, { withCredentials: true });
+            await instance.post(`/account/logout/`, null, {
+              withCredentials: true,
+            });
             toast.success("Đăng xuất thành công !!");
-            window.location.reload()
+            setUser({
+              email: "",
+              id: "",
+              name: "",
+              verified: false,
+            });
+            window.location.reload();
           }}
         >
           Đăng xuất
@@ -101,9 +109,13 @@ const Menu = () => {
             </li>
           );
         })}
-        {user ? (
+        {user?.verified ? (
           <li>
-            <Popover className="flex items-center space-x-2 cursor-pointer" placement="bottom" content={userInfo}>
+            <Popover
+              className="flex items-center space-x-2 cursor-pointer"
+              placement="bottom"
+              content={userInfo}
+            >
               <p className="capitalize bg-slate-200  items-center p-3 rounded-full cursor-pointer transition-all text-[#272727 ] text-xl  font-bold">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,17 @@
 export type Store = {
     isOpen : boolean
     isOpenMenu : (option : boolean) => void
+   
+}
+export type UserType = {
+    email  : string,
+    name : string,
+    id : string,
+    verified : boolean
+}
+export type UserStore = {
+    user : UserType,
+    setUser : (user : UserType) => void, 
 }
 
 export type listMenuProps = {

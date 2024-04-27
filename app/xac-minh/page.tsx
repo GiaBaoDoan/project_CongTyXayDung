@@ -1,20 +1,31 @@
 "use client";
-import { base_url } from "@/constants/baseUrl";
-import axios from "axios";
 import React, { useState } from "react";
 import OtpInput from "react-otp-input";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { instance } from "@/config";
 const VerifyCode = () => {
+  const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
+  const id = localStorage.getItem("id");
   const [otp, setOTP] = useState("");
   const handleChange = (otp: string) => {
     setOTP(otp);
   };
+  const resendCode = async () => {
+    const res = await instance.post("/account/reverify", id);
+    if (res.data.code === 200) {
+      return toast.error("Mã của bạn đã được gửi lại");
+    }
+    setIsVisible(false);
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 15000);
+  };
   const checkVerify = otp.length < 6;
   const verifyAccount = async () => {
-    const res = await axios.post(`${base_url}/account/verify`, {
-      id: localStorage.getItem("userId"),
+    const res = await instance.post(`/account/verify`, {
+      id: localStorage.getItem("id"),
       code: otp,
     });
     if (res.data.code == 200) {
@@ -49,7 +60,9 @@ const VerifyCode = () => {
         </div>
         <p className="text-xl">
           Chưa nhận được mã{" "}
-          <span className="text-greenTheme underline">Gửi lại</span>
+          <button onClick={resendCode}>
+            <span className="text-greenTheme underline">Gửi lại</span>
+          </button>
         </p>
         <button
           onClick={verifyAccount}

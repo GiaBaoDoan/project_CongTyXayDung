@@ -1,11 +1,11 @@
 "use client";
-import { base_url } from "@/constants/baseUrl";
 import { Form, Input } from "antd";
 import axios from "axios";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { instance } from "@/config";
 
 const DangKy = () => {
   const router = useRouter();
@@ -14,12 +14,16 @@ const DangKy = () => {
     name: "",
     password: "",
   });
+  const handelOnchange = async (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setInputs({ ...inputs, [name]: value });
+  };
   const singUpApi = async () => {
-    const res = await axios.post(`${base_url}/account/signup`, inputs);
+    const res = await instance.post(`/account/signup`, inputs);
     if (res.data.code === 200) {
       toast.success("Đăng kí thành công");
       router.push("/xac-minh");
-      return localStorage.setItem("user", JSON.stringify(res.data.data));
+      return localStorage.setItem("id", JSON.stringify(res.data.data.id));
     } else if (res.data.code === 400)
       return toast.error("email đã được đăng kí !!");
   };
@@ -55,7 +59,8 @@ const DangKy = () => {
               ]}
             >
               <Input
-                onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
+                name="name"
+                onChange={handelOnchange}
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Tên đăng nhập"
               />
@@ -82,9 +87,8 @@ const DangKy = () => {
               ]}
             >
               <Input
-                onChange={(e) =>
-                  setInputs({ ...inputs, email: e.target.value })
-                }
+                onChange={handelOnchange}
+                name="email"
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Email"
               />
@@ -103,9 +107,8 @@ const DangKy = () => {
               ]}
             >
               <Input
-                onChange={(e) =>
-                  setInputs({ ...inputs, password: e.target.value })
-                }
+                name="password"
+                onChange={handelOnchange}
                 type="password"
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Mật khẩu"
@@ -114,7 +117,7 @@ const DangKy = () => {
           </div>
         </div>
         <button
-          onClick={() => singUpApi()}
+          onClick={singUpApi}
           className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
         >
           <span> Đăng ký</span>

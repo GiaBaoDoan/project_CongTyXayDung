@@ -1,60 +1,34 @@
 "use client";
-import { _redirect } from "@/action";
-import { instance } from "@/config";
-import { userStore } from "@/store";
-import { Form, Input, Modal } from "antd";
+import { Form, Input } from "antd";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { ChangeEvent, useState } from "react";
 import { toast } from "react-toastify";
-const DangNhap = () => {
+import { useRouter } from "next/navigation";
+import { instance } from "@/config";
+const DatLaiMatKhau = () => {
   const router = useRouter();
-  const { setUser } = userStore();
-  const [open, setOpen] = useState(false);
-  const [id, setId] = useState("");
   const [inputs, setInputs] = useState({
     email: "",
+    code: "",
     password: "",
   });
-  const resendCode = async () => {
-    const res = await instance.post("/account/reverify", { id });
-    if (res.data.code === 200) {
-      toast.success("Mã đã được gửi tới email của bạn");
-      localStorage.setItem("id", id);
-      router.push("/xac-minh");
-    }
-  };
+
   const handelOnchange = async (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs({ ...inputs, [name]: value });
   };
-  const handleSignIn = async () => {
-    const res = await instance.post("/account/signin/", inputs);
-
+  const handelSetNewPassword = async () => {
+    const res = await instance.post("/account/verifyForgotCode/", inputs);
     if (res.data.code === 200) {
-      router.push("/");
-      localStorage.removeItem("id");
-      setUser(res.data.data);
-      return toast.success("Đăng nhập thành công");
-    } else {
-      return toast.error("Tài khoản hoặc mật khẩu không đúng");
-    }
+      toast.success("Cập nhật thành công");
+      router.push("/dang-nhap");
+    } else if (res.data.code === 404)
+      return toast.error("Không tìm thấy tài khoản");
+    else if (res.data.code === 403)
+      return toast.error("Mã xác thực không chính xác");
   };
-  const handelOk = () => {
-    setOpen(false);
-    resendCode();
-  };
-
   return (
     <section className="py-10 flex justify-center">
-      <Modal
-        title={
-          <p className="text-center text-xl">Xác thực tài khoản của bạn</p>
-        }
-        open={open}
-        onOk={handelOk}
-        onCancel={() => setOpen(false)}
-      ></Modal>
       <Form
         name="basic"
         style={{
@@ -64,11 +38,11 @@ const DangNhap = () => {
         }}
         initialValues={{ remember: true }}
         autoComplete="off"
-        className="space-y-7 w-[500px] max-sm:w-[320px]"
+        className="space-y-5 w-[500px] max-sm:w-[320px]"
       >
         <div className="">
-          <h2 className="text-2xl max-sm:text-lg text-center font-bold">
-            Đăng nhập tài khoản
+          <h2 className="text-2xl text-center font-bold max-sm:text-lg">
+            Đặt mật khẩu mới
           </h2>
           <div className="mt-5">
             <Form.Item
@@ -78,16 +52,14 @@ const DangNhap = () => {
                   type: "email",
                   message: (
                     <p className="text-lg my-2 max-sm:text-base">
-                      Email không hợp lệ *
+                      Vui lòng nhập email !
                     </p>
                   ),
                 },
                 {
                   required: true,
                   message: (
-                    <p className="text-lg my-2 max-sm:text-base">
-                      Vui lòng nhập email *
-                    </p>
+                    <p className="text-lg my-2 max-sm:text-base">Email</p>
                   ),
                 },
               ]}
@@ -97,6 +69,34 @@ const DangNhap = () => {
                 onChange={handelOnchange}
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Email"
+              />
+            </Form.Item>
+            <Form.Item
+              name="code"
+              rules={[
+                {
+                  type: "string",
+                  message: (
+                    <p className="text-lg my-2 max-sm:text-base">
+                      Vui lòng nhập mã code
+                    </p>
+                  ),
+                },
+                {
+                  required: true,
+                  message: (
+                    <p className="text-lg my-2 max-sm:text-base">
+                      Nhập mã code gồm 6 chữ số
+                    </p>
+                  ),
+                },
+              ]}
+            >
+              <Input
+                name="code"
+                onChange={handelOnchange}
+                className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
+                placeholder="code"
               />
             </Form.Item>
             <Form.Item
@@ -113,20 +113,20 @@ const DangNhap = () => {
               ]}
             >
               <Input
-                onChange={handelOnchange}
                 name="password"
+                onChange={handelOnchange}
                 type="password"
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
-                placeholder="Mật khẩu"
+                placeholder="Nhập mật khẩu mới"
               />
             </Form.Item>
           </div>
         </div>
         <button
-          onClick={handleSignIn}
+          onClick={handelSetNewPassword}
           className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
         >
-          <span>Đăng nhập</span>
+          <span>Cập nhật</span>
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -147,28 +147,15 @@ const DangNhap = () => {
           </span>
         </button>
         <div className="space-y-2 mt-5">
-          {/* forgot password */}
-          <div className="text-xl max-sm:text-base text-center">
-            <p className=" ">
-              Quên mật khẩu?{" "}
-              <Link
-                className="hover:text-greenTheme text-greenTheme"
-                href={"/quen-mat-khau"}
-              >
-                Xác thực
-              </Link>
-            </p>
-          </div>
           {/* signup */}
           <div className="text-center text-xl max-sm:text-base">
             <p>
               {" "}
-              Tạo tài khoản mới?{" "}
               <Link
                 className="hover:text-greenTheme text-greenTheme"
-                href={"/dang-ky"}
+                href={"/quen-mat-khau"}
               >
-                Đăng ký
+                Lấy lại mã ?
               </Link>
             </p>{" "}
           </div>
@@ -178,4 +165,4 @@ const DangNhap = () => {
   );
 };
 
-export default DangNhap;
+export default DatLaiMatKhau;
