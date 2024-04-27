@@ -1,3 +1,0 @@
-------PHÂN QUYỀN------- 
-+ USER : chỉ có thể thêm xóa sử bài viết của chính mình
-+ ADMIN : tạo mới user,xóa user,quản trị các bài viết của các user 
