@@ -5,13 +5,16 @@ import Link from "antd/es/typography/Link";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { store } from "@/store";
 const ForgotPassword = () => {
+  const { saveEmail } = store();
   const router = useRouter();
   const [email, setEmail] = useState("");
   const handelForgotPassword = async () => {
     const res = await instance.post("/account/forgotCode/", { email });
     if (res.data.code == 200) {
       toast.success("Mã xác minh đã được gửi tới email của bạn");
+      saveEmail(email);
       router.push("/dat-mat-khau-moi");
       return;
     } else if (res.data.code === 404)
@@ -31,9 +34,9 @@ const ForgotPassword = () => {
         className="relative space-y-7 w-[500px] max-sm:w-[320px]"
       >
         <div className="absolute top-[15px] left-[30px]">
-          <Link
+          <button
+            onClick={() => router.back()}
             className="flex items-center text-lg max-sm:text-base font-medium !text-greenTheme"
-            href="/dang-nhap"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +52,7 @@ const ForgotPassword = () => {
               <path d="m18 17-5-5 5-5" />
             </svg>
             <span>BACK</span>
-          </Link>
+          </button>
         </div>
         <div className="">
           <h2 className="text-2xl text-center font-bold max-sm:text-lg">

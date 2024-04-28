@@ -6,12 +6,23 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { instance } from "@/config";
 import { userStore } from "@/store";
+import { useRouter } from "next/navigation";
 
 const Menu = () => {
   const { setUser, user } = userStore();
+  const router = useRouter();
+  const handeLogout = async () => {
+    await instance.post(`/account/logout/`, null, {
+      withCredentials: true,
+    });
+    toast.success("Đăng xuất thành công !!");
+    window.location.reload();
+    router.push("/");
+  };
   useEffect(() => {
     (async () => {
       const user = await instance.get("/account/");
+      console.log(user);
       if (user.data.code === 200) {
         setUser(user.data.data);
       }
@@ -39,23 +50,7 @@ const Menu = () => {
         <Link href={"/thong-tin-ca-nhan"}>Xem trang cá nhân</Link>
       </p>
       <p className="hover:bg-gray-100 text-xl cursor-pointer transition-all p-3">
-        <button
-          onClick={async () => {
-            await instance.post(`/account/logout/`, null, {
-              withCredentials: true,
-            });
-            toast.success("Đăng xuất thành công !!");
-            setUser({
-              email: "",
-              id: "",
-              name: "",
-              verified: false,
-            });
-            window.location.reload();
-          }}
-        >
-          Đăng xuất
-        </button>
+        <button onClick={handeLogout}>Đăng xuất</button>
       </p>
     </div>
   );

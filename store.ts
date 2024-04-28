@@ -2,7 +2,8 @@ import {create} from 'zustand';
 import { Store,UserStore, UserType} from './types';
 export const store  = create<Store>(set => ({
     isOpen : false,
-    user : {},
+    email : "",
+    saveEmail : (email : string) => set({email}),
     isOpenMenu : (option : boolean) => set({isOpen : option })
 }))                               
 export const userStore = create<UserStore>(set => ({

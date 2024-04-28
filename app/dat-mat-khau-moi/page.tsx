@@ -1,10 +1,10 @@
 "use client";
 import { Form, Input } from "antd";
-import Link from "next/link";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { instance } from "@/config";
+import { Timer } from "@/components";
 const DatLaiMatKhau = () => {
   const router = useRouter();
   const [inputs, setInputs] = useState({
@@ -12,7 +12,6 @@ const DatLaiMatKhau = () => {
     code: "",
     password: "",
   });
-
   const handelOnchange = async (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs({ ...inputs, [name]: value });
@@ -40,11 +39,11 @@ const DatLaiMatKhau = () => {
         autoComplete="off"
         className="space-y-5 w-[500px] max-sm:w-[320px]"
       >
-        <div className="">
+        <div>
           <h2 className="text-2xl text-center font-bold max-sm:text-lg">
             Đặt mật khẩu mới
           </h2>
-          <div className="mt-5">
+          <Form className="mt-5">
             <Form.Item
               name="email"
               rules={[
@@ -52,14 +51,17 @@ const DatLaiMatKhau = () => {
                   type: "email",
                   message: (
                     <p className="text-lg my-2 max-sm:text-base">
-                      Vui lòng nhập email !
+                      Email không đúng định dạng
                     </p>
                   ),
                 },
                 {
                   required: true,
                   message: (
-                    <p className="text-lg my-2 max-sm:text-base">Email</p>
+                    <p className="text-lg my-2 max-sm:text-base">
+                      {" "}
+                      Vui lòng nhập email !
+                    </p>
                   ),
                 },
               ]}
@@ -75,18 +77,10 @@ const DatLaiMatKhau = () => {
               name="code"
               rules={[
                 {
-                  type: "string",
-                  message: (
-                    <p className="text-lg my-2 max-sm:text-base">
-                      Vui lòng nhập mã code
-                    </p>
-                  ),
-                },
-                {
                   required: true,
                   message: (
                     <p className="text-lg my-2 max-sm:text-base">
-                      Nhập mã code gồm 6 chữ số
+                      Vui lòng nhập mã
                     </p>
                   ),
                 },
@@ -96,7 +90,7 @@ const DatLaiMatKhau = () => {
                 name="code"
                 onChange={handelOnchange}
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
-                placeholder="code"
+                placeholder="Nhập mã code gồm 6 chữ số"
               />
             </Form.Item>
             <Form.Item
@@ -120,7 +114,7 @@ const DatLaiMatKhau = () => {
                 placeholder="Nhập mật khẩu mới"
               />
             </Form.Item>
-          </div>
+          </Form>
         </div>
         <button
           onClick={handelSetNewPassword}
@@ -148,17 +142,7 @@ const DatLaiMatKhau = () => {
         </button>
         <div className="space-y-2 mt-5">
           {/* signup */}
-          <div className="text-center text-xl max-sm:text-base">
-            <p>
-              {" "}
-              <Link
-                className="hover:text-greenTheme text-greenTheme"
-                href={"/quen-mat-khau"}
-              >
-                Lấy lại mã ?
-              </Link>
-            </p>{" "}
-          </div>
+          <Timer />
         </div>
       </Form>
     </section>

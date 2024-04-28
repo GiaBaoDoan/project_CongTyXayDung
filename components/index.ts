@@ -6,6 +6,7 @@ import About from "./About";
 import Commit from "./Commit";
 import Map from './Map';
 import Model from "./Model";
+import Timer from "./Timer";
 import Comment from './Comment'
 import Hotline from "./Hotline";
 import CardInfor from "./CardInfor";
@@ -14,4 +15,4 @@ import Banner from './Banner'
 import BannerInfor from "./BannerInfor";
 import ListNews from "./ListNews";
 import Button from './Button'
-export {Navbar,ListNews,CardInfor,BannerInfor,Comment,Footer,Button,Map,Hotline,News,Banner,Commit,Model,Menu,RightSideMenu,About}
+export {Navbar,ListNews,CardInfor,BannerInfor,Timer,Comment,Footer,Button,Map,Hotline,News,Banner,Commit,Model,Menu,RightSideMenu,About}

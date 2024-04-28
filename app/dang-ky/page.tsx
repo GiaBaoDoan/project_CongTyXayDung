@@ -23,7 +23,7 @@ const DangKy = () => {
     if (res.data.code === 200) {
       toast.success("Đăng kí thành công");
       router.push("/xac-minh");
-      return localStorage.setItem("id", JSON.stringify(res.data.data.id));
+      return localStorage.setItem("id", res.data.data.id);
     } else if (res.data.code === 400)
       return toast.error("email đã được đăng kí !!");
   };

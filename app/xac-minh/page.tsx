@@ -1,11 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import OtpInput from "react-otp-input";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { instance } from "@/config";
 const VerifyCode = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [reload, setReload] = useState(false);
+  const [seconds, setSeconds] = useState(60);
+  const handelTimer = () => {
+    setSeconds(60);
+    setReload(true);
+  };
   const router = useRouter();
   const id = localStorage.getItem("id");
   const [otp, setOTP] = useState("");
@@ -13,14 +18,13 @@ const VerifyCode = () => {
     setOTP(otp);
   };
   const resendCode = async () => {
-    const res = await instance.post("/account/reverify", id);
+    const res = await instance.post("/account/reverify/", {
+      id: localStorage.getItem("id"),
+    });
+    handelTimer();
     if (res.data.code === 200) {
-      return toast.error("Mã của bạn đã được gửi lại");
+      return toast.success("Mã của bạn đã được gửi lại");
     }
-    setIsVisible(false);
-    setTimeout(() => {
-      setIsVisible(true);
-    }, 15000);
   };
   const checkVerify = otp.length < 6;
   const verifyAccount = async () => {
@@ -35,6 +39,20 @@ const VerifyCode = () => {
       toast.error("Mã nhập không chính xác !!");
     }
   };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((prevSeconds: any) => {
+        if (prevSeconds === 0) {
+          clearInterval(interval);
+          setReload(true);
+          return 0;
+        }
+        return prevSeconds - 1;
+      });
+    }, 1000);
+    // Xóa interval khi component unmount hoặc khi seconds đạt giá trị 0
+    return () => clearInterval(interval);
+  }, [reload]);
   return (
     <section className="flex justify-center items-center py-10">
       <div
@@ -60,9 +78,18 @@ const VerifyCode = () => {
         </div>
         <p className="text-xl">
           Chưa nhận được mã{" "}
-          <button onClick={resendCode}>
-            <span className="text-greenTheme underline">Gửi lại</span>
-          </button>
+          {seconds === 0 ? (
+            <button onClick={resendCode}>
+              <span className="text-greenTheme underline">Gửi lại</span>
+            </button>
+          ) : (
+            <button>
+              <span className="text-greenTheme">
+                {Math.floor(seconds / 60)}:{seconds % 60 < 10 ? "0" : ""}
+                {seconds % 60}
+              </span>
+            </button>
+          )}
         </p>
         <button
           onClick={verifyAccount}

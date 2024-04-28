@@ -1,5 +1,7 @@
 export type Store = {
-    isOpen : boolean
+    isOpen : boolean,
+    email :string
+    saveEmail : (email : string) => void 
     isOpenMenu : (option : boolean) => void
    
 }
