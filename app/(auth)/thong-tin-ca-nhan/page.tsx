@@ -46,10 +46,15 @@ const ChangePassword = () => {
         },
       );
 
-      console.log(res);
-
       if (res.data.code === 200) {
-        return toast.success("Đổi mật khẩu thành công");
+        toast.success("Đổi mật khẩu thành công");
+        if (
+          oldPassRef.current.input?.value &&
+          newPassRef.current.input?.value
+        ) {
+          oldPassRef.current.input.value = "";
+          newPassRef.current.input.value = "";
+        }
       } else if (res.data.code === 401) {
         return toast.error("Sai mật khẩu");
       } else {
@@ -192,11 +197,7 @@ const ThongTinCaNhan = () => {
       const res = await instance.get("/account/", {
         withCredentials: true,
       });
-      if (res.data.code === 200) {
-        setUser(res.data.data);
-      } else {
-        _redirect("/dang-nhap");
-      }
+      setUser(res.data.data);
     })();
   }, []);
   return (

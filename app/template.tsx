@@ -25,7 +25,7 @@ export default function RootTemplate({
     })();
   }, []);
   return (
-    <body className={font.className}>
+    <body className={`${font.className} bg-white`}>
       <Navbar user={user} />
       <RightSideMenu />
       {children}

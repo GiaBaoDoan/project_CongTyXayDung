@@ -12,9 +12,5 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      {children}
-    </html>
-  );
+  return <html lang="vi">{children}</html>;
 }
