@@ -1,28 +1,36 @@
 "use client";
-import { base_url } from "@/constants/baseUrl";
 import { Form, Input } from "antd";
-import axios from "axios";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
+import { instance } from "@/config";
+import { _redirect } from "@/action";
 
 const DangKy = () => {
-  const router = useRouter();
-  const [inputs, setInputs] = useState({
-    email: "",
-    name: "",
-    password: "",
-  });
+  const [email, setEmail] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
   const singUpApi = async () => {
-    const res = await axios.post(`${base_url}/account/signup`, inputs);
+    if (!name || !password || !email) {
+      return toast.error("Vui lòng nhập đầy đủ thông tin");
+    }
+
+    const res = await instance.post("/account/signup/", {
+      name,
+      email,
+      password,
+    });
+
     if (res.data.code === 200) {
       toast.success("Đăng kí thành công");
-      router.push("/xac-minh");
-      return localStorage.setItem("user", JSON.stringify(res.data.data));
-    } else if (res.data.code === 400)
+      localStorage.setItem("uid", res.data.data.id);
+      _redirect("/xac-minh");
+    } else if (res.data.code === 400) {
       return toast.error("email đã được đăng kí !!");
+    }
   };
+
   return (
     <section className="py-10 flex justify-center">
       <Form
@@ -55,7 +63,8 @@ const DangKy = () => {
               ]}
             >
               <Input
-                onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
+                name="name"
+                onChange={(e) => setName(e.target.value)}
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Tên đăng nhập"
               />
@@ -82,9 +91,8 @@ const DangKy = () => {
               ]}
             >
               <Input
-                onChange={(e) =>
-                  setInputs({ ...inputs, email: e.target.value })
-                }
+                onChange={(e) => setEmail(e.target.value)}
+                name="email"
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Email"
               />
@@ -103,9 +111,8 @@ const DangKy = () => {
               ]}
             >
               <Input
-                onChange={(e) =>
-                  setInputs({ ...inputs, password: e.target.value })
-                }
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
                 placeholder="Mật khẩu"
@@ -114,10 +121,10 @@ const DangKy = () => {
           </div>
         </div>
         <button
-          onClick={() => singUpApi()}
+          onClick={singUpApi}
           className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
         >
-          <span> Đăng ký</span>
+          <span>Đăng ký</span>
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -138,10 +145,8 @@ const DangKy = () => {
           </span>
         </button>
         <div className="space-y-2 mt-5">
-          {/* signup */}
           <div className="text-center text-xl max-sm:text-base">
             <p>
-              {" "}
               Đã có tài khoản?{" "}
               <Link
                 className="hover:text-greenTheme text-greenTheme"
@@ -149,7 +154,7 @@ const DangKy = () => {
               >
                 Đăng nhập
               </Link>
-            </p>{" "}
+            </p>
           </div>
         </div>
       </Form>
