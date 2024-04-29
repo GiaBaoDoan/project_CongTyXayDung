@@ -1,6 +1,7 @@
 "use client";
 import { _redirect } from "@/action";
 import { instance } from "@/config";
+import { userState } from "@/store";
 import { Form, Input, InputRef, Tabs } from "antd";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
@@ -186,15 +187,7 @@ const data = [
 ];
 const ThongTinCaNhan = () => {
   const [tabPosition, setTabPosition] = useState<TabPosition>("top");
-  const [user, setUser] = useState<any>();
-  useEffect(() => {
-    (async () => {
-      const res = await instance.get("/account/", {
-        withCredentials: true,
-      });
-      setUser(res.data.data);
-    })();
-  }, []);
+  const { user } = userState();
   return (
     <section className="py-10 flex max-lg:space-y-5 px-5 lg:h-[600px] max-lg:flex-col justify-center lg:space-x-3">
       <div

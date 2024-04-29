@@ -6,6 +6,7 @@ import { FileToBase64 } from "@/constants/tob64";
 import Image from "next/image";
 import { FormEvent, useRef, useState } from "react";
 import { toast } from "react-toastify";
+import isURL from "validator/lib/isURL";
 
 type TArray = {
   id: number;
@@ -22,10 +23,6 @@ export default function TaoPost() {
   const [keywords, setKeywords] = useState<Array<TArray>>([]);
   const [links, setLinks] = useState<Array<TArray>>([]);
   const [image, setImage] = useState<string | File>("/post1.jpg");
-  const titleRef = useRef<null | HTMLInputElement>(null);
-  const descRef = useRef<null | HTMLInputElement>(null);
-  const contentRef = useRef<null | HTMLTextAreaElement>(null);
-  const imageRef = useRef<null | HTMLInputElement>(null);
   const keywordsRef = useRef<null | HTMLInputElement>(null);
   const linksRef = useRef<null | HTMLInputElement>(null);
 
@@ -36,20 +33,20 @@ export default function TaoPost() {
       return toast.error("Vui lòng cung cấp hình ảnh");
     }
 
-    if (!title || !desc || !content || !keywords.length || !links.length) {
+    if (!title || !desc || !content) {
       return toast.error("Vui lòng nhập đầy đủ những trường bắt buộc");
     }
 
     try {
-      const res = await instance.post(
+      const res = await instance.postForm(
         "/post/create/",
         {
-          title: titleRef.current?.value!,
-          description: descRef.current?.value!,
-          content: contentRef.current?.value!,
+          title,
+          description: desc,
+          content: content,
           keywords: keywords.map(({ content }) => content),
           links: links.map(({ content }) => content),
-          image: await FileToBase64(image),
+          image: image,
         },
         {
           withCredentials: true,
@@ -80,8 +77,7 @@ export default function TaoPost() {
             </span>
           </div>
           <input
-            onChange={() => setTitle(titleRef.current?.value!)}
-            ref={titleRef}
+            onChange={(e) => setTitle(e.target.value)}
             type="text"
             placeholder="Tiêu đề"
             className="input bg-white input-bordered w-full"
@@ -94,8 +90,7 @@ export default function TaoPost() {
             </span>
           </div>
           <input
-            onChange={() => setDesc(descRef.current?.value!)}
-            ref={descRef}
+            onChange={(e) => setDesc(e.target.value)}
             type="text"
             placeholder="Mô tả"
             className="input bg-white input-bordered w-full"
@@ -108,8 +103,7 @@ export default function TaoPost() {
             </span>
           </div>
           <textarea
-            onChange={() => setContent(contentRef.current?.value!)}
-            ref={contentRef}
+            onChange={(e) => setContent(e.target.value)}
             className="textarea textarea-bordered bg-white h-24"
             placeholder="Nhập nội dung ở đây"
           ></textarea>
@@ -121,14 +115,9 @@ export default function TaoPost() {
             </span>
           </div>
           <input
-            onChange={() =>
-              setImage(
-                imageRef.current?.files
-                  ? imageRef.current.files[0]
-                  : "/post1.jpg",
-              )
+            onChange={(e) =>
+              setImage(e.target.files ? e.target.files[0] : "/post1.jpg")
             }
-            ref={imageRef}
             type="file"
             placeholder="Hình ảnh"
             className="input bg-white input-bordered w-full"
@@ -158,11 +147,14 @@ export default function TaoPost() {
                       "Vui lòng nhập đầy đủ nội dung trước khi thêm",
                     );
                   }
+                  if (!isURL(value)) {
+                    return toast.error("Trường này cần một đường dẫn");
+                  }
                   setKeywords([
                     ...keywords,
                     {
                       id: nextKeywordsId++,
-                      content: keywordsRef.current?.value!,
+                      content: value,
                     },
                   ]);
                 }}

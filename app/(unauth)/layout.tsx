@@ -1,6 +1,6 @@
 "use client";
 import { _redirect } from "@/action";
-import { instance } from "@/config";
+import { userState } from "@/store";
 import { useEffect } from "react";
 
 export default function AuthLayout({
@@ -8,15 +8,10 @@ export default function AuthLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { user } = userState();
+
   useEffect(() => {
-    (async () => {
-      const res = await instance.get("/account/", {
-        withCredentials: true,
-      });
-      if (res.data.code === 200) {
-        // _redirect("/");
-      }
-    })();
+    if (user) _redirect("/");
   }, []);
   return <>{children}</>;
 }

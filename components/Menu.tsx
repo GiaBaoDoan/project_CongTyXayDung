@@ -4,8 +4,10 @@ import { contentService, listMenu } from "@/constants";
 import { ConfigProvider, Popover } from "antd";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import { userState } from "@/store";
 
-const Menu = ({ user }: { user: any }) => {
+const Menu = () => {
+  const { user } = userState();
   const content = (
     <div className="flex flex-col space-y-2 !w-[400px]">
       {contentService.map((item, index) => {

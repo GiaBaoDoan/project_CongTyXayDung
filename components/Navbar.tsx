@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import { store } from "@/store";
 import Link from "next/link";
 import { MenuOutlined } from "@ant-design/icons";
-const Navbar = ({ user }: { user: any }) => {
+const Navbar = () => {
   const { isOpenMenu } = store();
   const [toogle, setToogle] = useState(false);
   useEffect(() => {
@@ -99,7 +99,7 @@ const Navbar = ({ user }: { user: any }) => {
             />
           </Link>
           {/* screens > 1280px => show this menu */}
-          <Menu user={user} />
+          <Menu/>
           {/* screens =< 1280px => show this menu */}
           <div onClick={() => isOpenMenu(true)} className="xl:hidden">
             <div className="flex items-center space-x-3 cursor-pointer border-redTheme rounded-md border py-1 px-2">
