@@ -6,7 +6,6 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { isStrongPassword } from "validator";
 type TabPosition = "left" | "right" | "top" | "bottom";
-
 const validatorPassword = (password: string) => {
   return isStrongPassword(password, {
     minLength: 8,
@@ -16,7 +15,6 @@ const validatorPassword = (password: string) => {
     minUppercase: 0,
   });
 };
-
 const ChangePassword = () => {
   const oldPassRef = useRef<null | InputRef>(null);
   const newPassRef = useRef<null | InputRef>(null);
@@ -33,7 +31,6 @@ const ChangePassword = () => {
     if (!validatorPassword(oldPass) || !validatorPassword(newPass)) {
       return toast.error("Mật khẩu không hợp lệ");
     }
-
     try {
       const res = await instance.put(
         "/account/changePassword/",
@@ -116,7 +113,7 @@ const ChangePassword = () => {
       </Form.Item>
       <button
         type="submit"
-        className="p-2 px-3 text-xl bg-greenTheme text-white"
+        className="lg:py-2 py-1 px-3 text-xl max-sm:text-base bg-greenTheme text-white"
       >
         Xác nhận
       </button>
@@ -155,7 +152,7 @@ const ChangeName = () => {
           {
             required: true,
             message: (
-              <p className="text-lg my-2 max-sm:text-base">Tên đăng nhập</p>
+              <p className="text-xl my-2 max-sm:text-base">Tên đăng nhập</p>
             ),
           },
         ]}
@@ -168,7 +165,6 @@ const ChangeName = () => {
           placeholder="Tên mới"
         />
       </Form.Item>
-
       <button
         type="submit"
         className={`p-2 px-3 text-xl bg-greenTheme text-white`}
@@ -188,9 +184,8 @@ const data = [
     content: <ChangeName />,
   },
 ];
-
 const ThongTinCaNhan = () => {
-  const [tabPosition, setTabPosition] = useState<TabPosition>("left");
+  const [tabPosition, setTabPosition] = useState<TabPosition>("top");
   const [user, setUser] = useState<any>();
   useEffect(() => {
     (async () => {
@@ -201,13 +196,13 @@ const ThongTinCaNhan = () => {
     })();
   }, []);
   return (
-    <section className="py-10 flex justify-center space-x-3 h-[600px]">
+    <section className="py-10 flex max-lg:space-y-5 px-5 lg:h-[600px] max-lg:flex-col justify-center lg:space-x-3">
       <div
-        className="space-y-5 p-10 h-full"
+        className="space-y-5  lg:p-10 p-5 h-full flex justify-center items-center"
         style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
       >
-        <div className="flex justify-center flex-col space-y-3 items-center">
-          <p className="capitalize bg-slate-200 flex justify-center w-[100px] h-[100px] items-center p-3 rounded-full cursor-pointer transition-all text-[#272727 ] text-xl  font-bold">
+        <div className="flex justify-center flex-col space-y-3  items-center">
+          <p className="capitalize bg-slate-200 flex justify-center lg:w-[100px] lg:h-[100px] w-[80px] h-[80px] items-center p-3 rounded-full cursor-pointer transition-all text-[#272727 ] text-xl  font-bold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"
@@ -225,22 +220,28 @@ const ThongTinCaNhan = () => {
             </svg>
           </p>
           <div>
-            <h3 className="text-2xl text-center font-bold">Hồ sơ</h3>
+            <h3 className="text-2xl text-center font-bold max-sm:text-lg">
+              Hồ sơ
+            </h3>
             <div className="space-y-2 mt-2">
-              <p className="text-xl">Tên đăng nhập : {user?.name}</p>
-              <p className="text-xl">Email : {user?.email}</p>
+              <p className="text-xl max-sm:text-base">
+                Tên đăng nhập : {user?.name}
+              </p>
+              <p className="text-xl max-sm:text-base">Email : {user?.email}</p>
             </div>
           </div>
         </div>
       </div>
       <div
-        className="space-y-5 py-10 pr-10 h-full "
+        className="py-10 h-full max-lg:px-5"
         style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
       >
-        <div className="pl-10 pb-5 space-y-3 ">
-          <h2 className="text-2xl font-bold ">Thông tin cá nhân</h2>
-          <p className="text-xl">Xin chào, {user?.name} !</p>
-          <p className="text-xl flex items-center space-x-1">
+        <div className="lg:pl-5 pb-5 space-y-3">
+          <h2 className="text-2xl font-bold max-sm:text-lg">
+            Thông tin cá nhân
+          </h2>
+          <p className="text-xl max-sm:text-base">Xin chào, {user?.name} !</p>
+          <p className="text-xl max-sm:text-base flex items-center space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -259,7 +260,7 @@ const ThongTinCaNhan = () => {
             </svg>
             <span>Thông tin được bảo mật</span>
           </p>
-          <p className="text-xl flex items-center space-x-1">
+          <p className="text-xl max-sm:text-base flex items-center space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -280,12 +281,12 @@ const ThongTinCaNhan = () => {
           </p>
         </div>
         <Tabs
-          className="!w-[600px] pl-5"
+          className="lg:!w-[600px] lg:pl-5"
           tabPosition={tabPosition}
           items={data.map((item, i) => {
             const id = String(i + 1);
             return {
-              label: <p className="text-xl">{item.label}</p>,
+              label: <p className="text-xl max-sm:text-base">{item.label}</p>,
               key: id,
               children: item.content,
             };

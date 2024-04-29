@@ -22,7 +22,6 @@ export default function TaoPost() {
   const [keywords, setKeywords] = useState<Array<TArray>>([]);
   const [links, setLinks] = useState<Array<TArray>>([]);
   const [image, setImage] = useState<string | File>("/post1.jpg");
-
   const titleRef = useRef<null | HTMLInputElement>(null);
   const descRef = useRef<null | HTMLInputElement>(null);
   const contentRef = useRef<null | HTMLTextAreaElement>(null);
@@ -57,8 +56,6 @@ export default function TaoPost() {
         },
       );
 
-      console.log(res.data);
-
       if (res.data.code === 200) {
         toast.success("Tạo bài viết thành công");
         _redirect("/bai-viet");
@@ -71,15 +68,14 @@ export default function TaoPost() {
   };
 
   return (
-    <div className="flex w-full p-16 gap-8 bg-white">
+    <div className="flex w-full max-lg:flex-col lg:px-10 px-5 py-16  gap-8 bg-white">
       <form onSubmit={handleSubmit} className="basis-3/5">
-        <div className="text-center text-xl text-black/90 font-semibold">
+        <div className="text-center text-2xl max-sm:text-lg text-black/90 font-semibold">
           Tạo bài đăng mới
         </div>
-
         <label className="form-control w-full">
           <div className="label">
-            <span className="label-text">
+            <span className="text-base max-sm:text-base">
               Tiêu đề của bài đăng? <span className="text-red-400">*</span>
             </span>
           </div>
@@ -91,10 +87,9 @@ export default function TaoPost() {
             className="input bg-white input-bordered w-full"
           />
         </label>
-
         <label className="form-control w-full">
           <div className="label">
-            <span className="label-text">
+            <span className="text-base">
               Mô tả của bài đăng? <span className="text-red-400">*</span>
             </span>
           </div>
@@ -106,10 +101,9 @@ export default function TaoPost() {
             className="input bg-white input-bordered w-full"
           />
         </label>
-
         <label className="form-control w-full">
           <div className="label">
-            <span className="label-text">
+            <span className="text-base">
               Nội dung của bài đăng? <span className="text-red-400">*</span>
             </span>
           </div>
@@ -120,10 +114,9 @@ export default function TaoPost() {
             placeholder="Nhập nội dung ở đây"
           ></textarea>
         </label>
-
         <label className="form-control w-full">
           <div className="label">
-            <span className="label-text">
+            <span className="text-base">
               Hình ảnh của bài đăng? <span className="text-red-400">*</span>
             </span>
           </div>
@@ -141,11 +134,10 @@ export default function TaoPost() {
             className="input bg-white input-bordered w-full"
           />
         </label>
-
-        <div className="flex gap-3">
+        <div className="flex max-lg:flex-col lg:gap-3 gap-1">
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text">
+              <span className="text-base">
                 Từ khóa của bài viết? <span className="text-red-400">*</span>
               </span>
             </div>
@@ -157,7 +149,7 @@ export default function TaoPost() {
                 className="input input-bordered w-full bg-white"
               />
               <button
-                className="btn btn-success"
+                className="bg-greenTheme px-3 max-sm:text-base text-white rounded-lg"
                 onClick={(e) => {
                   e.preventDefault();
                   const value = keywordsRef.current?.value;
@@ -184,7 +176,7 @@ export default function TaoPost() {
                   <li key={i} className="flex flex-row gap-1 py-1">
                     <span className="flex-1">{content}</span>
                     <button
-                      className="btn btn-xs h-full btn-error"
+                      className="h-full text-white bg-red-500"
                       onClick={(e) => {
                         e.preventDefault();
                         setKeywords(keywords.filter((i) => i.id !== id));
@@ -200,10 +192,9 @@ export default function TaoPost() {
               })}
             </ul>
           </label>
-
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text">
+              <span className="text-base">
                 Đường dẫn liên quan của bài viết?{" "}
                 <span className="text-red-400">*</span>
               </span>
@@ -216,7 +207,7 @@ export default function TaoPost() {
                 className="input input-bordered w-full bg-white"
               />
               <button
-                className="btn btn-success"
+                className="bg-greenTheme px-3 text-white max-sm:text-base rounded-lg "
                 onClick={(e) => {
                   e.preventDefault();
                   const value = linksRef.current?.value;
@@ -240,7 +231,7 @@ export default function TaoPost() {
                   <li key={i} className="flex flex-row gap-1 py-1">
                     <span className="flex-1">{content}</span>
                     <button
-                      className="btn btn-xs h-full btn-error"
+                      className="h-full text-white bg-red-500"
                       onClick={(e) => {
                         e.preventDefault();
                         setLinks(links.filter((i) => i.id !== id));
@@ -257,11 +248,14 @@ export default function TaoPost() {
             </ul>
           </label>
         </div>
-        <button type="submit" className="btn float-right btn-success">
+        <button
+          type="submit"
+          className="btn bg-greenTheme px-3 max-sm:text-base text-white rounded-lg"
+        >
           Đăng bài
         </button>
       </form>
-      <div className="basis-2/5 card w-96 bg-[#121212] shadow-xl">
+      <div className="basis-2/5 card lg:w-96 w-full shadow-xl">
         <figure>
           <Image
             src={typeof image === "string" ? image : URL.createObjectURL(image)}
