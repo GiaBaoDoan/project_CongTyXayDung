@@ -12,7 +12,7 @@ const RightSideMenu = () => {
       <div
         className={` ${
           isOpen ? "translate-x-[0]" : "translate-x-[-1200px]"
-        } fixed top-0 left-0 w-[80%] z-50 transition-all bg-white border h-screen shadow border-gray-200`}
+        } fixed top-0 left-0 w-[80%] z-50 overflow-scroll transition-all bg-white border h-screen shadow border-gray-200`}
       >
         <CloseOutlined
           onClick={() => isOpenMenu(false)}
