@@ -1,12 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { instance } from "@/config";
 import { _redirect } from "@/action";
 const VerifyCode = () => {
-  const [seconds, setSeconds] = useState<number>(0);
+  const [count, setCount] = useState<number>(0);
   const [otp, setOTP] = useState<string>("");
   const [id, setId] = useState<string>("");
+
+  const countRef = useRef<number>(0);
 
   useEffect(() => {
     const getId = localStorage.getItem("uid");
@@ -14,11 +16,16 @@ const VerifyCode = () => {
     setId(getId);
   }, []);
 
-  const countDown = () => {
+  const countDown = (first: boolean) => {
+    console.log(countRef.current);
     setTimeout(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-        countDown();
+      if (first) {
+        countRef.current = 60;
+      }
+      if (countRef.current > 0) {
+        countRef.current--;
+        setCount(countRef.current);
+        countDown(false);
       } else {
         return;
       }
@@ -29,8 +36,7 @@ const VerifyCode = () => {
     const res = await instance.post("/account/reverify/", {
       id,
     });
-    setSeconds(60);
-    countDown();
+    countDown(true);
     if (res.data.code === 200) {
       return toast.success("Mã của bạn đã được gửi lại");
     }
@@ -72,10 +78,10 @@ const VerifyCode = () => {
         <div className="flex gap-3">
           <button
             onClick={resendCode}
-            disabled={seconds !== 0}
-            className={`btn text-black border-none ${seconds !== 0 ? "cursor-no-drop bg-[#FF5861]/20" : "bg-[#FF5861] hover:bg-[#FF5861]/90"}`}
+            disabled={count !== 0}
+            className={`btn text-black border-none ${count !== 0 ? "cursor-no-drop bg-[#FF5861]/20" : "bg-[#FF5861] hover:bg-[#FF5861]/90"}`}
           >
-            {seconds > 0 ? `Thử lại sau ${seconds}` : "Gửi lại mã"}
+            {count > 0 ? `Thử lại sau ${count}` : "Gửi lại mã"}
           </button>
 
           <button

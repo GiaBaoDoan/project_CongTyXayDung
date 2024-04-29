@@ -4,14 +4,17 @@ import { instance } from "@/config";
 import { Form, Input } from "antd";
 import React, { MouseEvent, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
+
 const ForgotPassword = () => {
-  const [seconds, setSeconds] = useState<number>(0);
   const [email, setEmail] = useState<string>("");
   const [otp, setOtp] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [count, setCount] = useState<number>(0);
 
   const modelRef = useRef<null | HTMLDialogElement>(null);
   const submitRef = useRef<null | HTMLButtonElement>(null);
+
+  const countRef = useRef<number>(0);
 
   const handleSendOtp = async () => {
     const res = await instance.post("/account/forgotCode/", { email });
@@ -24,11 +27,16 @@ const ForgotPassword = () => {
     }
   };
 
-  const countDown = () => {
+  const countDown = (first: boolean) => {
+    console.log(countRef.current);
     setTimeout(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-        countDown();
+      if (first) {
+        countRef.current = 60;
+      }
+      if (countRef.current > 0) {
+        countRef.current--;
+        setCount(countRef.current);
+        countDown(false);
       } else {
         return;
       }
@@ -40,8 +48,7 @@ const ForgotPassword = () => {
     const res = await instance.post("/account/forgotCode/", {
       email,
     });
-    setSeconds(60);
-    countDown();
+    countDown(true);
     if (res.data.code === 200) {
       return toast.success("Mã của bạn đã được gửi lại");
     }
@@ -74,7 +81,7 @@ const ForgotPassword = () => {
       }
     };
     if (window) window.addEventListener("keypress", onKeyPress);
-    
+
     return () => window.removeEventListener("keypress", onKeyPress);
   }, []);
   return (
@@ -156,10 +163,10 @@ const ForgotPassword = () => {
               <button
                 tabIndex={-1}
                 onClick={resendCode}
-                disabled={seconds !== 0}
-                className={`btn text-black border-none ${seconds !== 0 ? "cursor-no-drop bg-[#FF5861]/20" : "bg-[#FF5861] hover:bg-[#FF5861]/90"}`}
+                disabled={count !== 0}
+                className={`btn text-black border-none ${count !== 0 ? "cursor-no-drop bg-[#FF5861]/20" : "bg-[#FF5861] hover:bg-[#FF5861]/90"}`}
               >
-                {seconds > 0 ? `Thử lại sau ${seconds}` : "Gửi lại mã"}
+                {count > 0 ? `Thử lại sau ${count}` : "Gửi lại mã"}
               </button>
 
               <button
