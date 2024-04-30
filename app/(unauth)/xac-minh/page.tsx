@@ -42,13 +42,10 @@ const VerifyCode = () => {
     }
   };
   const verifyAccount = async () => {
-    const res = await instance.post(
-      `/account/verify/`,
-      {
-        id,
-        code: otp,
-      },
-    );
+    const res = await instance.post(`/account/verify/`, {
+      id,
+      code: otp,
+    });
     if (res.data.code === 200) {
       toast.success("Tài khoản đã được xác thực !!");
       _redirect("/");

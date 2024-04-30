@@ -2,7 +2,15 @@
 import { _redirect } from "@/action";
 import { instance } from "@/config";
 import { Form, Input } from "antd";
-import React, { MouseEvent, useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  FormEventHandler,
+  MouseEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
@@ -16,7 +24,9 @@ const ForgotPassword = () => {
 
   const countRef = useRef<number>(0);
 
-  const handleSendOtp = async () => {
+  const handleSendOtp = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(email);
     const res = await instance.post("/account/forgotCode/", { email });
     if (res.data.code == 200) {
       toast.success("Mã xác minh đã được gửi tới email của bạn");
@@ -28,7 +38,6 @@ const ForgotPassword = () => {
   };
 
   const countDown = (first: boolean) => {
-    console.log(countRef.current);
     setTimeout(() => {
       if (first) {
         countRef.current = 60;
@@ -86,16 +95,13 @@ const ForgotPassword = () => {
   }, []);
   return (
     <section className="flex justify-center py-10">
-      <Form
-        onSubmitCapture={handleSendOtp}
-        name="basic"
+      <form
+        onSubmit={handleSendOtp}
         style={{
           padding: 30,
           paddingBottom: 70,
           boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
         }}
-        initialValues={{ remember: true }}
-        autoComplete="off"
         className="relative space-y-7 w-[500px] max-sm:w-[320px]"
       >
         <div>
@@ -105,33 +111,12 @@ const ForgotPassword = () => {
           <p className="text-center block mb-5 text-xl my-3 max-sm:text-base">
             Sử dụng email bạn đăng kí để tìm lại mật khẩu{" "}
           </p>
-          <Form.Item
-            name="email"
-            rules={[
-              {
-                type: "email",
-                message: (
-                  <p className="text-lg my-2 max-sm:text-base">
-                    Email không hợp lệ *
-                  </p>
-                ),
-              },
-              {
-                required: true,
-                message: (
-                  <p className="text-lg my-2 max-sm:text-base">
-                    Vui lòng nhập email *
-                  </p>
-                ),
-              },
-            ]}
-          >
-            <Input
-              onChange={(e) => setEmail(e.target.value)}
-              className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
-              placeholder="Email"
-            />
-          </Form.Item>
+          <input
+            type="text"
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Type here"
+            className="input input-bordered w-full"
+          />
           <button
             type="submit"
             className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
@@ -139,7 +124,7 @@ const ForgotPassword = () => {
             Gửi
           </button>
         </div>
-      </Form>
+      </form>
 
       <dialog ref={modelRef} className="modal modal-bottom sm:modal-middle">
         <div className="modal-box bg-white">

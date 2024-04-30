@@ -1,28 +1,21 @@
 "use client";
 import { _redirect } from "@/action";
 import { instance } from "@/config";
-import { Form, Input } from "antd";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
 const DangNhap = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
   const handleSignIn = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (!email || !password) {
       return toast.error("Vui lòng nhập đầy đủ các trường");
     }
-
-    const res = await instance.post(
-      "/account/signin/",
-      {
-        email,
-        password,
-      },
-    );
+    const res = await instance.post("/account/signin/", {
+      email,
+      password,
+    });
 
     switch (res.data.code) {
       case 200:
@@ -43,7 +36,7 @@ const DangNhap = () => {
             toast.success("Mã của bạn đã được gửi lại");
             return _redirect("/xac-minh");
           } else {
-            return toast.error("Đã xảy ra lỗi bất định")
+            return toast.error("Đã xảy ra lỗi bất định");
           }
         } else {
           toast.error("Sai mật khẩu!");
@@ -57,72 +50,53 @@ const DangNhap = () => {
 
   return (
     <section className="py-10 flex justify-center">
-      <Form
-        onSubmitCapture={handleSignIn}
-        name="basic"
-        style={{
-          padding: 30,
-          paddingBottom: 70,
-          boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-        }}
-        initialValues={{ remember: true }}
-        autoComplete="off"
-        className="space-y-7 w-[500px] max-sm:w-[320px]"
+      <form
+        onSubmit={handleSignIn}
+        style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
+        className="space-y-7 w-[500px] p-10  max-sm:w-[320px]"
       >
         <div className="">
           <h2 className="text-2xl max-sm:text-lg text-center font-bold">
             Đăng nhập tài khoản
           </h2>
-          <div className="mt-5">
-            <Form.Item
-              name="email"
-              rules={[
-                {
-                  type: "email",
-                  message: (
-                    <p className="text-lg my-2 max-sm:text-base">
-                      Email không hợp lệ *
-                    </p>
-                  ),
-                },
-                {
-                  required: true,
-                  message: (
-                    <p className="text-lg my-2 max-sm:text-base">
-                      Vui lòng nhập email *
-                    </p>
-                  ),
-                },
-              ]}
-            >
-              <Input
-                name="email"
+          <div className="mt-5 space-y-5">
+            <label className="input input-bordered flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                className="w-4 h-4 opacity-70"
+              >
+                <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+              </svg>
+              <input
                 onChange={(e) => setEmail(e.target.value)}
-                className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
+                type="text"
+                className="grow"
                 placeholder="Email"
               />
-            </Form.Item>
-            <Form.Item
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: (
-                    <p className="text-lg my-2 max-sm:text-base">
-                      Vui lòng nhập mật khẩu *
-                    </p>
-                  ),
-                },
-              ]}
-            >
-              <Input
+            </label>
+            <label className="input input-bordered flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                className="w-4 h-4 opacity-70"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <input
+                placeholder="*******"
                 onChange={(e) => setPassword(e.target.value)}
-                name="password"
                 type="password"
-                className="p-4 rounded-none  text-xl max-sm:text-base placeholder-gray-600"
-                placeholder="Mật khẩu"
+                className="grow"
               />
-            </Form.Item>
+            </label>
           </div>
         </div>
         <button
@@ -173,7 +147,7 @@ const DangNhap = () => {
             </p>
           </div>
         </div>
-      </Form>
+      </form>
     </section>
   );
 };
