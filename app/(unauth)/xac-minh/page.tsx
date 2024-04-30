@@ -48,7 +48,6 @@ const VerifyCode = () => {
         id,
         code: otp,
       },
-      { withCredentials: true },
     );
     if (res.data.code === 200) {
       toast.success("Tài khoản đã được xác thực !!");

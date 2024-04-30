@@ -39,9 +39,6 @@ const ChangePassword = () => {
           oldPassword: oldPass,
           newPassword: newPass,
         },
-        {
-          withCredentials: true,
-        },
       );
 
       if (res.data.code === 200) {
@@ -133,9 +130,6 @@ const ChangeName = () => {
       `/account/changeName/`,
       {
         name: nameRef?.current?.input?.value,
-      },
-      {
-        withCredentials: true,
       },
     );
     if (res.data.code === 200) {

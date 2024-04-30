@@ -22,9 +22,6 @@ const DangNhap = () => {
         email,
         password,
       },
-      {
-        withCredentials: true,
-      },
     );
 
     switch (res.data.code) {

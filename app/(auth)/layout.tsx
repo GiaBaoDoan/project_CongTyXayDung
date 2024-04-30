@@ -8,10 +8,11 @@ export default function AuthLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { user } = userState();
+  const { user, loading } = userState();
 
   useEffect(() => {
-    if (!user) _redirect("/");
+    console.log("User: ", user);
+    if (!user && !loading) _redirect("/");
   }, []);
   return <>{children}</>;
 }

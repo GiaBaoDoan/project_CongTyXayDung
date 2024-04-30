@@ -16,16 +16,7 @@ export default function RootTemplate({
 }>) {
   const { setUser } = userState();
   useEffect(() => {
-    (async () => {
-      const res = await instance.get("/account/", {
-        withCredentials: true,
-      });
-      if (res.data.code === 200) {
-        setUser(res.data.data);
-      } else {
-        setUser(null)
-      }
-    })();
+    setUser()
   }, []);
   return (
     <body className={`${font.className} bg-white`}>

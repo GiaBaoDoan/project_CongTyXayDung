@@ -32,9 +32,7 @@ const Menu = () => {
       <p className="hover:bg-gray-100 text-xl cursor-pointer transition-all p-3">
         <button
           onClick={async () => {
-            await instance.post(`/account/logout/`, null, {
-              withCredentials: true,
-            });
+            await instance.post(`/account/logout/`);
             toast.success("Đăng xuất thành công !!");
             window.location.reload();
           }}
