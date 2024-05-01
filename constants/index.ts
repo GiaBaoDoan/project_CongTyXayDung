@@ -13,8 +13,8 @@ export const listMenu: listMenuProps[] = [
     link: "/dich-vu",
   },
   {
-    title: "tin tức",
-    link: "/tin-tuc",
+    title: "Bài viết",
+    link: "/cac-bai-viet",
   },
   {
     title: "liên hệ",

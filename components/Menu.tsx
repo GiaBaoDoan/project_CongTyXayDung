@@ -29,6 +29,12 @@ const Menu = () => {
       <p className="text-xl hover:bg-gray-100 cursor-pointer transition-all p-3 ">
         <Link href={"/thong-tin-ca-nhan"}>Xem trang cá nhân</Link>
       </p>
+      <p className="text-xl hover:bg-gray-100 cursor-pointer transition-all p-3 ">
+        <Link href={"/thong-tin-ca-nhan"}>Bài viết của tôi</Link>
+      </p>
+      <p className="text-xl hover:bg-gray-100 cursor-pointer transition-all p-3 ">
+        <Link href={"/thong-tin-ca-nhan"}>Tạo bài viết</Link>
+      </p>
       <p className="hover:bg-gray-100 text-xl cursor-pointer transition-all p-3">
         <button
           onClick={async () => {

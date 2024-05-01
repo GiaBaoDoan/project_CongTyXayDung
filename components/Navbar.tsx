@@ -94,12 +94,12 @@ const Navbar = () => {
               src={"/logo.png"}
               width={80}
               height={8}
-              className="max-md:w-[60px] max-sm:w-[50px]"
+              className="w-[60px]"
               alt="logo"
             />
           </Link>
           {/* screens > 1280px => show this menu */}
-          <Menu/>
+          <Menu />
           {/* screens =< 1280px => show this menu */}
           <div onClick={() => isOpenMenu(true)} className="xl:hidden">
             <div className="flex items-center space-x-3 cursor-pointer border-redTheme rounded-md border py-1 px-2">
