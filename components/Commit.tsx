@@ -11,7 +11,7 @@ const listCarddemo = [
     img: "/dich-vu-02.jpg",
     title: "Người giúp việc nhà tiêu chuẩn",
     content:
-      "Người giúp việc nhà tiêu chuẩn, đáng tin cậy, có đầy đủ hồ sơ. Công ty Tapvu247 chịu trách nhiệm tuyển chọn, đào tạo và quản lý.",
+      "Người giúp việc nhà tiêu chuẩn, đáng tin cậy, có đầy đủ hồ sơ. Công ty Trần Lê chịu trách nhiệm tuyển chọn, đào tạo và quản lý.",
   },
   {
     img: "/dich-vu-01.jpg",

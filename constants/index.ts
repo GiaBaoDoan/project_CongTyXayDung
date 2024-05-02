@@ -86,34 +86,34 @@ export const newsModel = [
 export const listBanner = ["/banner.png", "/banner1.png", "/banner2.png"];
 export const listAbout = [
   {
-    icon: "/about6.png",
+    icon: "/lau-kinh-logo.png",
     link: "/dich-vu-ve-sinh-lau-kinh",
     title: "Vệ sinh lau kính",
   },
   {
-    icon: "/about2.png",
+    icon: "/pin-mat-troi-logo.jpg",
     link: "/ve-sinh-pin-mat-troi",
     title: "Dịch vụ vệ sinh pin mặt trời",
   },
   {
-    link: "/ve-sinh-sua-chua-ve-sinh-thiet-bi-dien-lanh",
-    icon: "/about3.png",
+    link: "/ve-sinh-dien-lanh-sua-chua",
+    icon: "/may-lanh-logo.png",
     title: "Dịch vụ sửa chữa & vệ sinh thiết bị điện lạnh",
   },
   {
     link: "/ve-sinh-cong-nghiep",
-    icon: "/about4.png",
-    title: "Vệ sinh bệnh viện",
+    icon: "/about5.png",
+    title: "Vệ sinh công nghiệp",
   },
   {
-    link: "/ve-sinh-cong-nghiep",
-    icon: "/about5.png",
+    link: "/ve-sinh-van-phong",
+    icon: "/van-phong-logo.jpg",
     title: "Vệ sinh văn phòng",
   },
   {
     link: "/ve-sinh-danh-bong-san",
-    icon: "/about1.png",
-    title: "Vệ sinh theo giờ",
+    icon: "/about4.png",
+    title: "Vệ sinh đánh bóng sàn",
   },
 ];
 export const listCard: CardProps[] = [
@@ -201,3 +201,4 @@ export const contentService = [
   },
 ];
 export const phoneNumber = "0393 500 993";
+export const email = 'giabaod345@gmail.com'

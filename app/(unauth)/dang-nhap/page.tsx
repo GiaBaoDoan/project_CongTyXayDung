@@ -16,7 +16,6 @@ const DangNhap = () => {
       email,
       password,
     });
-
     switch (res.data.code) {
       case 200:
         toast.success("Đăng nhập thành công");
@@ -53,7 +52,7 @@ const DangNhap = () => {
       <form
         onSubmit={handleSignIn}
         style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
-        className="space-y-7 w-[500px] p-10  max-sm:w-[320px]"
+        className="space-y-7 w-[500px] p-10  max-sm:w-[320px] rounded"
       >
         <div className="">
           <h2 className="text-2xl max-sm:text-lg text-center font-bold">
@@ -101,7 +100,7 @@ const DangNhap = () => {
         </div>
         <button
           type="submit"
-          className="text-xl flex justify-center space-x-2 items-center rounded-none w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
+          className="text-xl rounded flex justify-center space-x-2 items-center w-full max-sm:text-base hover:bg-green-800 max-lg:py-2 mt-5 font-bold uppercase bg-greenTheme text-white p-4 "
         >
           <span>Đăng nhập</span>
           <span>

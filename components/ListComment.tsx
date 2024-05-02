@@ -3,17 +3,18 @@ import { commentStore, userState } from "@/store";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-
 const ListComment = () => {
   const { user } = userState();
   const params = useParams();
-  const { comments, setCommentInpost } = commentStore();
+  const { comments, maxCount, setCommentInpost } = commentStore();
   const [content, setContent] = useState<string>("");
   const [idEdit, setIdEdit] = useState("");
+  const [page, setPage] = useState(1);
+  const maxPage = Math.ceil(maxCount / 3);
   const deleteComment = async (id: any) => {
     const res = await instance.delete(`/comment/delete/?id=${id}`);
     if (res.data.code === 200) {
-      setCommentInpost(params.id);
+      setCommentInpost(params.id, page);
       return toast.success("Xóa thành công");
     }
   };
@@ -27,18 +28,18 @@ const ListComment = () => {
       content,
     });
     if (res.data.code === 200) {
-      setCommentInpost(params.id);
+      setCommentInpost(params.id, page);
       setIdEdit("");
       return toast.success("Cập nhật thành công");
     }
   };
   useEffect(() => {
-    setCommentInpost(params.id);
-  }, []);
+    setCommentInpost(params.id, page);
+  }, [page]);
   return (
     <section className="py-10">
       <h3 className="font-bold text-xl">Danh sách bình luận</h3>
-      <div className="p-5 mt-5">
+      <div className="p-5 mt-5 h-[300px]">
         {comments?.map((item: any) => {
           return (
             <div key={item.id}>
@@ -63,7 +64,9 @@ const ListComment = () => {
                   </p>
                   <div className="space-y-3 flex-1">
                     <p className="text-xl">{item?.author.name}</p>
-                    <p className="text-gray-400 text-base">{item?.createAt}</p>
+                    <p className="text-gray-400 text-base">
+                      {/* {format(item.createdAt, "MM/dd/yyyy")} */}
+                    </p>
                     {idEdit === item.id && idEdit ? (
                       <div className="flex-1 flex-col justify-end">
                         <textarea
@@ -120,9 +123,21 @@ const ListComment = () => {
         })}
       </div>
       <div className="join flex justify-center">
-        <button className="join-item btn">«</button>
-        <button className="join-item btn">Page 4</button>
-        <button className="join-item btn">»</button>
+        <button
+          onClick={() => page > 1 && setPage(page - 1)}
+          className="join-item btn"
+        >
+          «
+        </button>
+        <button className="join-item btn">
+          Page {page}/{maxPage}
+        </button>
+        <button
+          onClick={() => page < maxPage && setPage(page + 1)}
+          className="join-item btn"
+        >
+          »
+        </button>
       </div>
     </section>
   );

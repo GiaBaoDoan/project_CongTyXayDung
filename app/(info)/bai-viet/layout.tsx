@@ -2,7 +2,8 @@
 import { Comment } from "@/components";
 import CardPost from "@/components/CardPost";
 import ListComment from "@/components/ListComment";
-import { postState } from "@/store";
+import { postState, userState } from "@/store";
+
 import {
   FacebookOutlined,
   GooglePlusOutlined,
@@ -11,9 +12,9 @@ import {
 } from "@ant-design/icons";
 import Link from "next/link";
 import React, { ReactNode, useEffect, useState } from "react";
-
 const Layout = ({ children }: { children: ReactNode }) => {
   const { posts, setPost } = postState();
+  const { user } = userState();
   useEffect(() => {
     setPost();
   }, []);
@@ -65,7 +66,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <br />
           <hr />
           <ListComment />
-          <Comment />
+          {user && <Comment />}
         </div>
       </div>
     </section>

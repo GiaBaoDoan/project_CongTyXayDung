@@ -3,11 +3,10 @@ import { instance } from "@/config";
 import { contentService, listMenu } from "@/constants";
 import { ConfigProvider, Popover } from "antd";
 import Link from "next/link";
-import { toast } from "react-toastify";
 import { userState } from "@/store";
 
 const Menu = () => {
-  const { user } = userState();
+  const { user, logout } = userState();
   const content = (
     <div className="flex flex-col space-y-2 !w-[400px]">
       {contentService.map((item, index) => {
@@ -36,15 +35,7 @@ const Menu = () => {
         <Link href={"/thong-tin-ca-nhan"}>Tạo bài viết</Link>
       </p>
       <p className="hover:bg-gray-100 text-xl cursor-pointer transition-all p-3">
-        <button
-          onClick={async () => {
-            await instance.post(`/account/logout/`);
-            toast.success("Đăng xuất thành công !!");
-            window.location.reload();
-          }}
-        >
-          Đăng xuất
-        </button>
+        <button onClick={() => logout()}>Đăng xuất</button>
       </p>
     </div>
   );

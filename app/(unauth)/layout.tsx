@@ -11,7 +11,6 @@ export default function AuthLayout({
   const { user, loading } = userState();
 
   useEffect(() => {
-    console.log("User: ", user);
     if (user && !loading) _redirect("/");
   }, [user]);
   return <>{children}</>;

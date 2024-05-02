@@ -1,4 +1,3 @@
-import { ListNews } from "@/components";
 import Image from "next/image";
 import React from "react";
 
@@ -79,9 +78,6 @@ const VeSinhDanhBongSan = () => {
               sẵn sàng tư vấn cho bạn 24/7.
             </p>
           </div>
-        </div>
-        <div>
-          <ListNews />
         </div>
       </div>
     </section>

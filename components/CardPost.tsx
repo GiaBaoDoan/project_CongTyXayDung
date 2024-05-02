@@ -10,7 +10,7 @@ const CardPost = ({ blog }: { blog: any }) => {
       className="space-y-5 cursor-pointer hover:text-greenTheme"
     >
       <Image
-        src={`/post1.jpg`}
+        src={`https://api.xaydungtranle.vn/public/furina.jpg`}
         alt="dich-vu-ban-quan-tam"
         width={300}
         height={150}

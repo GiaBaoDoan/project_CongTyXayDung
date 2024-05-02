@@ -1,9 +1,12 @@
 import { create } from "zustand";
 import { Store } from "./types";
 import { instance } from "./config";
+import { toast } from "react-toastify";
+import { _redirect } from "./action";
 interface IUserState {
   user: any;
   loading: boolean;
+  logout : () => Promise<void>;
   setUser: () => Promise<void>;
 }
 interface postsStateProps {
@@ -14,7 +17,8 @@ interface postsStateProps {
 }
 interface commentsStateProps {
   comments : [],
-  setCommentInpost : (postId :any) => Promise<void>,
+  maxCount : number,
+  setCommentInpost : (postId :any,page?:number) => Promise<void>,
 }
 export const store = create<Store>((set) => ({
   isOpen: false,
@@ -22,14 +26,20 @@ export const store = create<Store>((set) => ({
 }));
 export const userState = create<IUserState>((set) => ({
   user: null,
-  loading: true,
+  loading: false,
   setUser: async () => {
     const res = await instance.get("/account/");
     if (res.data.code === 200) {
       set({ user: res.data.data });
     }
-    set({ loading: false });
+    set({ loading: true });
   },
+  logout : async () => {
+    await instance.post('/account/logout/');
+    set({user : null });
+    toast.success('Dang xuat thanh cong');
+    _redirect('/')
+  }
 }));
 export const postState = create<postsStateProps>((set) => ({
     posts : [],
@@ -50,10 +60,12 @@ export const postState = create<postsStateProps>((set) => ({
 }))
 export const commentStore = create<commentsStateProps>((set) =>({
   comments : [],
-  setCommentInpost : async(postId : any) => {
-    const res = await instance.get(`/comment?postId=${postId}`);
+  maxCount : 0,
+  setCommentInpost : async(postId : any,page ?:number) => {
+    const res = await instance.get(`/comment?postId=${postId}&count=${3}&page=${page}`);
     if (res.data.code === 200) {
       set({comments : res.data.data })
+      set({maxCount : res.data.count})
     }
   },
 }))

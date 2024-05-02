@@ -1,5 +1,6 @@
+"use client";
 import { instance } from "@/config";
-import { commentStore, postState } from "@/store";
+import { commentStore } from "@/store";
 import { useParams } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
@@ -18,7 +19,7 @@ const Comment = () => {
       content,
     });
     if (res.data.code === 200) {
-      setCommentInpost(params.id);
+      setCommentInpost(params.id, 1);
       setContent("");
       return toast.success("Đã thêm một bình luận vào bài viết");
     }
@@ -41,7 +42,7 @@ const Comment = () => {
               type="submit"
               className="text-xl inline-flex items-center space-x-2 max-sm:text-base mt-5 max-lg:mt-2 rounded hover:bg-green-800 bg-greenTheme text-white p-2 px-3"
             >
-              <span> Phản hồi</span>
+              <span>Phản hồi</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

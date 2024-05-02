@@ -1,13 +1,12 @@
 import { phoneNumber } from "@/constants";
 import Image from "next/image";
 import React from "react";
-
-const VeSinhTheoGio = () => {
+const VeSinhLauKinh = () => {
   return (
     <main>
       <div className="banner relative">
         <Image
-          src={"/banner1.jpg"}
+          src={"/lau-kinh1.jpg"}
           alt="ve-sinh-lau-chui"
           sizes="100vw"
           width={0}
@@ -20,7 +19,7 @@ const VeSinhTheoGio = () => {
           <div className={`flex gap-10 max-lg:flex-col flex-row-reverse mt-10`}>
             <div className="image w-full">
               <Image
-                src={"/post1.jpg"}
+                src={"/lau-kinh2.jpg"}
                 alt="about"
                 width={400}
                 height={200}
@@ -36,45 +35,53 @@ const VeSinhTheoGio = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="lucide lucide-circle-check text-greenTheme"
                 >
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
-                <h3 className="text-2xl max-sm:text-xl font-bold text-greenTheme">
-                  Dịch vụ giúp việc hằng ngày chuyên nghiệp, uy tín tại Trần lê
+                <h3 className="text-2xl max-sm:text-lg font-bold text-greenTheme">
+                  Lợi ích khi thuê dịch vụ lau kính nhà cao tầng của Trần Lê
                 </h3>
               </div>
               <p className="text-xl max-sm:text-base">
                 <i>
                   {" "}
-                  Cuộc sống bận rộn khiến cho Quý khách không có thời gian để
-                  chăm sóc nhà cửa, Quý khách đang băn khoăn không biết nên lựa
-                  chọn dịch vụ giúp việc ở đâu? Vậy Quý khách có thể tham khảo
-                  dịch vụ giúp việc hằng ngày tại Trần lê . Chắc chắn với sự
-                  chuyên nghiệp, uy tín của dịch vụ này sẽ khiến Quý khách hài
-                  lòng.
+                  Vệ sinh kính mặt tiền tòa nhà vốn là một công việc nguy hiểm,
+                  cần thiết bị chuyên dụng cũng như nhân công có kinh nghiệm để
+                  triển khai. Vì thế dịch vụ lau kính chuyên nghiệp GFC CLEAN ra
+                  đời để dẹp bỏ các lo ngại này. Đồng thời mang lại nhiều lợi
+                  ích như:
+                  <br />
+                  <span className="font-bold">Tăng tính thẩm mỹ</span>: một tòa
+                  nhà với bề mặt kính bên ngoài bị bám đầy bụi bẩn do lâu ngày
+                  đã không vệ sinh sẽ nhìn rất cũ kỹ, làm giảm khả năng ánh xạ
+                  ánh sáng, làm cho không gian bên trong bị thiếu sáng & thiếu
+                  sức sống. Vì thế vệ sinh kính ngoài tòa nhà sẽ giúp trả lại vẻ
+                  “long lanh” vốn có ban đầu.
+                  <br />
+                  <span className="font-bold">Đảm bảo sự an toàn</span>: làm
+                  sạch mặt dựng kính định kì sẽ giúp cho quản lý tòa nhà phát
+                  hiện kịp thời các vết nứt, hở ron hay men kính bị mất,… từ đó
+                  khắc phục kịp thời để đảm bảo sự an toàn khi sử dụng.
+                  <br />
+                  <span className="font-bold">Giúp tiết kiệm chi phí</span>: so
+                  với thay mới thì việc vệ sinh, kiểm tra định kì và sửa chữa
+                  kịp thời luôn tiết kiệm chi phí hơn, đảm bảo tuổi thọ cho kính
+                  hơn. Giảm thiểu các quy trình phức tạp như tìm kính cùng loại,
+                  lên kế hoạch tháo gỡ kính cũ, thuê nhân công lắp kính mới,…
+                  tới giai đoạn dọn dẹp sau đó.
                 </i>
-              </p>
-
-              <p className="text-xl max-sm:text-base">
-                Mặc dù trên thị trường hiện nay có rất nhiều địa chỉ cung cấp
-                dịch vụ{" "}
-                <span className="font-bold">
-                  giúp việc theo giờ, giúp việc nhà.
-                </span>{" "}
-                Tuy nhiên, Trần lê là một đơn vị được đông đảo khách hàng tin
-                tưởng lựa chọn bởi:
               </p>
             </div>
           </div>
           <div className={`flex gap-10 max-lg:flex-col mt-10`}>
             <div className="image w-full">
               <Image
-                src={"/may-hut-bui.jpg"}
+                src={"/lau-kinh-3.png"}
                 alt="about"
                 width={400}
                 height={200}
@@ -90,9 +97,9 @@ const VeSinhTheoGio = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="lucide lucide-circle-check text-greenTheme"
                 >
                   <circle cx="12" cy="12" r="10" />
@@ -130,7 +137,6 @@ const VeSinhTheoGio = () => {
             </div>
           </div>
         </div>
-
         <div className="pt-10">
           <div className="flex items-center space-x-2">
             <svg
@@ -140,9 +146,9 @@ const VeSinhTheoGio = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-circle-check text-greenTheme"
             >
               <circle cx="12" cy="12" r="10" />
@@ -197,7 +203,8 @@ const VeSinhTheoGio = () => {
             </ul>
             <p className="text-xl max-sm:text-base mt-10">
               Quý khách có nhu cầu tìm người giúp việc hãy liên hệ ngay với
-              hotline Trần lê <span className="font-bold">{phoneNumber}</span>{" "}
+              hotline Trần lê{" "}
+              <span className="font-bold text-greenTheme">{phoneNumber}</span>{" "}
               để được tư vấn và hỗ trợ tốt nhất.
             </p>
           </div>
@@ -207,4 +214,4 @@ const VeSinhTheoGio = () => {
   );
 };
 
-export default VeSinhTheoGio;
+export default VeSinhLauKinh;

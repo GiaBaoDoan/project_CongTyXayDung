@@ -2,6 +2,7 @@
 import { _redirect } from "@/action";
 import { userState } from "@/store";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 export default function AuthLayout({
   children,
@@ -11,8 +12,10 @@ export default function AuthLayout({
   const { user, loading } = userState();
 
   useEffect(() => {
-    console.log("User: ", user);
-    if (!user && !loading) _redirect("/");
+    if (!user && !loading) {
+      _redirect("/");
+      toast.error("Bạn cần phải đăng nhập trước!!");
+    }
   }, []);
   return <>{children}</>;
 }
