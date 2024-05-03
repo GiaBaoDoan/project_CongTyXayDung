@@ -2,6 +2,7 @@
 import { _redirect } from "@/action";
 import { instance } from "@/config";
 import { userState } from "@/store";
+import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { isStrongPassword } from "validator";
@@ -180,13 +181,26 @@ const ThongTinCaNhan = () => {
               </p>
               <p className="text-xl max-sm:text-base">Email : {user?.email}</p>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center space-x-3">
               <button
                 onClick={logout}
                 className="px-3 mt-5 rounded py-2 hover:bg-green-800 bg-greenTheme text-base text-white"
               >
                 Đăng xuất
               </button>
+              <button
+                onClick={() => _redirect("/tao-bai-viet")}
+                className="px-3 mt-5 rounded py-2 hover:bg-green-800 bg-greenTheme text-base text-white"
+              >
+                Tạo bài viết
+              </button>
+            </div>
+            <div className="flex justify-center mt-5">
+              <Link href={"bai-viet-cua-toi"}>
+                <p className="text-greenTheme text-xl max-sm:text-base">
+                  Bài viết của tôi
+                </p>
+              </Link>
             </div>
           </div>
         </div>

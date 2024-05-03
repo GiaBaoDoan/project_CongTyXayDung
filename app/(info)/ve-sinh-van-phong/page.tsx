@@ -33,11 +33,11 @@ const VeSinhVanPhong = () => {
         </div>
         <div className="space-y-5 mt-10">
           <h3 className="text-xl font-bold max-sm:text-base">
-            Vì sao Quý khách nên chọn dịch vụ vệ sinh văn phòng của TranLe.com
+            Vì sao Quý khách nên chọn dịch vụ vệ sinh văn phòng của Trần Lê
             !?
           </h3>
           <p className="text-xl max-sm:text-base">
-            Dịch vụ vệ sinh chuyên nghiệp TranLe.com kết mang đến cho văn phòng
+            Dịch vụ vệ sinh chuyên nghiệp Trần Lê kết mang đến cho văn phòng
             của Quý khách một môi trường làm việc sạch, đẹp đến bất ngờ, cùng
             tìm hiểu những ưu điểm mà chúng tôi mang lại cho khách hàng.
           </p>
@@ -75,12 +75,12 @@ const VeSinhVanPhong = () => {
           </h3>
           <p className="text-xl max-sm:text-base">
             Đảm bảo Quý khách sẽ cảm thấy hài lòng khi sử dụng dịch vụ vệ sinh
-            văn phòng của TranLe.com bởi chế độ khử trùng có thể giết chết 99%
+            văn phòng của Trần Lê bởi chế độ khử trùng có thể giết chết 99%
             vi khuẩn. Giúp cho văn phòng của Khách hàng luôn sạch bóng và không
             có các vi khuẩn gây bệnh.
           </p>
           <h3 className="text-xl font-bold max-sm:text-base">
-            TranLe.com chuyên nghiệp, uy tín, chất lượng
+            Trần Lê chuyên nghiệp, uy tín, chất lượng
           </h3>
           <p className="text-xl max-sm:text-base">
             Chúng tôi chuyên cung cấp các dịch vụ như: giúp việc nhà, vệ sinh
@@ -94,14 +94,14 @@ const VeSinhVanPhong = () => {
           </p>
 
           <h3 className="text-xl font-bold max-sm:text-base">
-            Giá cả của các dịch vụ tại TranLe.com
+            Giá cả của các dịch vụ tại Trần Lê
           </h3>
           <p className="text-xl max-sm:text-base">
             Trước khi ký hợp đồng thực hiện dịch vụ vệ sinh chúng tôi sẽ báo giá
             chi tiết, rõ ràng các danh mục cần làm để khách hàng tham khảo và
             lựa chọn. Tuy nhiên, khi đến với các dịch vụ vệ sinh của chúng tôi
             khách hàng hoàn toàn có thể yên tâm về giá cả vì không ở đâu có thể
-            rẻ hơn TranLe.com. Hiện tại chúng tôi có bảng báo giá các dịch vụ:
+            rẻ hơn Trần Lê. Hiện tại chúng tôi có bảng báo giá các dịch vụ:
             <span className="font-bold">
               {" "}
               thuê người giúp việc theo giờ, tìm người giúp việc, giúp việc nhà,
@@ -109,7 +109,7 @@ const VeSinhVanPhong = () => {
             </span>
           </p>
           <h3 className="text-xl font-bold max-sm:text-base">
-            Một số dịch vụ hiện có tại TranLe.com
+            Một số dịch vụ hiện có tại Trần Lê
           </h3>
           <p className="text-xl max-sm:text-base">
             Hiện nay, công ty chúng tôi cung cấp một số dịch vụ để khách hàng

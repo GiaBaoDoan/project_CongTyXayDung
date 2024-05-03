@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import Link from "next/link";
 import { email, phoneNumber } from "@/constants";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -21,6 +22,15 @@ const Footer: React.FC = () => {
     >
       <div className="grid grid-cols-4 max-lg:grid-cols-1 gap-10 ">
         <div className="flex flex-col space-y-5">
+          <Link href={"/"}>
+            <Image
+              src={"/logo.png"}
+              width={80}
+              height={8}
+              className="w-[50px] "
+              alt="logo"
+            />
+          </Link>
           <p className="text-xl max-sm:text-base">
             Là đơn vị có thâm niên trong ngành vệ sinh công nghiệp, chúng tôi
             tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với nhưng kinh

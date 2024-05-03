@@ -5,6 +5,7 @@ import Menu from "./Menu";
 import { store } from "@/store";
 import Link from "next/link";
 import { MenuOutlined } from "@ant-design/icons";
+import { email, phoneNumber } from "@/constants";
 const Navbar = () => {
   const { isOpenMenu } = store();
   const [toogle, setToogle] = useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
                 <ul className="flex space-x-2">
                   <li className="border-r border">
                     <a href="mailto:info.vesinhcongnghiep@gmail.com">
-                      <span className="flex space-x-2">
+                      <span className="flex space-x-2 items-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -50,9 +51,7 @@ const Navbar = () => {
                           <rect width="20" height="16" x="2" y="4" rx="2" />
                           <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                         </svg>
-                        <span className="text-xl">
-                          info.vesinhcongnghiep@gmail.com
-                        </span>
+                        <span className="text-xl">{email}</span>
                       </span>
                     </a>
                   </li>
@@ -74,7 +73,7 @@ const Navbar = () => {
                         >
                           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
-                        <span className="text-lg"> 0911.212.233</span>
+                        <span className="text-lg">{phoneNumber}</span>
                       </span>
                     </a>
                   </li>
@@ -94,7 +93,7 @@ const Navbar = () => {
               src={"/logo.png"}
               width={80}
               height={8}
-              className="w-[60px]"
+              className="w-[60px] max-sm:w-[50px]"
               alt="logo"
             />
           </Link>
@@ -103,8 +102,8 @@ const Navbar = () => {
           {/* screens =< 1280px => show this menu */}
           <div onClick={() => isOpenMenu(true)} className="xl:hidden">
             <div className="flex items-center space-x-3 cursor-pointer border-redTheme rounded-md border py-1 px-2">
-              <span className="text-redTheme text-xl max-sm:text-lg font-medium">
-                MENU
+              <span className="text-redTheme text-xl max-sm:text-base font-medium">
+                Menu
               </span>
               <MenuOutlined className="text-redTheme font-extrabold" />
             </div>

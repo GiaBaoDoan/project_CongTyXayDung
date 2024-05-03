@@ -48,13 +48,13 @@ const Layout = ({ children }: { children: ReactNode }) => {
             </ul>
           </div>
           <div className="mt-5">
-            <p className="text-2xl border-t border-b py-5">
+            <p className="text-2xl max-sm:text-lg border-t border-b py-5">
               Danh mục :{" "}
               <span className="text-greenTheme">Chi tiết bài viết</span>
             </p>
           </div>
           <div className="mt-5 space-y-5">
-            <p className="text-2xl text-greenTheme font-bold max:sm-text-lg">
+            <p className="text-2xl max-sm:text-lg text-greenTheme font-bold max:sm-text-lg">
               Có thể bạn quan tâm:
             </p>
             <div className="grid grid-cols-4 max-lg:grid-cols-1 gap-10">

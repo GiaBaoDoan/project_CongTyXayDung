@@ -29,7 +29,7 @@ const Comment = () => {
       <div>
         <div className="mt-10 max-lg:mt-2">
           <form onSubmit={postComment}>
-            <h3 className="font-bold text-xl">Bình luận</h3>
+            <h3 className="font-bold text-xl max-sm:text-base">Bình luận</h3>
             <div className="mt-5">
               <textarea
                 value={content}
@@ -40,7 +40,7 @@ const Comment = () => {
             </div>
             <button
               type="submit"
-              className="text-xl inline-flex items-center space-x-2 max-sm:text-base mt-5 max-lg:mt-2 rounded hover:bg-green-800 bg-greenTheme text-white p-2 px-3"
+              className="inline-flex items-center space-x-2 text-base mt-5 max-lg:mt-2 rounded hover:bg-green-800 bg-greenTheme text-white p-2 px-3"
             >
               <span>Phản hồi</span>
               <svg

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Store } from "./types";
+import { PostType, Store } from "./types";
 import { instance } from "./config";
 import { toast } from "react-toastify";
 import { _redirect } from "./action";
@@ -10,8 +10,10 @@ interface IUserState {
   setUser: () => Promise<void>;
 }
 interface postsStateProps {
-  posts : [],
-  detailPost : any,
+  myPost : [],
+  posts : PostType[],
+  detailPost : PostType,
+  getMyPost : (userId : string) => Promise<void>,
   setPost : () => Promise<void>,
   setDetailPost : (id : any) => Promise<void>
 }
@@ -43,7 +45,14 @@ export const userState = create<IUserState>((set) => ({
 }));
 export const postState = create<postsStateProps>((set) => ({
     posts : [],
+    myPost : [],
     detailPost : null,
+    getMyPost : async(userId : string) => {
+        const res = await instance.post(`/post/me?userId=${userId}`);
+        if (res.data.code ===200) {
+           set({myPost : res.data.data})
+        }
+    },
      setPost : async () => {
       const res = await instance.get("/post/");
       if (res.data.code === 200) {

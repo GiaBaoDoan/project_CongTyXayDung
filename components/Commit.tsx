@@ -27,7 +27,7 @@ const Commit = () => {
       className="px-10 max-lg:px-5 py-20"
     >
       <div className="title">
-        <h2 className="text-3xl font-bold text-center max-sm:text-xl">
+        <h2 className="text-2xl font-bold text-center max-sm:text-lg">
           TIÊU CHÍ HOẠT ĐỘNG
         </h2>
         <p className="text-center text-2xl max-sm:text-base">

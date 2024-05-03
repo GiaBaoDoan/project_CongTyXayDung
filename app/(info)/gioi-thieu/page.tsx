@@ -15,19 +15,19 @@ const GioiThieu = () => {
       />
       <div className="p-12 px-5 flex pb-24 max-lg:flex-col lg:space-x-10 max-lg:space-y-10">
         <div className="left-content space-y-5">
-          <h3 className="text-3xl max-md:text-2xl max-sm:text-lg font-bold text-center">
+          <h3 className="text-2xl  max-sm:text-lg font-bold text-center">
             TẦM NHÌN VÀ SỨ MỆNH
           </h3>
           <div className="border-l-[3px] px-10 border-greenTheme">
             <p className="text-center">
-              <span className="text-greenTheme font-medium text-3xl max-sm:text-lg max-md:text-2xl">
+              <span className="text-greenTheme font-medium text-2xl max-sm:text-lg ">
                 <i>“Mang đến không gian xanh”</i>
               </span>
             </p>
           </div>
         </div>
         <div className="right-content lg:w-[90%] space-y-5">
-          <p className="text-2xl  max-sm:text-base">
+          <p className="text-2xl max-sm:text-lg">
             <span className="text-2xl max-sm:text-lg font-bold">
               Công ty Trần Lê
             </span>{" "}
@@ -36,7 +36,7 @@ const GioiThieu = () => {
             các dịch vụ vệ sinh văn phòng, chúng tôi còn hướng đến sự tiện nghi
             và thành công cho các công ty…
           </p>
-          <p className="text-2xl  max-sm:text-base">
+          <p className="text-2xl  max-sm:text-lg">
             <span className="text-2xl max-sm:text-lg font-bold">
               Công ty Trần Lê
             </span>{" "}
@@ -47,11 +47,8 @@ const GioiThieu = () => {
         </div>
       </div>
       {/* main service */}
-      <section
-        style={{ backgroundColor: "rgb(246, 246, 247)" }}
-        className="p-12 pb-24 px-5"
-      >
-        <h3 className="text-3xl uppercase text-center max-lg:text-2xl font-bold">
+      <section className="p-12 pb-24 px-5">
+        <h3 className="text-2xl uppercase text-center max-sm:text-lg font-bold">
           Các dịch vụ chính
         </h3>
         <div className="sevice-cards grid grid-cols-4 mt-10 max-lg:grid-cols-2 max-md:grid-cols-1 gap-10">
@@ -81,7 +78,7 @@ const GioiThieu = () => {
       {/* content service */}
       <section className="p-12 px-5 space-y-5 pb-24">
         <div className="title space-y-3">
-          <h3 className="font-bold text-2xl  max-sm:text-base uppercase">
+          <h3 className="font-bold text-2xl  max-sm:text-lg uppercase">
             NHỮNG CAM KẾT CỦA Công ty Trần Lê DÀNH CHO KHÁCH HÀNG
           </h3>
           <p className="text-xl  max-sm:text-base">
@@ -131,11 +128,11 @@ const GioiThieu = () => {
             </li>
             <li>
               <p>
-                Bất cứ dịch vụ nào Tapvu 247 cũng đều tiến hành theo quy trình
-                khoa học, logic. Các dịch vụ vệ sinh, lau kính, sửa chữa… đảm
-                bảo thực hiện trong thời gian nhanh chóng mà vẫn hiệu quả cao,
-                không làm ảnh hưởng nhiều đến việc sinh hoạt và công việc của
-                khách hàng.
+                Bất cứ dịch vụ nào Công ty Trần Lê cũng đều tiến hành theo quy
+                trình khoa học, logic. Các dịch vụ vệ sinh, lau kính, sửa chữa…
+                đảm bảo thực hiện trong thời gian nhanh chóng mà vẫn hiệu quả
+                cao, không làm ảnh hưởng nhiều đến việc sinh hoạt và công việc
+                của khách hàng.
               </p>
             </li>
           </ul>
@@ -145,8 +142,9 @@ const GioiThieu = () => {
             <span className="font-bold">Công ty Trần Lê</span> sẽ là lựa chọn lý
             tưởng cho các gia đình, các văn phòng công ty mong muốn được tận
             hưởng một môi trường sạch sẽ, thoải mái. Liên hệ ngay với chúng tôi
-            qua số hotline {phoneNumber} để được tư vấn nhanh chóng và chi tiết
-            nhất.
+            qua số hotline{" "}
+            <span className="text-greenTheme">{phoneNumber}</span> để được tư
+            vấn nhanh chóng và chi tiết nhất.
           </p>
         </div>
       </section>

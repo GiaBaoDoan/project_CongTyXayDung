@@ -27,3 +27,28 @@ export type SingInProps = {
 export type SingUpProps = SingInProps & {
   name: string;
 };
+export type CommentType = {
+  id:       string;
+  author: Author;
+  content:  string;
+  postId:   string;
+  createAt: string;
+  updateAt: string;
+}
+export type Author  ={
+  name: string;
+  id  : string,
+}
+export type PostType  = {
+  id:          string;
+  title:       string;
+  description: string;
+  content:     string;
+  keywords:    string[];
+  links:       string[];
+  createAt:    Date;
+  updateAt:    Date;
+  comment:     CommentType[];
+  image:       string;
+  author:      Author;
+}

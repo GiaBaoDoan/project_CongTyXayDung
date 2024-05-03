@@ -32,7 +32,7 @@ const About = () => {
       </div>
       <div className="right">
         <div className="flex flex-col space-y-5  justify-between">
-          <h2 className="text-3xl font-bold max-sm:text-xl">Về chúng tôi</h2>
+          <h2 className="text-2xl font-bold max-sm:text-lg">Về chúng tôi</h2>
           <p className="text-xl  max-sm:text-base">
             Là đơn vị có thâm niên trong ngành vệ sinh công nghiệp, chúng tôi
             tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với nhưng kinh

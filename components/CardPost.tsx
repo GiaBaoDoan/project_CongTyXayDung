@@ -1,8 +1,10 @@
+import { baseUrlImage } from "@/constants";
+import { PostType } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const CardPost = ({ blog }: { blog: any }) => {
+const CardPost = ({ blog }: { blog: PostType }) => {
   return (
     <Link
       href={`/bai-viet/${blog.id}`}
@@ -10,7 +12,7 @@ const CardPost = ({ blog }: { blog: any }) => {
       className="space-y-5 cursor-pointer hover:text-greenTheme"
     >
       <Image
-        src={`https://api.xaydungtranle.vn/public/furina.jpg`}
+        src={baseUrlImage(blog.image)}
         alt="dich-vu-ban-quan-tam"
         width={300}
         height={150}

@@ -12,11 +12,9 @@ import CardInfor from "./CardInfor";
 import News from "./News";
 import Banner from "./Banner";
 import BannerInfor from "./BannerInfor";
-import ListNews from "./ListNews";
 import Button from "./Button";
 export {
   Navbar,
-  ListNews,
   CardInfor,
   BannerInfor,
   Comment,

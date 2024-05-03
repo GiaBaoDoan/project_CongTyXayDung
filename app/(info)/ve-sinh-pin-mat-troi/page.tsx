@@ -8,7 +8,7 @@ const VeSinhPinMatTroi = () => {
       <section>
         <div className="flex justify-center ">
           <Image
-            src={"/ve-sinh-mat-troi-banner.jpg"}
+            src={"/Ve-sinh-tam-pin-nang-luong-mat-troi-3.jpg"}
             alt="banner-ve-sinh-pin-mat-troi"
             width={0}
             sizes="100vw"
@@ -65,7 +65,7 @@ const VeSinhPinMatTroi = () => {
             width={400}
             height={300}
             className="w-[800px] h-[500px]"
-            src={"/ve-sinh-he-thong-dien-nang-luong-mat-troi.jpg"}
+            src={"/avt-ve-sinh-pin-mat-troi.webp"}
             alt="anh-ve-sinh-pin-mat-troi"
           />
         </div>
