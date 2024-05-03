@@ -24,7 +24,7 @@ const Commit = () => {
   return (
     <section
       style={{ backgroundColor: "rgb(246, 246, 247)" }}
-      className="px-10 max-lg:px-5 py-20"
+      className="px-5 py-20"
     >
       <div className="title">
         <h2 className="text-2xl font-bold text-center max-sm:text-lg">

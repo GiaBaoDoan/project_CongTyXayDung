@@ -14,7 +14,6 @@ export default function AuthLayout({
   useEffect(() => {
     if (!user && !loading) {
       _redirect("/");
-      toast.error("Bạn cần phải đăng nhập trước!!");
     }
   }, []);
   return <>{children}</>;

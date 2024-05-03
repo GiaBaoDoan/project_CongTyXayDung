@@ -4,20 +4,20 @@ import React from "react";
 
 const VeSinhDienLanh = () => {
   return (
-    <main>
-      <div className="banner relative flex justify-center"></div>
-      <section className="pt-10 pb-32 px-5">
-        <div className="pt-10">
+    <main className="px-5 py-10 pb-24">
+      <div className="image w-full">
+        <Image
+          src={"/ve-sinh-may-lanh.png"}
+          alt="ve-sinh-may-lanh"
+          width={500}
+          sizes="100vw"
+          height={300}
+          className="w-full"
+        />
+      </div>
+      <section>
+        <div className="">
           <div className={`flex gap-10 max-lg:flex-col flex-row-reverse mt-10`}>
-            <div className="image w-full">
-              <Image
-                src={"/ve-sinh-may-lanh.jpg"}
-                alt="ve-sinh-may-lanh"
-                width={500}
-                height={300}
-                className=""
-              />
-            </div>
             <div className="content space-y-7">
               <div className="flex space-x-2 items-center">
                 <svg
@@ -35,7 +35,7 @@ const VeSinhDienLanh = () => {
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
-                <h3 className="text-2xl max-sm:text-xl font-bold text-greenTheme">
+                <h3 className="text-2xl max-sm:text-lg font-bold text-greenTheme">
                   Quy trình vệ sinh máy lạnh
                 </h3>
               </div>
@@ -68,7 +68,7 @@ const VeSinhDienLanh = () => {
           <div className={`flex gap-10 max-lg:flex-col mt-10`}>
             <div className="image w-full">
               <Image
-                src={"/may-hut-bui.jpg"}
+                src={"/dich-vu-ve-sinh-may-lanh.png"}
                 alt="about"
                 width={400}
                 height={200}
@@ -92,7 +92,7 @@ const VeSinhDienLanh = () => {
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
-                <h3 className="text-2xl max-sm:text-xl font-bold text-greenTheme">
+                <h3 className="text-2xl max-sm:text-lg font-bold text-greenTheme">
                   Dịch vụ chuyên nghiệp
                 </h3>
               </div>
@@ -198,7 +198,8 @@ const VeSinhDienLanh = () => {
             </ul>
             <p className="text-xl max-sm:text-base mt-10">
               Quý khách có nhu cầu tìm người giúp việc hãy liên hệ ngay với
-              hotline Trần lê <span className="font-bold">{phoneNumber}</span>{" "}
+              hotline Trần lê{" "}
+              <span className="font-bold text-greenTheme">{phoneNumber}</span>{" "}
               để được tư vấn và hỗ trợ tốt nhất.
             </p>
           </div>

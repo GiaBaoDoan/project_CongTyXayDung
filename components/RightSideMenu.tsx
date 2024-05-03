@@ -99,6 +99,14 @@ const RightSideMenu = () => {
                   </p>
                 </Link>
               </div>
+              <div
+                onClick={logout}
+                className="hover:bg-[rgba(0,0,0,0.2)] cursor-pointer transition-all"
+              >
+                <p className="text-xl capitalize font-medium py-5 px-3">
+                  Đăng xuất
+                </p>
+              </div>
             </div>
           ) : (
             <Link

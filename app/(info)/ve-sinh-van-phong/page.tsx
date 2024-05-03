@@ -6,14 +6,14 @@ const VeSinhVanPhong = () => {
   return (
     <main>
       <Image
-        src={"/banner1.jpg"}
-        alt="ve-sinh-lau-chui"
+        src={"/dich-vu-ve-sinh-van-phong.jpg"}
+        alt="ve-sinh-van-phong"
         sizes="100vw"
-        width={0}
-        height={0}
+        width={500}
+        height={500}
         className="w-full h-auto"
       />
-      <section className="px-5 py-20">
+      <section className="px-5 py-10 pb-24">
         <div>
           <p className="title text-xl max-md:text-xl max-ms:text-base text-greenTheme border-l-[3px] border-greenTheme pl-5">
             <i>
@@ -33,13 +33,12 @@ const VeSinhVanPhong = () => {
         </div>
         <div className="space-y-5 mt-10">
           <h3 className="text-xl font-bold max-sm:text-base">
-            Vì sao Quý khách nên chọn dịch vụ vệ sinh văn phòng của Trần Lê
-            !?
+            Vì sao Quý khách nên chọn dịch vụ vệ sinh văn phòng của Trần Lê !?
           </h3>
           <p className="text-xl max-sm:text-base">
-            Dịch vụ vệ sinh chuyên nghiệp Trần Lê kết mang đến cho văn phòng
-            của Quý khách một môi trường làm việc sạch, đẹp đến bất ngờ, cùng
-            tìm hiểu những ưu điểm mà chúng tôi mang lại cho khách hàng.
+            Dịch vụ vệ sinh chuyên nghiệp Trần Lê kết mang đến cho văn phòng của
+            Quý khách một môi trường làm việc sạch, đẹp đến bất ngờ, cùng tìm
+            hiểu những ưu điểm mà chúng tôi mang lại cho khách hàng.
           </p>
           <h3 className="text-xl font-bold max-sm:text-base">
             Chuyên nghiệp, tận tâm với khách hàng
@@ -63,8 +62,8 @@ const VeSinhVanPhong = () => {
             sinh.
           </p>
           <Image
-            src={"/banner2.jpg"}
-            alt="ve-sinh-lau-chui"
+            src={"/Dịch-vụ-Vệ-Sinh-Văn-Phòng.png"}
+            alt="ve-sinh-van-phong"
             sizes="100vw"
             width={0}
             height={0}
@@ -75,9 +74,9 @@ const VeSinhVanPhong = () => {
           </h3>
           <p className="text-xl max-sm:text-base">
             Đảm bảo Quý khách sẽ cảm thấy hài lòng khi sử dụng dịch vụ vệ sinh
-            văn phòng của Trần Lê bởi chế độ khử trùng có thể giết chết 99%
-            vi khuẩn. Giúp cho văn phòng của Khách hàng luôn sạch bóng và không
-            có các vi khuẩn gây bệnh.
+            văn phòng của Trần Lê bởi chế độ khử trùng có thể giết chết 99% vi
+            khuẩn. Giúp cho văn phòng của Khách hàng luôn sạch bóng và không có
+            các vi khuẩn gây bệnh.
           </p>
           <h3 className="text-xl font-bold max-sm:text-base">
             Trần Lê chuyên nghiệp, uy tín, chất lượng

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <section className="px-10 max-lg:px-5 max-sm:px-2 py-20 gap-10 grid grid-cols-2 max-lg:grid-cols-1">
+    <section className="px-5 py-20 gap-10 grid grid-cols-2 max-lg:grid-cols-1">
       <div className="left">
         <div className="grid grid-cols-3 max-lg:grid-cols-2 gap-5">
           {listAbout.map((item, i) => {

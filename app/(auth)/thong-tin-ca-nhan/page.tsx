@@ -197,7 +197,7 @@ const ThongTinCaNhan = () => {
             </div>
             <div className="flex justify-center mt-5">
               <Link href={"bai-viet-cua-toi"}>
-                <p className="text-greenTheme text-xl max-sm:text-base">
+                <p className="text-greenTheme underline text-xl max-sm:text-base">
                   Bài viết của tôi
                 </p>
               </Link>

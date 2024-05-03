@@ -14,18 +14,17 @@ const DetailPage = () => {
   return (
     <section>
       <div className="space-y-3">
-        <h3 className="text-xl max-sm:text-base text-greenTheme">
-          <span className="text-black">Chi tiết bài đăng:</span>{" "}
+        <h3 className="text-2xl max-sm:text-lg font-bold  text-greenTheme">
           {detailPost?.title}
         </h3>
-        <p className="text-xl max-sm:text-base font-bold text-greenTheme">
+        <p className="text-xl max-sm:text-base text-greenTheme">
           {detailPost?.description}
         </p>
         <Image
           alt="anh-bai-viet"
           width={300}
           height={150}
-          className="w-[300px] rounded-md"
+          className="w-[300px] max-lg:w-full rounded-md"
           src={baseUrlImage(detailPost?.image)}
         />
         <p className="text-xl max-sm:text-base">{detailPost?.content}</p>

@@ -108,7 +108,7 @@ export const listAbout = [
   },
   {
     link: "/ve-sinh-van-phong",
-    icon: "/van-phong-logo.jpg",
+    icon: "/logo-van-phong.png",
     title: "Vệ sinh văn phòng",
   },
   {
@@ -185,7 +185,7 @@ export const contentService = [
     title: "Dịch vụ vệ sinh pin mặt trời",
   },
   {
-    link: "/ve-sinh-sua-chua-ve-sinh-thiet-bi-dien-lanh",
+    link: "/ve-sinh-dien-lanh-sua-chua",
     title: "Dịch vụ sửa chữa & vệ sinh thiết bị điện lạnh",
   },
   {

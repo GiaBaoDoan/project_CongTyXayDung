@@ -1,12 +1,10 @@
 "use client";
-
 import { _redirect } from "@/action";
 import { instance } from "@/config";
 import Image from "next/image";
 import { FormEvent, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import isURL from "validator/lib/isURL";
-
 type TArray = {
   id: number;
   content: string;
@@ -14,7 +12,6 @@ type TArray = {
 
 let nextKeywordsId = 0,
   nextLinksId = 0;
-
 export default function TaoPost() {
   const [title, setTitle] = useState<string>("Nhập tiêu đề ở đây");
   const [desc, setDesc] = useState<string>("Nhập mô tả ở đây");
@@ -41,17 +38,14 @@ export default function TaoPost() {
     }
 
     try {
-      const res = await instance.postForm(
-        "/post/create/",
-        {
-          title: titleRef.current?.value!,
-          description: descRef.current?.value!,
-          content: contentRef.current?.value!,
-          keywords: keywords.map(({ content }) => content),
-          links: links.map(({ content }) => content),
-          image,
-        },
-      );
+      const res = await instance.postForm("/post/create/", {
+        title: titleRef.current?.value!,
+        description: descRef.current?.value!,
+        content: contentRef.current?.value!,
+        keywords: keywords.map(({ content }) => content),
+        links: links.map(({ content }) => content),
+        image,
+      });
 
       if (res.data.code === 200) {
         toast.success("Tạo bài viết thành công");

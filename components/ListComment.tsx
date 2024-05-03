@@ -6,8 +6,14 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 const ListComment = () => {
-  const [readMore, setReadMore] = useState(false);
   const { user } = userState();
+  const [commentStates, setCommentStates] = useState<any>({});
+  const handleCommentToggle = (commentId: string) => {
+    setCommentStates((prevState: any) => ({
+      ...prevState,
+      [commentId]: !prevState[commentId],
+    }));
+  };
   const params = useParams();
   const { comments, maxCount, setCommentInpost } = commentStore();
   const [content, setContent] = useState<string>("");
@@ -36,9 +42,9 @@ const ListComment = () => {
       return toast.success("Cập nhật thành công");
     }
   };
-  const handelTextContent = (text: string) => {
-    if (text.length > 500) {
-      return readMore ? text.slice(0, 400) : text;
+  const handelTextContent = (text: string, cmtId: any) => {
+    if (text.length > 400) {
+      return !commentStates[cmtId] ? text.slice(0, 300) : text;
     }
     return text;
   };
@@ -50,12 +56,12 @@ const ListComment = () => {
       <h3 className="font-bold text-xl max-sm:text-base">
         Danh sách bình luận
       </h3>
-      {comments.length && (
+      {comments.length > 0 && (
         <div>
           <div className={`max-sm:p-2 p-5 mt-5`}>
-            {comments?.map((item: CommentType) => {
+            {comments?.map((item: CommentType, index) => {
               return (
-                <div key={item.id}>
+                <div key={index}>
                   <div className="flex justify-between items-center">
                     <div className="flex space-x-4 items-start flex-1">
                       <p className="capitalize w-[50px] h-[50px] bg-slate-200  items-center p-3 rounded-full cursor-pointer transition-all text-[#272727 ] text-xl  font-bold">
@@ -127,14 +133,15 @@ const ListComment = () => {
                           </div>
                         ) : (
                           <p
-                            key={item.id}
-                            onClick={() => setReadMore(!readMore)}
+                            onClick={() => handleCommentToggle(item.id)}
                             className="text-xl cursor-pointer max-sm:text-base"
                           >
-                            {handelTextContent(item.content)}
-                            <span className="text-greenTheme ml-1 underline">
-                              {item.content.length > 500 && readMore
-                                ? "...Đọc thêm"
+                            {handelTextContent(item.content, item.id)}
+                            <span className="text-greenTheme underline ml-1">
+                              {item.content.length > 500
+                                ? !commentStates[item.id]
+                                  ? "Đọc thêm..."
+                                  : "Ẩn bớt"
                                 : ""}
                             </span>
                           </p>

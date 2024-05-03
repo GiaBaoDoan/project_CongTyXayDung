@@ -28,7 +28,6 @@ const CacBaiViet = () => {
             đầu trên thị trường cùng những giải pháp linh hoạt và toàn diện
             nhất.
           </p>
-          <br />
           <p>
             <span className="font-bold">Trần lê</span> ra đời với mong muốn mang
             đến một không gian sống sạch sẽ, trong lành, thoải mái và hạnh phúc
@@ -40,8 +39,8 @@ const CacBaiViet = () => {
       </div>
       <br />
       <hr />
-      <div className="flex justify-between items-center">
-        <h3 className="mt-5 font-bold text-xl  max-sm:text-base text-greenTheme">
+      <div className="flex justify-between mt-5 max-sm:flex-col items-center">
+        <h3 className="font-bold text-xl max-sm:text-base text-greenTheme">
           Các bài viết bạn có thể quan tâm
         </h3>
         <Link
@@ -75,11 +74,11 @@ const CacBaiViet = () => {
         })}
       </div>
       <hr />
-      <div className="text-xl max-sm:text-base space-y-5 py-10">
+      <div className="text-xl max-sm:text-base space-y-5 py-10 ">
         <h3 className="font-bold text-greenTheme text-xl max-sm:text-base">
           Mục đích kham khảo các bài viết
         </h3>
-        <p>
+        <p className="max-sm:text-base">
           <span className="font-bold">Công ty Trần Lê </span> là một đơn vị
           chuyên cung cấp các dịch vụ về lau dọn, sửa chữa và vệ sinh. Với đội
           ngũ nhân viên chuyên nghiệp và kinh nghiệm, công ty cam kết mang lại

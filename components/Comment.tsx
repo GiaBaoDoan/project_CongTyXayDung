@@ -34,7 +34,7 @@ const Comment = () => {
               <textarea
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                className="textarea w-full h-[200px] textarea-bordered"
+                className="textarea w-full text-lg max-sm:text-base h-[200px] textarea-bordered"
                 placeholder="Nội dung bình luận"
               ></textarea>
             </div>

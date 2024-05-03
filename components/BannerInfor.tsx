@@ -22,6 +22,7 @@ const BannerInfor = () => {
             <Image
               width={70}
               height={20}
+              className="max-sm:w-[50px]"
               src={"/icon-chat-zalo.png"}
               alt="icon-zalo"
             ></Image>
@@ -33,6 +34,7 @@ const BannerInfor = () => {
             <Image
               width={70}
               height={20}
+              className="max-sm:w-[50px]"
               src={"/icon-chat-messenger.png"}
               alt="icon-message"
             ></Image>
@@ -44,6 +46,7 @@ const BannerInfor = () => {
             <Image
               width={70}
               height={20}
+              className="max-sm:w-[50px]"
               src={"/phone-icon.png"}
               alt="icon-phonenumber"
             ></Image>

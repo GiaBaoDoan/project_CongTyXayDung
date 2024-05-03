@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { postState } from "@/store";
 import CardPost from "./CardPost";
+import { PostType } from "@/types";
 const News = () => {
   const { setPost, posts } = postState();
   useEffect(() => {
@@ -15,8 +16,8 @@ const News = () => {
       <h2 className="text-center text-2xl max-sm:text-lg font-bold">
         BÀI VIẾT TIN TỨC
       </h2>
-      <div className="cardNews grid mt-5 grid-cols-4 max-lg:grid-cols-2 gap-10 max-sm:gap-5">
-        {posts?.map((item: any) => {
+      <div className="cardNews grid mt-5 grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-10 max-sm:gap-5">
+        {posts?.map((item: PostType) => {
           return <CardPost blog={item} />;
         })}
       </div>

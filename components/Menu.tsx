@@ -1,5 +1,4 @@
 "use client";
-import { instance } from "@/config";
 import { contentService, listMenu } from "@/constants";
 import { ConfigProvider, Popover } from "antd";
 import Link from "next/link";
@@ -29,10 +28,10 @@ const Menu = () => {
         <Link href={"/thong-tin-ca-nhan"}>Xem trang cá nhân</Link>
       </p>
       <p className="text-xl hover:bg-gray-100 cursor-pointer transition-all p-3 ">
-        <Link href={"/thong-tin-ca-nhan"}>Bài viết của tôi</Link>
+        <Link href={"/bai-viet-cua-toi"}>Bài viết của tôi</Link>
       </p>
       <p className="text-xl hover:bg-gray-100 cursor-pointer transition-all p-3 ">
-        <Link href={"/thong-tin-ca-nhan"}>Tạo bài viết</Link>
+        <Link href={"/tao-bai-viet"}>Tạo bài viết</Link>
       </p>
       <p className="hover:bg-gray-100 text-xl cursor-pointer transition-all p-3">
         <button onClick={() => logout()}>Đăng xuất</button>
@@ -44,7 +43,7 @@ const Menu = () => {
       <ul className="flex justify-center space-x-6 items-center">
         {listMenu.map((item, i) => {
           return item.link === "/dich-vu" ? (
-            <li key={i}>  
+            <li key={i}>
               <ConfigProvider
                 theme={{
                   token: {

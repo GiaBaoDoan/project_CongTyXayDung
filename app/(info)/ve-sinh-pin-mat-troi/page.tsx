@@ -4,7 +4,7 @@ import React from "react";
 
 const VeSinhPinMatTroi = () => {
   return (
-    <main className="px-5 py-10">
+    <main className="px-5 py-10 pb-24">
       <section>
         <div className="flex justify-center ">
           <Image

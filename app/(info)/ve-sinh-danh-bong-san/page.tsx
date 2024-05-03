@@ -4,8 +4,16 @@ import React from "react";
 const VeSinhDanhBongSan = () => {
   return (
     <section className="">
+      <Image
+        src={"/danh-bong-san.jpg"}
+        alt="dich-vu-lau-chui"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
       <div
-        className="px-5 py-10 flex max-lg:flex-col lg:space-x-10 space-y-10"
+        className="px-5 py-10 pb-24 flex max-lg:flex-col lg:space-x-10 space-y-10"
         style={{ backgroundColor: "rgb(246, 246, 247)" }}
       >
         <div className="space-y-5 w-full">
@@ -18,8 +26,9 @@ const VeSinhDanhBongSan = () => {
               sàn nhà của mình. Tại các nơi đông người qua lại như các trung tâm
               thương mại, nhà ga, sân bay thì cần đánh sàn nhiều hơn bằng các
               máy đánh sàn liên hợp. Quy trình chà sàn với các công ty vệ sinh
-              không còn xa lạ gì. Tại đây, Cleanhouse chia sẻ quy trình này cho
-              người mới bắt đầu. Trong các hạng mục công trình, các hạng mục
+              không còn xa lạ gì. Tại đây,{" "}
+              <span className="font-bold">Trần Lê</span> chia sẻ quy trình này
+              cho người mới bắt đầu. Trong các hạng mục công trình, các hạng mục
               xuống cấp và các vấn đề chủ yếu: mặt đá bị ố vàng, bị bám bụi bẩn
               lâu ngày, mặt sàn không còn sáng bóng cần thực hiện chà sàn đánh
               bóng sàn.
@@ -73,9 +82,9 @@ const VeSinhDanhBongSan = () => {
             </p>
             <p>
               Với kinh nghiệm nhiều năm trong lĩnh vực làm sạch, công ty vệ sinh
-              Cleanhousecung cấp các dịch vụ vệ sinh, tư vấn và các loại máy chà
-              sàn cùng với hóa chất vệ sinh công nghiệp chuyên dụng. Chúng tôi
-              sẵn sàng tư vấn cho bạn 24/7.
+              <span className="font-bold">Trần Lê</span> cung cấp các dịch vụ vệ
+              sinh, tư vấn và các loại máy chà sàn cùng với hóa chất vệ sinh
+              công nghiệp chuyên dụng. Chúng tôi sẵn sàng tư vấn cho bạn 24/7.
             </p>
           </div>
         </div>

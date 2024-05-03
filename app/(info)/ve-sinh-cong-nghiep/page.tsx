@@ -1,3 +1,4 @@
+import { phoneNumber } from "@/constants";
 import Image from "next/image";
 import React from "react";
 const contentDemo = [
@@ -25,14 +26,14 @@ const VeSinhCongNghiep = () => {
   return (
     <main>
       <Image
-        src={"/banner1.jpg"}
+        src={"/cong-ty-ve-sinh.png"}
         alt="ve-sinh-lau-chui"
-        sizes="100vw"
+        sizes="90vw"
         width={0}
         height={0}
         className="w-full h-auto"
       />
-      <section className="px-5 py-20">
+      <section className="px-5 py-10 pb-24">
         <div className="flex max-lg:flex-col lg:space-x-10 space-y-5 items-center">
           <div>
             <h2 className="text-2xl max-sm:text-lg font-bold ">
@@ -47,8 +48,9 @@ const VeSinhCongNghiep = () => {
               Tran Le – địa chỉ chuyên cung cấp dịch vụ vệ sinh công nghiệp
               chuyên nghiệp. <br /> <br /> Tran Le cam kết mang tới cho khách
               hàng dịch vụ uy tín, chuyên nghiệp nhất. Mọi thông tin chi tiết
-              xin vui lòng liên hệ số điện thoại 0907.082.999 để sử dụng dịch vụ
-              vệ sinh công nghiệp Vũng Tàu.
+              xin vui lòng liên hệ số điện thoại{" "}
+              <span className="text-greenTheme">{phoneNumber}</span> để sử dụng
+              dịch vụ vệ sinh công nghiệp Vũng Tàu.
             </p>
           </div>
           <Image
@@ -57,7 +59,7 @@ const VeSinhCongNghiep = () => {
             height={0}
             className="w-full h-auto"
             alt="anh-cong-ty-ve-sinh"
-            src={"/giup-viec-nha-co-be-day-kinh-nghiem.jpg"}
+            src={"/ve-sinh-cong-nghjiep.png"}
           ></Image>
         </div>
       </section>
@@ -67,7 +69,7 @@ const VeSinhCongNghiep = () => {
         sizes="100vw"
         width={0}
         height={0}
-        src={"/banner2.jpg"}
+        src={"/ve-sinh-cong-nghiep-1.jpg"}
       />
       <section className="mt-10">
         <div

@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 const Contact = () => {
   return (
-    <section className="flex max-lg:flex-col px-5 py-10 gap-10">
+    <section className="flex max-lg:flex-col px-5 py-10 pb-24 gap-10">
       <div className="left-section space-y-5 flex-1">
         <h2 className="text-2xl max-sm:text-lg text-greenTheme">
           Cảm ơn bạn đã dành thời gian để tìm hiểu về các hoạt động của Công ty

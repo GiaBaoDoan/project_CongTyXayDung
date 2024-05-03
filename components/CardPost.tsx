@@ -9,7 +9,7 @@ const CardPost = ({ blog }: { blog: PostType }) => {
     <Link
       href={`/bai-viet/${blog.id}`}
       key={blog.id}
-      className="space-y-5 cursor-pointer hover:text-greenTheme"
+      className="space-y-5 max-lg:space-y-3 max-sm:space-y-1 cursor-pointer hover:text-greenTheme"
     >
       <Image
         src={baseUrlImage(blog.image)}
@@ -21,7 +21,9 @@ const CardPost = ({ blog }: { blog: PostType }) => {
       <p className="text-xl max-sm:text-base text-left font-bold">
         {blog.title}
       </p>
-      <p className="line-clamp-3 text-xl">{blog.description}</p>
+      <p className="line-clamp-3 text-xl max-sm:text-base">
+        {blog.description}
+      </p>
     </Link>
   );
 };

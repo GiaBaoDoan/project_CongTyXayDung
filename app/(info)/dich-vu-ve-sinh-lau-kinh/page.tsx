@@ -14,8 +14,8 @@ const VeSinhLauKinh = () => {
           className="w-full h-auto"
         />
       </div>
-      <section className="pt-10  pb-32 px-5">
-        <div className="pt-10">
+      <section className="py-10 pb-24 px-5">
+        <div>
           <div className={`flex gap-10 max-lg:flex-col flex-row-reverse mt-10`}>
             <div className="image w-full">
               <Image
