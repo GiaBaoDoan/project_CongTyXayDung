@@ -2,7 +2,6 @@
 import { _redirect } from "@/action";
 import { userState } from "@/store";
 import { useEffect } from "react";
-import { toast } from "react-toastify";
 
 export default function AuthLayout({
   children,
@@ -15,6 +14,6 @@ export default function AuthLayout({
     if (!user && !loading) {
       _redirect("/");
     }
-  }, []);
+  }, [user, loading]);
   return <>{children}</>;
 }
