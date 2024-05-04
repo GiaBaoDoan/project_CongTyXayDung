@@ -42,7 +42,7 @@ const GioiThieu = () => {
             </span>{" "}
             với sứ mệnh nỗ lực từng ngày trong việc trở thành đơn vị cung cấp
             các dịch vụ dọn dẹp hàng đầu trên thị trường cùng những giải pháp
-            linh hoạt và toàn diện nhất. nhất.
+            linh hoạt và toàn diện nhất.
           </p>
         </div>
       </div>
@@ -78,7 +78,7 @@ const GioiThieu = () => {
       {/* content service */}
       <section className="p-12 px-5 space-y-5 pb-24">
         <div className="title space-y-3">
-          <h3 className="font-bold text-2xl  max-sm:text-lg uppercase">
+          <h3 className="font-bold text-xl max-sm:text-lg text-greenTheme uppercase">
             NHỮNG CAM KẾT CỦA Công ty Trần Lê DÀNH CHO KHÁCH HÀNG
           </h3>
           <p className="text-xl  max-sm:text-base">
@@ -90,15 +90,15 @@ const GioiThieu = () => {
           <ul className="list-disc px-5">
             <li>
               <p className="text-xl max-sm:text-base">
-                Người giúp việc nhà tại Công try Trần Lê đạt tiêu chuẩn, đáng
-                tin cậy và có đầy đủ hồ sơ, thông tin cá nhân. Tất cả đều được
-                đào tạo bài bản và được quản lý bởi đơn vị Công try Trần Lê, một
+                Người giúp việc nhà tại Công ty Trần Lê đạt tiêu chuẩn, đáng tin
+                cậy và có đầy đủ hồ sơ, thông tin cá nhân. Tất cả đều được đào
+                tạo bài bản và được quản lý bởi đơn vị Công ty Trần Lê, một
                 trong những đơn vị tuyển chọn và đào tạo người giúp việc uy tín
                 nhất hiện nay.
               </p>
             </li>
           </ul>
-          <p className="text-xl  max-sm:text-base">
+          <p className="text-xl text-greenTheme max-sm:text-base">
             <i>Người giúp việc đáng tin cậy, được đào tạo bài bản</i>
           </p>
           <ul className="text-xl  max-sm:text-base list-disc px-5 space-y-5">
@@ -112,7 +112,7 @@ const GioiThieu = () => {
             </li>
             <li>
               <p>
-                Công try Trần Lê tìm người giúp việc nhanh chóng sau khi khách
+                Công ty Trần Lê tìm người giúp việc nhanh chóng sau khi khách
                 hàng đăng ký theo nhu cầu. Chúng tôi còn cung cấp ứng dụng đầy
                 đủ thông tin về dịch vụ và người giúp việc, giúp cho khách hàng
                 chủ động chọn lựa và đánh giá một cách tiện lợi.
@@ -142,7 +142,7 @@ const GioiThieu = () => {
             <span className="font-bold">Công ty Trần Lê</span> sẽ là lựa chọn lý
             tưởng cho các gia đình, các văn phòng công ty mong muốn được tận
             hưởng một môi trường sạch sẽ, thoải mái. Liên hệ ngay với chúng tôi
-            qua số hotline{" "}
+            qua số hotline
             <span className="text-greenTheme">{phoneNumber}</span> để được tư
             vấn nhanh chóng và chi tiết nhất.
           </p>

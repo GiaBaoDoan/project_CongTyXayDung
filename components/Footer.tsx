@@ -7,7 +7,7 @@ import {
   GooglePlusOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
-import { email, phoneNumber } from "@/constants";
+import { contentService, email, phoneNumber } from "@/constants";
 import Image from "next/image";
 
 const Footer: React.FC = () => {
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="flex space-y-5 flex-col max-lg:hidden">
-          <h3 className="text-2xl text-white font-bold">Hỗ trợ</h3>
+          <h3 className="text-xl text-white font-bold">Hỗ trợ</h3>
           <ul className="space-y-5 pl-5 list-disc">
             <li className="text-xl hover:text-white max-sm:text-base">
               <Link href={"/"}>Liên hệ</Link>
@@ -59,24 +59,22 @@ const Footer: React.FC = () => {
           </ul>
         </div>
         <div className="flex space-y-5 flex-col max-lg:hidden">
-          <h3 className="text-2xl text-white font-bold">Giới thiệu chung</h3>
+          <h3 className="text-xl text-white font-bold">Giới thiệu chung</h3>
           <ul className="space-y-5 pl-5 list-disc">
-            <li className="text-xl max-sm:text-base hover:text-white">
-              <Link href={"/"}>Vệ sinh văn phòng</Link>
-            </li>
-            <li className="text-xl max-sm:text-base hover:text-white">
-              <Link href={"/"}>Vệ sinh công nghiệp</Link>
-            </li>
-            <li className="text-xl max-sm:text-base hover:text-white">
-              <Link href={"/"}>Lau kính nhà cao tầng</Link>
-            </li>
-            <li className="text-xl max-sm:text-base hover:text-white">
-              <Link href={"/"}>Sửa chữa nhà cửa</Link>
-            </li>
+            {contentService.map((item, index) => {
+              return (
+                <li
+                  className="text-xl hover:text-white max-sm:text-base"
+                  key={index}
+                >
+                  <Link href={item.link}>{item.title}</Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="flex space-y-5 flex-col">
-          <h3 className="text-2xl text-white font-bold max-sm:text-lg">
+          <h3 className="text-xl text-white font-bold max-sm:text-lg">
             Thông tin liên hệ
           </h3>
           <div>
@@ -84,11 +82,6 @@ const Footer: React.FC = () => {
               <li className="text-xl max-sm:text-base hover:text-white">
                 <Link href={"/"}>
                   <p>Email: {email}</p>
-                </Link>
-              </li>
-              <li className="text-xl max-sm:text-base hover:text-white">
-                <Link href={"/"}>
-                  <p>Website: giuseart.com / ninhbinhweb.com</p>
                 </Link>
               </li>
             </ul>

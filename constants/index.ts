@@ -103,17 +103,17 @@ export const listAbout = [
   },
   {
     link: "/ve-sinh-cong-nghiep",
-    icon: "/about5.png",
+    icon: "/ve-sinh-cong-nghiep.png",
     title: "Vệ sinh công nghiệp",
   },
   {
     link: "/ve-sinh-van-phong",
-    icon: "/logo-van-phong.png",
+    icon: "/ve-sinh-van-phong.png",
     title: "Vệ sinh văn phòng",
   },
   {
     link: "/ve-sinh-danh-bong-san",
-    icon: "/about4.png",
+    icon: "/danh-bong-san.png",
     title: "Vệ sinh đánh bóng sàn",
   },
 ];
@@ -178,7 +178,7 @@ export const listService = [
 export const contentService = [
   {
     link: "/dich-vu-ve-sinh-lau-kinh",
-    title: "Dịch vệ sinh lau kính",
+    title: "Dịch vụ vệ sinh lau kính",
   },
   {
     link: "/ve-sinh-pin-mat-troi",
@@ -202,4 +202,5 @@ export const contentService = [
   },
 ];
 export const phoneNumber = "0393 500 993";
-export const email = 'giabaod345@gmail.com'
+export const email = 'ks.lethanhviet@gmail.com'
+

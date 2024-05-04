@@ -23,13 +23,13 @@ const CacBaiViet = () => {
         </h2>
         <div className="max-sm:text-base text-xl">
           <p>
-            <span className="font-bold">Trần lê</span> với sứ mệnh nỗ lực từng
+            <span className="font-bold">Trần Lê</span> với sứ mệnh nỗ lực từng
             ngày trong việc trở thành đơn vị cung cấp các dịch vụ dọn dẹp hàng
             đầu trên thị trường cùng những giải pháp linh hoạt và toàn diện
             nhất.
           </p>
           <p>
-            <span className="font-bold">Trần lê</span> ra đời với mong muốn mang
+            <span className="font-bold">Trần Lê</span> ra đời với mong muốn mang
             đến một không gian sống sạch sẽ, trong lành, thoải mái và hạnh phúc
             cho các gia đình. Không những thế, với các dịch vụ vệ sinh văn
             phòng, chúng tôi còn hướng đến sự tiện nghi và thành công cho các
@@ -86,7 +86,7 @@ const CacBaiViet = () => {
           <br />
           <br />
           Các bài viết từ <span className="font-bold">
-            Công ty Trần lê{" "}
+            Công ty Trần Lê{" "}
           </span>{" "}
           không chỉ giới thiệu về các dịch vụ mà công ty cung cấp, mà còn cung
           cấp những thông tin hữu ích về quy trình lau dọn, sửa chữa và vệ sinh.

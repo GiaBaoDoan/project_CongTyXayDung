@@ -28,9 +28,6 @@ const Menu = () => {
         <Link href={"/thong-tin-ca-nhan"}>Xem trang cá nhân</Link>
       </p>
       <p className="text-xl hover:bg-gray-100 cursor-pointer transition-all p-3 ">
-        <Link href={"/bai-viet-cua-toi"}>Bài viết của tôi</Link>
-      </p>
-      <p className="text-xl hover:bg-gray-100 cursor-pointer transition-all p-3 ">
         <Link href={"/tao-bai-viet"}>Tạo bài viết</Link>
       </p>
       <p className="hover:bg-gray-100 text-xl cursor-pointer transition-all p-3">

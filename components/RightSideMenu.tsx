@@ -92,13 +92,6 @@ const RightSideMenu = () => {
                   </p>
                 </Link>
               </div>
-              <div className="hover:bg-[rgba(0,0,0,0.2)] cursor-pointer transition-all">
-                <Link href={"/bai-viet-cua-toi"}>
-                  <p className="text-xl capitalize font-medium py-5 px-3">
-                    Bài viết của tôi
-                  </p>
-                </Link>
-              </div>
               <div
                 onClick={logout}
                 className="hover:bg-[rgba(0,0,0,0.2)] cursor-pointer transition-all"

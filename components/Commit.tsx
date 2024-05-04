@@ -5,7 +5,7 @@ const listCarddemo = [
     img: "/dich-vu-03.jpg",
     title: "Chuyên nghiệp – Tận tâm",
     content:
-      "Đội ngũ tư vấn viên & chăm sóc khách hàng kinh nghiệm, chuyênnghiệp, tận tâm, cam kết bảo hành dịch vụ khi Khách hàng chưa hài lòng",
+      "Đội ngũ tư vấn viên & chăm sóc khách hàng kinh nghiệm, chuyên nghiệp, tận tâm, cam kết bảo hành dịch vụ khi Khách hàng chưa hài lòng",
   },
   {
     img: "/dich-vu-02.jpg",
@@ -32,7 +32,7 @@ const Commit = () => {
         </h2>
         <p className="text-center text-2xl max-sm:text-base">
           Chúng tôi hoạt động với những tiêu chí rất cụ thể để giữ chữ tín với
-          khác hàng.
+          khách hàng.
         </p>
       </div>
       <div className="grid grid-cols-3 max-lg:grid-cols-1  gap-10 mt-12">

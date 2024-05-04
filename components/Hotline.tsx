@@ -48,7 +48,7 @@ const Hotline = () => {
       <div className="bg-greenTheme max-lg:grid-cols-1 w-full grid grid-cols-3 fixed bottom-0 z-10">
         <div className="border-r-[2px] max-md:hidden border-white">
           <p className="text-white text-xl p-3 text-center">
-            Công ty Vệ sinh xây dựng trần lê
+            Công ty Vệ sinh xây dựng Trần Lê
           </p>
         </div>
         <div className="border-r-[2px] max-md:hidden border-white">

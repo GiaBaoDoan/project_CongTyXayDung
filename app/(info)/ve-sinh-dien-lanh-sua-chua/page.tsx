@@ -18,24 +18,9 @@ const VeSinhDienLanh = () => {
       <section>
         <div className="">
           <div className={`flex gap-10 max-lg:flex-col flex-row-reverse mt-10`}>
-            <div className="content space-y-7">
+            <div className="content space-y-5">
               <div className="flex space-x-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-circle-check text-greenTheme"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-                <h3 className="text-2xl max-sm:text-lg font-bold text-greenTheme">
+                <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
                   Quy trình vệ sinh máy lạnh
                 </h3>
               </div>
@@ -75,24 +60,9 @@ const VeSinhDienLanh = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="content space-y-7">
+            <div className="content space-y-5">
               <div className="flex space-x-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-circle-check text-greenTheme"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-                <h3 className="text-2xl max-sm:text-lg font-bold text-greenTheme">
+                <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
                   Dịch vụ chuyên nghiệp
                 </h3>
               </div>
@@ -111,19 +81,19 @@ const VeSinhDienLanh = () => {
                 dài hạn sau khi vệ sinh, có nhiều chế độ ưu đãi dành cho khách
                 hàng cũ
               </p>
-              <p className="font-bold text-xl max-sm:text-base">
+              <h3 className="font-bold text-xl text-greenTheme max-sm:text-lg">
                 Đội ngũ giúp việc chuyên nghiệp, nhiệt tình
-              </p>
+              </h3>
               <p className="text-xl max-sm:text-base">
                 Đến với dịch vụ giúp việc theo tháng hay bất cứ dịch vụ giúp
-                việc nào của Trần lê khách hàng có thể hoàn toàn yên tâm bởi đội
+                việc nào của Trần Lê khách hàng có thể hoàn toàn yên tâm bởi đội
                 ngũ nhân viên làm việc chuyên nghiệp, nhiệt tình. Tất cả nhân
-                viên, người giúp việc của Trần lê đều được đào tạo bài bản, tác
+                viên, người giúp việc của Trần Lê đều được đào tạo bài bản, tác
                 phong làm việc nhanh nhẹn biết sắp xếp công việc nhà một cách
                 khoa học để đảm bảo chất lượng công việc tốt nhất.
               </p>
               <p className="text-xl max-sm:text-base">
-                Đặc biệt, người giúp việc nhà của Trần lê đều là những người có
+                Đặc biệt, người giúp việc nhà của Trần Lê đều là những người có
                 lý lịch rõ ràng, khỏe mạnh, chăm chỉ, thật thà nên không bao giờ
                 xảy ra tình trạng mất đồ của khách hàng trong thời gian làm
                 việc.
@@ -134,32 +104,17 @@ const VeSinhDienLanh = () => {
 
         <div className="pt-10">
           <div className="flex items-center space-x-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              className="lucide lucide-circle-check text-greenTheme"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="m9 12 2 2 4-4" />
-            </svg>
-            <h3 className="text-greenTheme text-2xl max-sm:text-base font-bold">
-              Cam kết của Trần lê về dịch vụ giúp việc hằng ngày
+            <h3 className="text-greenTheme text-xl max-sm:text-lg font-bold">
+              Cam kết của Trần Lê về dịch vụ giúp việc hằng ngày
             </h3>
           </div>
           <div className="space-y-5 mt-5">
             <p className="text-xl max-sm:text-base">
-              Trần lê cam kết cung cấp dịch vụ giúp việc hằng ngày chất lượng
+              Trần Lê cam kết cung cấp dịch vụ giúp việc hằng ngày chất lượng
             </p>
             <p className="text-xl max-sm:text-base">
-              Để khẳng định chất lượng dịch vụ cũng như sự uy tín của Trần lê và
-              lợi ích của khách hàng khi sử dụng dịch vụ, Trần lê cam kết:
+              Để khẳng định chất lượng dịch vụ cũng như sự uy tín của Trần Lê và
+              lợi ích của khách hàng khi sử dụng dịch vụ, Trần Lê cam kết:
             </p>
           </div>
           <div>
@@ -198,7 +153,7 @@ const VeSinhDienLanh = () => {
             </ul>
             <p className="text-xl max-sm:text-base mt-10">
               Quý khách có nhu cầu tìm người giúp việc hãy liên hệ ngay với
-              hotline Trần lê{" "}
+              hotline Trần Lê{" "}
               <span className="font-bold text-greenTheme">{phoneNumber}</span>{" "}
               để được tư vấn và hỗ trợ tốt nhất.
             </p>

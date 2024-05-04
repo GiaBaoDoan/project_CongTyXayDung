@@ -123,7 +123,7 @@ const DangNhap = () => {
           </span>
         </button>
         <div className="space-y-2 mt-5">
-          <div className="text-xl max-sm:text-base text-center">
+          {/* <div className="text-xl max-sm:text-base text-center">
             <p className=" ">
               Quên mật khẩu?{" "}
               <Link
@@ -133,8 +133,8 @@ const DangNhap = () => {
                 Lấy lại mật khẩu
               </Link>
             </p>
-          </div>
-          <div className="text-center text-xl max-sm:text-base">
+          </div> */}
+          {/* <div className="text-center text-xl max-sm:text-base">
             <p>
               Tạo tài khoản mới?{" "}
               <Link
@@ -144,7 +144,7 @@ const DangNhap = () => {
                 Đăng ký
               </Link>
             </p>
-          </div>
+          </div> */}
         </div>
       </form>
     </section>

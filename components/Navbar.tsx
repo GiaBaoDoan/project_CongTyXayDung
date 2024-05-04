@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="container-top-header px-10 max-lg:px-5 py-2 ">
             <div className="flex justify-between max-lg:justify-center">
               <p className="text-xl max-sm:text-lg">
-                Công ty vệ sinh xây dựng Trần lê{" "}
+                Công ty vệ sinh xây dựng Trần Lê{" "}
               </p>
               <div className="flex max-lg:hidden">
                 <ul className="flex space-x-2">

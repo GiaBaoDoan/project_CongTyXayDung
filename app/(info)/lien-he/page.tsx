@@ -1,6 +1,5 @@
 "use client";
 import { email, phoneNumber } from "@/constants";
-import Link from "next/link";
 import React from "react";
 const Contact = () => {
   return (
@@ -15,13 +14,13 @@ const Contact = () => {
             Thông tin liên hệ
           </h2>
           <p className="text-xl max-sm:text-base font-semibold ">
-            CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VỆ SINH CÔNG NGHIỆP
+            CÔNG TY TNHH DỊCH VỤ VỆ SINH CÔNG NGHIỆP TRẦN LÊ
           </p>
           <p className="text-xl max-sm:text-base">
             Là đơn vị có thâm niên trong ngành vệ sinh công nghiệp, chúng tôi
             tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với nhưng kinh
-            nghiệm đó giúp chúng tôi rút ngắn được thời gian thic ông cũng như
-            công đoạn vì vậy giá thành luôn được đàm bảo tốt nhất
+            nghiệm đó giúp chúng tôi rút ngắn được thời gian thi công cũng như
+            công đoạn vì vậy giá thành luôn được đảm bảo tốt nhất
           </p>
         </div>
         <ul className="space-y-5 list-disc px-5 text-xl max-sm:text-base">
@@ -41,19 +40,6 @@ const Contact = () => {
             <span>
               {" "}
               <strong>Email</strong>: {email}
-            </span>
-          </li>
-          <li>
-            <span>
-              {" "}
-              <strong>Website</strong>:{" "}
-              <Link
-                className="underline text-greenTheme"
-                href={"https://xaydungtranle.vn/"}
-              >
-                {" "}
-                https://xaydungtranle.vn/
-              </Link>
             </span>
           </li>
         </ul>

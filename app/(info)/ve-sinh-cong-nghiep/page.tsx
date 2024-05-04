@@ -6,7 +6,7 @@ const contentDemo = [
     img: "/icon-001.png",
     title: "Dịch vụ đa dạng",
     content:
-      "Tran Le cung cấp không chỉ một mà rất nhiều gói dịch vụ vệ sinh đa dạng, đảm bảo chất lượng khác như: Giúp việc nhà, ạp vụ văn phòng, nhà xưởng, chung cư, trường học, tổng vệ sinh, Lau kính nhà cao tầng, Sơn nhà, Sửa chữa nhà cửa, điện nước",
+      "Trần Lê cung cấp không chỉ một mà rất nhiều gói dịch vụ vệ sinh đa dạng, đảm bảo chất lượng khác như: Giúp việc nhà, ạp vụ văn phòng, nhà xưởng, chung cư, trường học, tổng vệ sinh, Lau kính nhà cao tầng, Sơn nhà, Sửa chữa nhà cửa, điện nước",
   },
   {
     img: "/icon-002.png",
@@ -36,17 +36,17 @@ const VeSinhCongNghiep = () => {
       <section className="px-5 py-10 pb-24">
         <div className="flex max-lg:flex-col lg:space-x-10 space-y-5 items-center">
           <div>
-            <h2 className="text-2xl max-sm:text-lg font-bold ">
+            <h3 className="text-xl text-greenTheme max-sm:text-lg font-bold ">
               Dịch vụ vệ sinh công nghiệp uy tín
-            </h2>
+            </h3>
             <p className="text-xl max-sm:text-lg mt-5">
-              Tran Le là địa chỉ chuyên cung cấp dịch vụ vệ sinh công nghiệp
+              Trần Lê là địa chỉ chuyên cung cấp dịch vụ vệ sinh công nghiệp
               chuyên nghiệp, giá rẻ nhận được nhiều sự lựa chọn của khách hàng.
               Dịch vụ mang tới nhiều ưu điểm với đội ngũ nhân viên chuyên
               nghiệp, trang thiết bị hiện đại, tiên tiến, dịch vụ đa dạng, giá
               cả phải chăng. <br /> <br />
-              Tran Le – địa chỉ chuyên cung cấp dịch vụ vệ sinh công nghiệp
-              chuyên nghiệp. <br /> <br /> Tran Le cam kết mang tới cho khách
+              Trần Lê – địa chỉ chuyên cung cấp dịch vụ vệ sinh công nghiệp
+              chuyên nghiệp. <br /> <br /> Trần Lê cam kết mang tới cho khách
               hàng dịch vụ uy tín, chuyên nghiệp nhất. Mọi thông tin chi tiết
               xin vui lòng liên hệ số điện thoại{" "}
               <span className="text-greenTheme">{phoneNumber}</span> để sử dụng
@@ -76,9 +76,9 @@ const VeSinhCongNghiep = () => {
           className="px-5 py-20 space-y-5"
           style={{ backgroundColor: "rgb(246, 246, 247)" }}
         >
-          <h2 className="text-2xl max-sm:text-lg font-bold">
+          <h3 className="text-xl max-sm:text-lg text-greenTheme  font-bold">
             TẠI SAO PHẢI DÙNG DỊCH VỤ VỆ SINH CÔNG NGHIỆP?
-          </h2>
+          </h3>
           <p className="text-xl max-sm:text-lg">
             Việc sử dụng dịch vụ vệ sinh công nghiệp là rất cần thiết, bởi dịch
             vụ mang lại rất nhiều lợi ích cho khách hàng, cho doanh nghiệp sử
@@ -121,33 +121,6 @@ const VeSinhCongNghiep = () => {
               </li>
             </ul>
           </div>
-        </div>
-      </section>
-      <section className="mt-10">
-        <div
-          className="px-5 py-20 gap-10 grid max-lg:grid-cols-1 grid-cols-3"
-          style={{ backgroundColor: "rgb(246, 246, 247)" }}
-        >
-          {contentDemo.map((item, index) => {
-            return (
-              <div key={index} className="flex flex-col space-y-5 items-center">
-                <Image
-                  src={item.img}
-                  alt="icon"
-                  width={150}
-                  height={150}
-                  loading="lazy"
-                  className="w-[150px] h-[150px] max-lg:w-[100px] max-lg:h-[100px] max-sm:w-[80px] max-sm:h-[80px]"
-                />
-                <h3 className="text-2xl max-sm:text-lg text-greenTheme font-bold text-center text-themeGreen">
-                  {item.title}
-                </h3>
-                <p className="text-xl max-sm:text-lg text-center">
-                  {item.content}
-                </p>
-              </div>
-            );
-          })}
         </div>
       </section>
     </main>

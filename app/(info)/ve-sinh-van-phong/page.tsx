@@ -32,7 +32,7 @@ const VeSinhVanPhong = () => {
           </p>
         </div>
         <div className="space-y-5 mt-10">
-          <h3 className="text-xl font-bold max-sm:text-base">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
             Vì sao Quý khách nên chọn dịch vụ vệ sinh văn phòng của Trần Lê !?
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -40,17 +40,17 @@ const VeSinhVanPhong = () => {
             Quý khách một môi trường làm việc sạch, đẹp đến bất ngờ, cùng tìm
             hiểu những ưu điểm mà chúng tôi mang lại cho khách hàng.
           </p>
-          <h3 className="text-xl font-bold max-sm:text-base">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
             Chuyên nghiệp, tận tâm với khách hàng
           </h3>
           <p className="text-xl max-sm:text-base">
             Nếu Quý khách có nhu cầu về giúp việc nhà, vệ sinh nhà cửa, văn
-            phòng thì có thể liên hệ với TranLe. Đảm bảo với Đội ngũ nhân viên
+            phòng thì có thể liên hệ với Trần Lê. Đảm bảo với Đội ngũ nhân viên
             chuyên nghiệp, đội ngũ tư vấn viên và chăm sóc khách hàng nhiệt
             tình, giàu kinh nghiệm, chuyên nghiệp, tận tâm đảm bảo sẽ làm hài
             lòng những khách hàng khó tính nhất.
           </p>
-          <h3 className="text-xl font-bold max-sm:text-base">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
             Sử dụng công nghệ hàng đầu
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -69,7 +69,7 @@ const VeSinhVanPhong = () => {
             height={0}
             className="w-full h-auto"
           />
-          <h3 className="text-xl font-bold max-sm:text-base">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
             Văn phòng của Quý khách luôn sạch sẽ
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -78,7 +78,7 @@ const VeSinhVanPhong = () => {
             khuẩn. Giúp cho văn phòng của Khách hàng luôn sạch bóng và không có
             các vi khuẩn gây bệnh.
           </p>
-          <h3 className="text-xl font-bold max-sm:text-base">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
             Trần Lê chuyên nghiệp, uy tín, chất lượng
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -92,7 +92,7 @@ const VeSinhVanPhong = () => {
             sẽ mang đến cho Quý khách sự hài lòng về chất lượng
           </p>
 
-          <h3 className="text-xl font-bold max-sm:text-base">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
             Giá cả của các dịch vụ tại Trần Lê
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -107,7 +107,7 @@ const VeSinhVanPhong = () => {
               giúp việc theo giờ….
             </span>
           </p>
-          <h3 className="text-xl font-bold max-sm:text-base">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
             Một số dịch vụ hiện có tại Trần Lê
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -118,7 +118,7 @@ const VeSinhVanPhong = () => {
             văn phòng của chúng tôi sẽ giúp Quý khách có những thông tin chi
             tiết về nhà cung cấp dịch vụ chất lượng, uy tín. Khi Quý khách có
             nhu cầu về thuê người giúp việc theo giờ, tìm người giúp việc nhà,
-            vệ sinh nhà hãy liên hệ với TranLe qua số Hotline:{" "}
+            vệ sinh nhà hãy liên hệ với Trần Lê qua số Hotline:{" "}
             <span className="text-greenTheme font-bold">{phoneNumber}</span>
           </p>
         </div>

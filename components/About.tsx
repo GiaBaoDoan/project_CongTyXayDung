@@ -35,14 +35,14 @@ const About = () => {
           <h2 className="text-2xl font-bold max-sm:text-lg">Về chúng tôi</h2>
           <p className="text-xl  max-sm:text-base">
             Là đơn vị có thâm niên trong ngành vệ sinh công nghiệp, chúng tôi
-            tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với nhưng kinh
+            tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với những kinh
             nghiệm đó giúp chúng tôi rút ngắn được thời gian thi công cũng như
             công đoạn vì vậy giá thành luôn được đảm bảo tốt nhất. <br /> <br />{" "}
-            Với đội ngũ nhân viên kỹ thuật dày dạng kinh nghiệm, trải dài khắp
+            Với đội ngũ nhân viên kỹ thuật dày dặng kinh nghiệm, trải dài khắp
             vùng miền và có thể huy động số lượng lớn nhân công cùng một lúc,
             chúng tôi thực hiện công việc trong thời gian rất ngắn. Bên cạnh đó,
             chúng tôi sử dụng các công cụ thiết bị vệ sinh hiện đại cùng với các
-            sản phẩm hoạt chất tẩy rửa an toàn sẽ giúp bề bặt của công trình trở
+            sản phẩm hoạt chất tẩy rửa an toàn sẽ giúp bề mặt của công trình trở
             nên sạch như mới.
           </p>
           <button className="text-white text-xl max-sm:text-base hover:bg-opacity-45 self-start p-3 px-6 bg-greenTheme rounded-full">

@@ -19,12 +19,12 @@ const VeSinhPinMatTroi = () => {
         <div className="mt-10 flex space-x-10">
           <div className="flex-1">
             <div>
-              <h3 className="text-2xl text-greenTheme">
+              <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
                 Các nguyên nhân khiến tấm Pin năng lượng mặt trời bị bẩn
               </h3>
               <br />
               <p className="text-xl">
-                Do Ô nhiểm trong không khí tại khu vực đông xe cộ qua lại hoặc
+                Do ô nhiễm trong không khí tại khu vực đông xe cộ qua lại hoặc
                 gần khu công nghiệp, khu chế xuất…v.v.
                 <br />
                 Khu vực có nhiều cây cối, Lá cây rụng bám dính lên bề mặt tấm
@@ -42,7 +42,7 @@ const VeSinhPinMatTroi = () => {
             <br />
             <br />
             <div className="">
-              <h3 className="text-2xl text-greenTheme">
+              <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
                 Tại sao cần phải vệ sinh tấm Pin năng lượng mặt trời?
               </h3>
               <br />
@@ -72,7 +72,7 @@ const VeSinhPinMatTroi = () => {
         <div className="mt-10 space-x-10 flex">
           <div>
             <div>
-              <h3 className="text-2xl text-greenTheme ">
+              <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme ">
                 Lợi ích của việc làm sạch tấm Pin năng lượng mặt trời
               </h3>
               <ul className="text-xl list-disc px-5 mt-5 space-y-5">
@@ -89,7 +89,7 @@ const VeSinhPinMatTroi = () => {
               </ul>
             </div>
             <div className="mt-5">
-              <h3 className="text-2xl text-greenTheme">
+              <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
                 Khi nào nên làm vệ sinh bề mặt tấm Pin
               </h3>
               <div className="mt-5">
@@ -102,7 +102,7 @@ const VeSinhPinMatTroi = () => {
                 </p>
                 <br />
                 <p className="text-xl">
-                  Vệ sinh Trần Lê khuyến nghị khách hàng nên thực hiên vệ sinh
+                  Vệ sinh Trần Lê khuyến nghị khách hàng nên thực hiện vệ sinh
                   chùi rửa các tấm pin năng lượng mặt trời với tần suất khoảng
                   1-3 lần trong năm, tuỳ theo mức độ bám bẩn tại khu vực Dự án
                   của khách hàng. Các khoảng thời gian cần thiết để vệ sinh tấm
@@ -130,7 +130,7 @@ const VeSinhPinMatTroi = () => {
             toàn lao động, chất lượng hiệu quả công việc, tiến độ thi công, kỹ
             năng xử lý giải quyết các vấn đề phát sinh, tinh thần trách nhiệm
             cao đã giúp chúng tôi có được uy tín trong ngành công nghiệp năng
-            lượng mặt trời. Quý khách hàng có nhu cầu làm vệ sinh cho Hệ thống
+            lượng mặt trời. Quý khách hàng có nhu cầu làm vệ sinh cho hệ thống
             năng lượng của mình, vui lòng liên hệ với chúng tôi qua:{" "}
             <span className="font-bold text-greenTheme">{phoneNumber}</span>
           </p>
