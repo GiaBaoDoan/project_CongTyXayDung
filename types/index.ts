@@ -51,4 +51,4 @@ export type PostType  = {
   comment:     CommentType[];
   image:       string;
   author:      Author;
-}
+} | null

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { isStrongPassword } from "validator";
-export const validatorPassword = (password: string) => {
+const validatorPassword = (password: string) => {
   return isStrongPassword(password, {
     minLength: 8,
     minLowercase: 0,

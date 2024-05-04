@@ -1,5 +1,5 @@
 import { CardProps, listMenuProps } from "@/types";
-export const baseUrlImage  = (url:string) =>  `https://api.xaydungtranle.vn/public/${url}`
+export const baseUrlImage  = (url:string | undefined): string =>  `https://api.xaydungtranle.vn/public/${url}`
 export const listMenu: listMenuProps[] = [
   {
     title: "trang chủ",
