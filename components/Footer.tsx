@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           <p className="text-xl max-sm:text-base">
             Là đơn vị có thâm niên trong ngành vệ sinh công nghiệp, chúng tôi
             tích lũy được nhiều kinh nghiệm khi thi công dịch vụ, với nhưng kinh
-            nghiệm đó giúp chúng tôi rút ngắn được thời gian thic ông cũng như
+            nghiệm đó giúp chúng tôi rút ngắn được thời gian thi công cũng như
             công đoạn vì vậy giá thành luôn được đàm bảo tốt nhất
           </p>
         </div>
