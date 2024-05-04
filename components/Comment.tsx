@@ -29,7 +29,9 @@ const Comment = () => {
       <div>
         <div className="mt-10 max-lg:mt-2">
           <form onSubmit={postComment}>
-            <h3 className="font-bold text-xl max-sm:text-base">Bình luận</h3>
+            <h3 className="font-bold text-xl max-sm:text-base">
+              Phản hồi vào bài viết
+            </h3>
             <div className="mt-5">
               <textarea
                 value={content}

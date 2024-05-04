@@ -46,9 +46,9 @@ export type PostType  = {
   content:     string;
   keywords:    string[];
   links:       string[];
-  createAt:    Date;
-  updateAt:    Date;
+  createAt:    string;
+  updateAt:    string;
   comment:     CommentType[];
   image:       string;
   author:      Author;
-} | null
+} 

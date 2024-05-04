@@ -3,6 +3,7 @@ import { baseUrlImage } from "@/constants";
 import { postState } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
+import { format, parseISO } from "date-fns";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 const DetailPage = () => {
@@ -12,28 +13,33 @@ const DetailPage = () => {
     setDetailPost(params?.id);
   }, []);
   return (
-    <section>
-      <div className="space-y-3">
-        <h3 className="text-2xl max-sm:text-lg font-bold  text-greenTheme">
+    <section className="py-10">
+      <div className="space-y-5">
+        <h3 className="text-xl max-sm:text-lg">
+          <span className="text-greenTheme font-medium">Tiêu đề bài viết</span>:{" "}
           {detailPost?.title}
         </h3>
-        <p className="text-xl max-sm:text-base text-greenTheme">
+        <p className="text-xl max-sm:text-bas">
+          <span className="font-medium text-greenTheme"> Mô tả bài đăng</span>:{" "}
           {detailPost?.description}
         </p>
         <Image
           alt="anh-bai-viet"
           width={300}
           height={150}
-          className="w-[300px] max-lg:w-full rounded-md"
+          className="w-[800px] rounded-md"
           src={baseUrlImage(detailPost?.image)}
         />
+        <p className="font-medium text-greenTheme ">Nội dung bài đăng</p>
         <p className="text-xl max-sm:text-base">{detailPost?.content}</p>
 
         <div className="space-y-2">
-          <p className="text-xl max-sm:text-base">Các từ khóa liên quan:</p>
+          <p className="text-xl text-greenTheme font-medium max-sm:text-base">
+            Các từ khóa liên quan:
+          </p>
           {detailPost?.keywords.map((keyword: string) => {
             return (
-              <ul className="text-xl max-sm:text-base px-5 list-decimal">
+              <ul className="text-xl max-sm:text-base px-5 list-disc">
                 <li>
                   <span>{keyword}</span>
                 </li>
@@ -42,12 +48,14 @@ const DetailPage = () => {
           })}
         </div>
         <div className="space-y-2">
-          <p>Các nguồn kham khảo</p>
+          <p className="text-xl text-greenTheme font-medium max-sm:text-base">
+            Các nguồn kham khảo
+          </p>
           {detailPost?.links.map((link: string) => {
             return (
               <ul className="list-disc px-5">
                 <li>
-                  <Link href={link} className="underline text-greenTheme">
+                  <Link href={link} className="underline">
                     <p className="text-xl max-sm:text-base ">{link}</p>
                   </Link>
                 </li>
@@ -55,6 +63,24 @@ const DetailPage = () => {
             );
           })}
         </div>
+      </div>
+      <div className="py-10 space-y-3">
+        <p>
+          <span className="text-greenTheme font-medium text-xl">
+            {" "}
+            Ngày đăng bài viết :{" "}
+          </span>
+          <span className="font-medium">
+            {detailPost &&
+              format(parseISO(detailPost?.createAt || ""), "dd-MM-yyyy")}
+          </span>
+        </p>
+        <p>
+          <span className="text-greenTheme font-medium text-xl">
+            Tác giả bài đăng:{" "}
+          </span>
+          <span className="font-medium">{detailPost?.author.name}</span>
+        </p>
       </div>
     </section>
   );

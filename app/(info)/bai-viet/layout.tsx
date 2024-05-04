@@ -13,7 +13,9 @@ import {
 import Link from "next/link";
 import React, { ReactNode, useEffect, useState } from "react";
 const Layout = ({ children }: { children: ReactNode }) => {
-  const { posts, setPost } = postState();
+  const { posts, setPost, maxCount } = postState();
+  const [page, setPage] = useState(1);
+  const maxPage = Math.ceil(maxCount / 3);
   const { user } = userState();
   useEffect(() => {
     setPost();
@@ -22,8 +24,14 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <section className="px-5 py-10 max-sm:py-5">
       <div className="flex justify-between max-lg:flex-col space-y-5 lg:space-x-10">
         <div className="w-full !text-xl">
+          <div>
+            <p className="text-2xl font-bold uppercase text-center max-sm:text-lg py-5">
+              <span className="text-greenTheme">Chi tiết bài đăng</span>
+            </p>
+          </div>
           {children}
-          <div className="soicals space-y-5 mt-5">
+          <hr />
+          <div className="soicals space-y-5 py-5">
             <ul className="flex space-x-5">
               <li className="border-black rounded-full">
                 <Link href={"/"}>
@@ -47,12 +55,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
               </li>
             </ul>
           </div>
-          <div className="mt-5">
-            <p className="text-2xl max-sm:text-lg border-t border-b py-5">
-              Danh mục :{" "}
-              <span className="text-greenTheme">Chi tiết bài viết</span>
-            </p>
-          </div>
+          <hr />
+
           <div className="mt-5 space-y-5">
             <p className="text-2xl max-sm:text-lg text-greenTheme font-bold max:sm-text-lg">
               Có thể bạn quan tâm:
@@ -61,6 +65,23 @@ const Layout = ({ children }: { children: ReactNode }) => {
               {posts.map((item) => {
                 return <CardPost blog={item} />;
               })}
+            </div>
+            <div className="join flex justify-center">
+              <button
+                onClick={() => page > 1 && setPage(page - 1)}
+                className="join-item btn"
+              >
+                «
+              </button>
+              <button className="join-item btn">
+                Page {page}/{maxPage}
+              </button>
+              <button
+                onClick={() => page < maxPage && setPage(page + 1)}
+                className="join-item btn"
+              >
+                »
+              </button>
             </div>
           </div>
           <br />

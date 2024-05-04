@@ -12,7 +12,8 @@ interface IUserState {
 interface postsStateProps {
   myPost : [],
   posts : PostType[],
-  detailPost : PostType,
+  detailPost : PostType | null,
+  maxCount : number,
   getMyPost : (userId : string) => Promise<void>,
   setPost : () => Promise<void>,
   setDetailPost : (id : any) => Promise<void>
@@ -46,6 +47,7 @@ export const userState = create<IUserState>((set) => ({
 export const postState = create<postsStateProps>((set) => ({
     posts : [],
     myPost : [],
+    maxCount : 4,
     detailPost : null,
     getMyPost : async(userId : string) => {
         const res = await instance.post(`/post/me?userId=${userId}`);

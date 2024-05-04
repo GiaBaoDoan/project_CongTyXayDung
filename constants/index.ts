@@ -157,19 +157,19 @@ export const listService = [
       "Đây là dịch vụ vệ sinh dành cho các tòa nhà, khu đô thị, văn phòng, hộ gia đình sau khi xây dựng. Người giúp việc chuyên nghiệp, đáp ứng tiêu chuẩn Singapore, có tinh thần trách nhiệm cao.",
   },
   {
-    img: "/about5.png",
+    img: "/ve-sinh-cong-nghiep.png",
     title: "Vệ sinh công nghiệp",
     content: 
       "Dịch vụ vệ sinh công nghiệp của chúng tôi giúp duy trì môi trường làm việc sạch sẽ và an toàn cho doanh nghiệp của bạn. Chúng tôi cung cấp các giải pháp vệ sinh chuyên nghiệp cho cơ sở sản xuất, nhà máy, văn phòng và các khu vực công cộng. Với đội ngũ nhân viên có kinh nghiệm, chúng tôi đảm bảo vệ sinh toàn diện, từ vệ sinh sàn, lau bụi, tẩy rửa đến xử lý chất thải.",
   },
   {
-    img: "/about4.png",
+    img: "/danh-bong-san.png",
     title: "Đánh bóng sàn",
     content:
       "Dịch vụ đánh bóng sàn của chúng tôi giúp mang lại sự lộng lẫy và bề mặt sáng bóng cho sàn nhà của bạn. Chúng tôi sử dụng các công nghệ và chất liệu chuyên dụng để loại bỏ vết xước, mảng bám và bụi bẩn trên sàn. Kết quả là một sàn nhà sạch sẽ, mịn màng và tạo cảm giác sang trọng cho không gian sống hoặc làm việc của bạn.",
   },
   {
-    img: "/may-lanh-logo.png",
+    img: "/ve-sinh-dien-lanh-sua-chua",
     title: "Sữa chữa bảo trì điện lạnh",
     content:
       "Dịch vụ sửa chữa bảo trì điện lạnh của chúng tôi giúp duy trì hiệu suất và độ tin cậy của hệ thống điều hòa không khí và thiết bị điện lạnh. Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và được trang bị kiến thức sâu về các loại máy lạnh và hệ thống điện lạnh khác nhau. Chúng tôi cung cấp các dịch vụ từ kiểm tra, vệ sinh, sửa chữa đến bảo trì định kỳ, đảm bảo hệ thống của bạn hoạt động ổn định và tiết kiệm năng lượng.",
