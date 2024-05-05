@@ -1,5 +1,6 @@
 "use client";
 import CardPost from "@/components/CardPost";
+import Posts from "@/components/Posts";
 import { phoneNumber } from "@/constants";
 import { postState } from "@/store";
 import { PostType } from "@/types";
@@ -9,7 +10,7 @@ import React, { useEffect } from "react";
 const CacBaiViet = () => {
   const { posts, setPost } = postState();
   useEffect(() => {
-    setPost();
+    setPost(1);
   }, []);
   return (
     <section className="py-10 px-5">
@@ -43,7 +44,7 @@ const CacBaiViet = () => {
         <h3 className="font-bold text-xl max-sm:text-base text-greenTheme">
           Các bài viết bạn có thể quan tâm
         </h3>
-        <Link
+        {/* <Link
           href={"/tao-bai-viet"}
           className="text-greenTheme cursor-pointer flex items-center space-x-1 text-xl  max-sm:text-base"
         >
@@ -66,13 +67,10 @@ const CacBaiViet = () => {
               <line x1="8" x2="16" y1="12" y2="12" />
             </svg>
           </span>
-        </Link>
+        </Link> */}
       </div>
-      <div className="grid grid-cols-3 mt-5 py-5 max-lg:grid-cols-1 gap-10">
-        {posts?.map((item: PostType) => {
-          return <CardPost blog={item} />;
-        })}
-      </div>
+      <Posts />
+      <br />
       <hr />
       <div className="text-xl max-sm:text-base space-y-5 py-10 ">
         <h3 className="font-bold text-greenTheme text-xl max-sm:text-base">

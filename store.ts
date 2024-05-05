@@ -10,12 +10,10 @@ interface IUserState {
   setUser: () => Promise<void>;
 }
 interface postsStateProps {
-  myPost : [],
   posts : PostType[],
   detailPost : PostType | null,
   maxCount : number,
-  getMyPost : (userId : string) => Promise<void>,
-  setPost : () => Promise<void>,
+  setPost : (page:number) => Promise<void>,
   setDetailPost : (id : any) => Promise<void>
 }
 interface commentsStateProps {
@@ -46,17 +44,10 @@ export const userState = create<IUserState>((set) => ({
 }));
 export const postState = create<postsStateProps>((set) => ({
     posts : [],
-    myPost : [],
     maxCount : 4,
     detailPost : null,
-    getMyPost : async(userId : string) => {
-        const res = await instance.post(`/post/me?userId=${userId}`);
-        if (res.data.code ===200) {
-           set({myPost : res.data.data})
-        }
-    },
-     setPost : async () => {
-      const res = await instance.get("/post/");
+     setPost : async (page : number) => {
+      const res = await instance.get(`/post?count=4&page=${page}`);
       if (res.data.code === 200) {
         set({ posts: res.data.data });
       }
@@ -73,7 +64,7 @@ export const commentStore = create<commentsStateProps>((set) =>({
   comments : [],
   maxCount : 0,
   setCommentInpost : async(postId : any,page ?:number) => {
-    const res = await instance.get(`/comment?postId=${postId}&count=${3}&page=${page}`);
+    const res = await instance.get(`/comment?postId=${postId}&count=3&page=${page}`);
     if (res.data.code === 200) {
       set({comments : res.data.data })
       set({maxCount : res.data.count})

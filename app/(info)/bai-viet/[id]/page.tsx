@@ -30,7 +30,7 @@ const DetailPage = () => {
           className="w-[800px] rounded-md"
           src={baseUrlImage(detailPost?.image)}
         />
-        <p className="font-medium text-greenTheme ">Nội dung bài đăng</p>
+        <p className="font-medium text-greenTheme ">Nội dung bài đăng:</p>
         <p className="text-xl max-sm:text-base">{detailPost?.content}</p>
 
         <div className="space-y-2">
@@ -49,7 +49,7 @@ const DetailPage = () => {
         </div>
         <div className="space-y-2">
           <p className="text-xl text-greenTheme font-medium max-sm:text-base">
-            Các nguồn kham khảo
+            Các nguồn kham khảo:
           </p>
           {detailPost?.links.map((link: string) => {
             return (
@@ -66,7 +66,7 @@ const DetailPage = () => {
       </div>
       <div className="py-10 space-y-3">
         <p>
-          <span className="text-greenTheme font-medium text-xl">
+          <span className="text-greenTheme font-medium text-xl max-sm:text-base">
             {" "}
             Ngày đăng bài viết :{" "}
           </span>
@@ -76,7 +76,7 @@ const DetailPage = () => {
           </span>
         </p>
         <p>
-          <span className="text-greenTheme font-medium text-xl">
+          <span className="text-greenTheme font-medium text-xl max-sm:text-base">
             Tác giả bài đăng:{" "}
           </span>
           <span className="font-medium">{detailPost?.author.name}</span>

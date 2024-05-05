@@ -50,13 +50,13 @@ const ListComment = () => {
   };
   useEffect(() => {
     setCommentInpost(params.id, page);
-  }, [page]);
+  }, [page, params.id]);
   return (
     <section className="py-10">
       {comments.length > 0 && (
         <div>
           <h3 className="font-bold text-xl max-sm:text-base">
-            Các ýs kiến phản hồi
+            Các ý kiến phản hồi
           </h3>
           <div>
             <div className={`max-sm:p-2 p-5 mt-5`}>

@@ -1,13 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
-import { postState } from "@/store";
-import CardPost from "./CardPost";
-import { PostType } from "@/types";
+import React from "react";
+import Posts from "./Posts";
 const News = () => {
-  const { setPost, posts } = postState();
-  useEffect(() => {
-    setPost();
-  }, []);
   return (
     <section
       style={{ backgroundColor: "rgb(246, 246, 247)" }}
@@ -16,11 +10,7 @@ const News = () => {
       <h2 className="text-center text-2xl max-sm:text-lg font-bold">
         BÀI VIẾT TIN TỨC
       </h2>
-      <div className="cardNews grid mt-5 grid-cols-4 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-10 max-sm:gap-5">
-        {posts?.map((item: PostType) => {
-          return <CardPost blog={item} />;
-        })}
-      </div>
+      <Posts />
     </section>
   );
 };
