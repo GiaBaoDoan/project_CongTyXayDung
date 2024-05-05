@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   const { user } = userState();
   return (
     <section className="px-5 py-10 max-sm:py-5">
-      <div className="flex justify-between max-lg:flex-col space-y-5 lg:space-x-10">
+      <div className="flex justify-between max-lg:flex-col lg:space-x-10">
         <div className="w-full !text-xl">
           <div>
             <p className="text-2xl font-bold uppercase text-center max-sm:text-lg">
@@ -49,12 +49,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
             </ul>
           </div>
           <hr />
-          <Posts />
           <div className="mt-5 space-y-5">
-            <p className="text-2xl max-sm:text-lg text-greenTheme font-bold max:sm-text-lg">
+            <p className="text-xl max-sm:text-lg text-greenTheme font-bold max:sm-text-base">
               Có thể bạn quan tâm:
             </p>
           </div>
+          <Posts />
           <br />
           <hr />
           <ListComment />

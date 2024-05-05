@@ -15,11 +15,11 @@ const DetailPage = () => {
   return (
     <section className="py-10">
       <div className="space-y-5">
-        <h3 className="text-xl max-sm:text-lg">
+        <h3 className="text-xl max-sm:text-base">
           <span className="text-greenTheme font-medium">Tiêu đề bài viết</span>:{" "}
           {detailPost?.title}
         </h3>
-        <p className="text-xl max-sm:text-bas">
+        <p className="text-xl max-sm:text-base">
           <span className="font-medium text-greenTheme"> Mô tả bài đăng</span>:{" "}
           {detailPost?.description}
         </p>
@@ -30,7 +30,9 @@ const DetailPage = () => {
           className="w-[800px] rounded-md"
           src={baseUrlImage(detailPost?.image)}
         />
-        <p className="font-medium text-greenTheme ">Nội dung bài đăng:</p>
+        <p className="font-medium text-greenTheme text-xl max-sm:text-base">
+          Nội dung bài đăng:
+        </p>
         <p className="text-xl max-sm:text-base">{detailPost?.content}</p>
 
         <div className="space-y-2">
@@ -64,13 +66,13 @@ const DetailPage = () => {
           })}
         </div>
       </div>
-      <div className="py-10 space-y-3">
+      <div className="py-5 space-y-3">
         <p>
           <span className="text-greenTheme font-medium text-xl max-sm:text-base">
             {" "}
             Ngày đăng bài viết :{" "}
           </span>
-          <span className="font-medium">
+          <span className="font-medium max-sm:text-base">
             {detailPost &&
               format(parseISO(detailPost?.createAt || ""), "dd-MM-yyyy")}
           </span>
@@ -79,7 +81,9 @@ const DetailPage = () => {
           <span className="text-greenTheme font-medium text-xl max-sm:text-base">
             Tác giả bài đăng:{" "}
           </span>
-          <span className="font-medium">{detailPost?.author.name}</span>
+          <span className="font-medium max-sm:text-base">
+            {detailPost?.author.name}
+          </span>
         </p>
       </div>
     </section>
