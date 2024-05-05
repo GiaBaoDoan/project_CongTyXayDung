@@ -14,7 +14,7 @@ const CacBaiViet = () => {
   }, []);
   return (
     <section className="py-10 px-5">
-      <div className="space-y-5 w-full">
+      <div className="space-y-3 w-full">
         <p className="max-sm:text-base text-xl  ">
           <span className="text-greenTheme">Trang chủ </span>
           {">>"} Bài viết
@@ -40,7 +40,7 @@ const CacBaiViet = () => {
       </div>
       <br />
       <hr />
-      <div className="flex justify-between mt-5 max-sm:flex-col items-center">
+      <div className="flex justify-between mt-3 max-sm:flex-col items-center">
         <h3 className="font-bold text-xl max-sm:text-base text-greenTheme">
           Các bài viết bạn có thể quan tâm
         </h3>
@@ -72,7 +72,7 @@ const CacBaiViet = () => {
       <Posts />
       <br />
       <hr />
-      <div className="text-xl max-sm:text-base space-y-5 py-10 ">
+      <div className="text-xl max-sm:text-base space-y-3 py-10 ">
         <h3 className="font-bold text-greenTheme text-xl max-sm:text-base">
           Mục đích kham khảo các bài viết
         </h3>

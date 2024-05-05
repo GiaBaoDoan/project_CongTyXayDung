@@ -16,11 +16,11 @@ const VeSinhDanhBongSan = () => {
         className="px-5 py-10 pb-24 flex max-lg:flex-col lg:space-x-10 space-y-10"
         style={{ backgroundColor: "rgb(246, 246, 247)" }}
       >
-        <div className="space-y-5 w-full">
-          <h3 className="font-bold text-xl text-greenTheme max-sm:text-lg">
+        <div className="space-y-3 w-full">
+          <h3 className="font-bold text-xl text-greenTheme max-sm:text-base">
             Quy trình chà sàn đánh bóng sàn
           </h3>
-          <div className="text-xl  space-y-5 max-sm:text-base">
+          <div className="text-xl  space-y-3 max-sm:text-base">
             <p>
               Chà sàn đánh bóng sàn là công việc định kỳ bạn cần thực hiện cho
               sàn nhà của mình. Tại các nơi đông người qua lại như các trung tâm
@@ -34,7 +34,7 @@ const VeSinhDanhBongSan = () => {
               bóng sàn.
             </p>
           </div>
-          <div className="text-xl  space-y-5 max-sm:text-base">
+          <div className="text-xl  space-y-3 max-sm:text-base">
             <p>Máy móc và dụng cụ vệ sinh cần chuẩn bị</p>
             <p>
               Các loại biển báo như biển báo đang thực hiện vệ sinh, biển báo
@@ -67,11 +67,11 @@ const VeSinhDanhBongSan = () => {
             className="w-full h-auto"
           />
           <div>
-            <h3 className="font-bold text-xl text-greenTheme max-sm:text-lg">
+            <h3 className="font-bold text-xl text-greenTheme max-sm:text-base">
               Hướng dẫn chà sàn đánh bóng sàn
             </h3>
           </div>
-          <div className="text-xl space-y-5 max-ms:text-base">
+          <div className="text-xl space-y-3 max-ms:text-base">
             <p>Bước 3: Tiến hành đánh sàn</p>
             <p>Bước 4: Chống thấm</p>
             <p>

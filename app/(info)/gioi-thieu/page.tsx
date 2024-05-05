@@ -14,21 +14,21 @@ const GioiThieu = () => {
         className="w-full h-auto"
       />
       <div className="p-12 px-5 flex pb-24 max-lg:flex-col lg:space-x-10 max-lg:space-y-10">
-        <div className="left-content space-y-5">
-          <h3 className="text-2xl  max-sm:text-lg font-bold text-center">
+        <div className="left-content space-y-3">
+          <h3 className="text-2xl  max-sm:text-base font-bold text-center">
             TẦM NHÌN VÀ SỨ MỆNH
           </h3>
           <div className="border-l-[3px] px-10 border-greenTheme">
             <p className="text-center">
-              <span className="text-greenTheme font-medium text-2xl max-sm:text-lg ">
+              <span className="text-greenTheme font-medium text-2xl max-sm:text-base ">
                 <i>“Mang đến không gian xanh”</i>
               </span>
             </p>
           </div>
         </div>
-        <div className="right-content lg:w-[90%] space-y-5">
-          <p className="text-2xl max-sm:text-lg">
-            <span className="text-2xl max-sm:text-lg font-bold">
+        <div className="right-content lg:w-[90%] space-y-3">
+          <p className="text-2xl max-sm:text-base">
+            <span className="text-2xl max-sm:text-base font-bold">
               Công ty Trần Lê
             </span>{" "}
             ra đời với mong muốn mang đến một không gian sống sạch sẽ, trong
@@ -36,8 +36,8 @@ const GioiThieu = () => {
             các dịch vụ vệ sinh văn phòng, chúng tôi còn hướng đến sự tiện nghi
             và thành công cho các công ty…
           </p>
-          <p className="text-2xl  max-sm:text-lg">
-            <span className="text-2xl max-sm:text-lg font-bold">
+          <p className="text-2xl  max-sm:text-base">
+            <span className="text-2xl max-sm:text-base font-bold">
               Công ty Trần Lê
             </span>{" "}
             với sứ mệnh nỗ lực từng ngày trong việc trở thành đơn vị cung cấp
@@ -48,13 +48,13 @@ const GioiThieu = () => {
       </div>
       {/* main service */}
       <section className="p-12 pb-24 px-5">
-        <h3 className="text-2xl uppercase text-center max-sm:text-lg font-bold">
+        <h3 className="text-2xl uppercase text-center max-sm:text-base font-bold">
           Các dịch vụ chính
         </h3>
         <div className="sevice-cards grid grid-cols-4 mt-10 max-lg:grid-cols-2 max-md:grid-cols-1 gap-10">
           {listService.map((item, index) => {
             return (
-              <div key={index} className="flex flex-col space-y-5 items-center">
+              <div key={index} className="flex flex-col space-y-3 items-center">
                 <Image
                   src={item.img}
                   alt="service-1"
@@ -62,7 +62,7 @@ const GioiThieu = () => {
                   height={100}
                   className="max-xl:w-[120px] max-md:w-[100px] max-sm:w-[80px]"
                 />
-                <div className="title space-y-5">
+                <div className="title space-y-3">
                   <h4 className="text-2xl  max-sm:text-xl font-bold text-center">
                     {item.title}
                   </h4>
@@ -76,9 +76,9 @@ const GioiThieu = () => {
         </div>
       </section>
       {/* content service */}
-      <section className="p-12 px-5 space-y-5 pb-24">
+      <section className="p-12 px-5 space-y-3 pb-24">
         <div className="title space-y-3">
-          <h3 className="font-bold text-xl max-sm:text-lg text-greenTheme uppercase">
+          <h3 className="font-bold text-xl max-sm:text-base text-greenTheme uppercase">
             NHỮNG CAM KẾT CỦA Công ty Trần Lê DÀNH CHO KHÁCH HÀNG
           </h3>
           <p className="text-xl  max-sm:text-base">
@@ -86,7 +86,7 @@ const GioiThieu = () => {
             các dịch vụ với những cam kết sau:
           </p>
         </div>
-        <div className="space-y-5">
+        <div className="space-y-3">
           <ul className="list-disc px-5">
             <li>
               <p className="text-xl max-sm:text-base">
@@ -101,7 +101,7 @@ const GioiThieu = () => {
           <p className="text-xl text-greenTheme max-sm:text-base">
             <i>Người giúp việc đáng tin cậy, được đào tạo bài bản</i>
           </p>
-          <ul className="text-xl  max-sm:text-base list-disc px-5 space-y-5">
+          <ul className="text-xl  max-sm:text-base list-disc px-5 space-y-3">
             <li>
               <p>
                 Đội ngũ nhân viên tư vấn và chăm sóc khách hàng giàu kinh

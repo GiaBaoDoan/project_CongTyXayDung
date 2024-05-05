@@ -26,9 +26,9 @@ const VeSinhLauKinh = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="content space-y-5">
+            <div className="content space-y-3">
               <div className="flex space-x-2 items-center">
-                <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
+                <h3 className="text-xl max-sm:text-base font-bold text-greenTheme">
                   Lợi ích khi thuê dịch vụ lau kính nhà cao tầng của Trần Lê
                 </h3>
               </div>
@@ -69,9 +69,9 @@ const VeSinhLauKinh = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="content space-y-5">
+            <div className="content space-y-3">
               <div className="flex space-x-2 items-center">
-                <h3 className="text-xl max-sm:text-xl font-bold text-greenTheme">
+                <h3 className="text-xl max-sm:text-base font-bold text-greenTheme">
                   Dịch vụ chuyên nghiệp
                 </h3>
               </div>
@@ -83,7 +83,7 @@ const VeSinhLauKinh = () => {
                 dịch vụ, quy trình thực hiện các công việc khi dọn dẹp nhà cho
                 khách hàng…
               </p>
-              <p className="font-bold text-xl max-sm:text-base">
+              <p className="font-bold text-xl text-greenTheme max-sm:text-base">
                 Đội ngũ giúp việc chuyên nghiệp, nhiệt tình
               </p>
               <p className="text-xl max-sm:text-base">
@@ -109,7 +109,7 @@ const VeSinhLauKinh = () => {
               Cam kết của Trần Lê về dịch vụ giúp việc hằng ngày
             </h3>
           </div>
-          <div className="space-y-5 mt-5">
+          <div className="space-y-3 mt-3">
             <p className="text-xl max-sm:text-base">
               Trần Lê cam kết cung cấp dịch vụ giúp việc hằng ngày chất lượng
             </p>
@@ -119,7 +119,7 @@ const VeSinhLauKinh = () => {
             </p>
           </div>
           <div>
-            <ul className="px-5 list-disc space-y-5 mt-5">
+            <ul className="px-5 list-disc space-y-3 mt-3">
               <li>
                 <p className="text-xl max-sm:text-base">
                   Cung cấp dịch vụ giúp việc nhà với chất lượng tốt nhất.

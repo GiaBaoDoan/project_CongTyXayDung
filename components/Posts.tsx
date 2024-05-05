@@ -19,16 +19,16 @@ const Posts = () => {
       <div className="join flex mt-5 justify-center">
         <button
           onClick={() => page > 1 && setPage(page - 1)}
-          className="join-item btn"
+          className="join-item btn max-sm:text-base"
         >
           «
         </button>
-        <button className="join-item btn">
+        <button className="join-item btn max-sm:text-base">
           Page {page}/{maxPage}
         </button>
         <button
           onClick={() => page < maxPage && setPage(page + 1)}
-          className="join-item btn"
+          className="join-item btn max-sm:text-base"
         >
           »
         </button>

@@ -15,7 +15,7 @@ const VeSinhVanPhong = () => {
       />
       <section className="px-5 py-10 pb-24">
         <div>
-          <p className="title text-xl max-md:text-xl max-ms:text-base text-greenTheme border-l-[3px] border-greenTheme pl-5">
+          <p className="title text-xl max-ms:text-base text-greenTheme border-l-[2px] border-greenTheme pl-5">
             <i>
               Ngày nay, cùng với sự phát triển kinh tế xã hội, đời sống vật chất
               lẫn tinh thần của con người ngày càng được nâng cao. Vì thế, nhu
@@ -31,8 +31,8 @@ const VeSinhVanPhong = () => {
             </i>
           </p>
         </div>
-        <div className="space-y-5 mt-10">
-          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
+        <div className="space-y-3 mt-10">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-base">
             Vì sao Quý khách nên chọn dịch vụ vệ sinh văn phòng của Trần Lê !?
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -40,7 +40,7 @@ const VeSinhVanPhong = () => {
             Quý khách một môi trường làm việc sạch, đẹp đến bất ngờ, cùng tìm
             hiểu những ưu điểm mà chúng tôi mang lại cho khách hàng.
           </p>
-          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-base">
             Chuyên nghiệp, tận tâm với khách hàng
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -50,7 +50,7 @@ const VeSinhVanPhong = () => {
             tình, giàu kinh nghiệm, chuyên nghiệp, tận tâm đảm bảo sẽ làm hài
             lòng những khách hàng khó tính nhất.
           </p>
-          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-base">
             Sử dụng công nghệ hàng đầu
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -69,7 +69,7 @@ const VeSinhVanPhong = () => {
             height={0}
             className="w-full h-auto"
           />
-          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-base">
             Văn phòng của Quý khách luôn sạch sẽ
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -78,7 +78,7 @@ const VeSinhVanPhong = () => {
             khuẩn. Giúp cho văn phòng của Khách hàng luôn sạch bóng và không có
             các vi khuẩn gây bệnh.
           </p>
-          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-base">
             Trần Lê chuyên nghiệp, uy tín, chất lượng
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -92,7 +92,7 @@ const VeSinhVanPhong = () => {
             sẽ mang đến cho Quý khách sự hài lòng về chất lượng
           </p>
 
-          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-base">
             Giá cả của các dịch vụ tại Trần Lê
           </h3>
           <p className="text-xl max-sm:text-base">
@@ -107,7 +107,7 @@ const VeSinhVanPhong = () => {
               giúp việc theo giờ….
             </span>
           </p>
-          <h3 className="text-greenTheme text-xl font-bold max-sm:text-lg">
+          <h3 className="text-greenTheme text-xl font-bold max-sm:text-base">
             Một số dịch vụ hiện có tại Trần Lê
           </h3>
           <p className="text-xl max-sm:text-base">

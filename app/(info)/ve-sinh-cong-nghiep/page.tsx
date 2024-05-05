@@ -36,10 +36,10 @@ const VeSinhCongNghiep = () => {
       <section className="px-5 py-10 pb-24">
         <div className="flex max-lg:flex-col lg:space-x-10 space-y-5 items-center">
           <div>
-            <h3 className="text-xl text-greenTheme max-sm:text-lg font-bold ">
+            <h3 className="text-xl text-greenTheme max-sm:text-base font-bold ">
               Dịch vụ vệ sinh công nghiệp uy tín
             </h3>
-            <p className="text-xl max-sm:text-lg mt-5">
+            <p className="text-xl max-sm:text-base mt-3">
               Trần Lê là địa chỉ chuyên cung cấp dịch vụ vệ sinh công nghiệp
               chuyên nghiệp, giá rẻ nhận được nhiều sự lựa chọn của khách hàng.
               Dịch vụ mang tới nhiều ưu điểm với đội ngũ nhân viên chuyên
@@ -76,10 +76,10 @@ const VeSinhCongNghiep = () => {
           className="px-5 py-20 space-y-5"
           style={{ backgroundColor: "rgb(246, 246, 247)" }}
         >
-          <h3 className="text-xl max-sm:text-lg text-greenTheme  font-bold">
+          <h3 className="text-xl max-sm:text-base text-greenTheme  font-bold">
             TẠI SAO PHẢI DÙNG DỊCH VỤ VỆ SINH CÔNG NGHIỆP?
           </h3>
-          <p className="text-xl max-sm:text-lg">
+          <p className="text-xl max-sm:text-base">
             Việc sử dụng dịch vụ vệ sinh công nghiệp là rất cần thiết, bởi dịch
             vụ mang lại rất nhiều lợi ích cho khách hàng, cho doanh nghiệp sử
             dụng như:
@@ -87,34 +87,34 @@ const VeSinhCongNghiep = () => {
           <div>
             <ul className="px-5 space-y-5 list-disc">
               <li>
-                <p className="text-xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-base">
                   Giúp không gian nhà xưởng được sạch sẽ hơn.
                 </p>
               </li>
               <li>
-                <p className="text-xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-base">
                   Thời gian vệ sinh nhanh chóng bởi nhân viên chuyên nghiệp,
                   trang thiết bị hiện đại.
                 </p>
               </li>
               <li>
-                <p className="text-xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-base">
                   Tiết kiệm được chi phí cho doanh nghiệp.
                 </p>
               </li>
               <li>
-                <p className="text-xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-base">
                   Mang lại hiệu quả làm việc cao hơn cho nhân viên.
                 </p>
               </li>
               <li>
-                <p className="text-xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-base">
                   Bảo vệ sức khỏe cho nhân viên, tạo không gian làm việc thoáng
                   mát.
                 </p>
               </li>
               <li>
-                <p className="text-xl max-sm:text-lg">
+                <p className="text-xl max-sm:text-base">
                   Đảm bảo an toàn cho người sử dụng bì những biện pháp vệ sinh
                   đều hiện đại và đảm bảo tiêu chuẩn.
                 </p>

@@ -14,7 +14,7 @@ const DetailPage = () => {
   }, []);
   return (
     <section className="py-10">
-      <div className="space-y-5">
+      <div className="space-y-3">
         <h3 className="text-xl max-sm:text-base">
           <span className="text-greenTheme font-medium">Tiêu đề bài viết</span>:{" "}
           {detailPost?.title}

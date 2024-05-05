@@ -18,9 +18,9 @@ const VeSinhDienLanh = () => {
       <section>
         <div className="">
           <div className={`flex gap-10 max-lg:flex-col flex-row-reverse mt-10`}>
-            <div className="content space-y-5">
+            <div className="content space-y-3">
               <div className="flex space-x-2 items-center">
-                <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
+                <h3 className="text-xl max-sm:text-base font-bold text-greenTheme">
                   Quy trình vệ sinh máy lạnh
                 </h3>
               </div>
@@ -60,9 +60,9 @@ const VeSinhDienLanh = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="content space-y-5">
+            <div className="content space-y-3">
               <div className="flex space-x-2 items-center">
-                <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
+                <h3 className="text-xl max-sm:text-base font-bold text-greenTheme">
                   Dịch vụ chuyên nghiệp
                 </h3>
               </div>
@@ -81,7 +81,7 @@ const VeSinhDienLanh = () => {
                 dài hạn sau khi vệ sinh, có nhiều chế độ ưu đãi dành cho khách
                 hàng cũ
               </p>
-              <h3 className="font-bold text-xl text-greenTheme max-sm:text-lg">
+              <h3 className="font-bold text-xl text-greenTheme max-sm:text-base">
                 Đội ngũ giúp việc chuyên nghiệp, nhiệt tình
               </h3>
               <p className="text-xl max-sm:text-base">
@@ -104,11 +104,11 @@ const VeSinhDienLanh = () => {
 
         <div className="pt-10">
           <div className="flex items-center space-x-2">
-            <h3 className="text-greenTheme text-xl max-sm:text-lg font-bold">
+            <h3 className="text-greenTheme text-xl max-sm:text-base font-bold">
               Cam kết của Trần Lê về dịch vụ giúp việc hằng ngày
             </h3>
           </div>
-          <div className="space-y-5 mt-5">
+          <div className="space-y-3 mt-3">
             <p className="text-xl max-sm:text-base">
               Trần Lê cam kết cung cấp dịch vụ giúp việc hằng ngày chất lượng
             </p>
@@ -118,7 +118,7 @@ const VeSinhDienLanh = () => {
             </p>
           </div>
           <div>
-            <ul className="px-5 list-disc space-y-5 mt-5">
+            <ul className="px-5 list-disc space-y-3 mt-3">
               <li>
                 <p className="text-xl max-sm:text-base">
                   Cung cấp dịch vụ giúp việc nhà với chất lượng tốt nhất.

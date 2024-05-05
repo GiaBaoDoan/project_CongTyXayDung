@@ -16,14 +16,14 @@ const VeSinhPinMatTroi = () => {
             height={500}
           />
         </div>
-        <div className="mt-10 flex space-x-10">
+        <div className="mt-10 flex space-y-3 max-lg:flex-col">
           <div className="flex-1">
             <div>
-              <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
+              <h3 className="text-xl max-sm:text-base font-bold text-greenTheme">
                 Các nguyên nhân khiến tấm Pin năng lượng mặt trời bị bẩn
               </h3>
               <br />
-              <p className="text-xl">
+              <p className="text-xl max-sm:text-base">
                 Do ô nhiễm trong không khí tại khu vực đông xe cộ qua lại hoặc
                 gần khu công nghiệp, khu chế xuất…v.v.
                 <br />
@@ -42,11 +42,11 @@ const VeSinhPinMatTroi = () => {
             <br />
             <br />
             <div className="">
-              <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
+              <h3 className="text-xl max-sm:text-base font-bold text-greenTheme">
                 Tại sao cần phải vệ sinh tấm Pin năng lượng mặt trời?
               </h3>
               <br />
-              <div className="text-xl">
+              <div className="text-xl max-sm:text-base">
                 Càng nhiều ánh sáng tiếp xúc với tấm pin năng lượng mặt trời,
                 thì càng nhiều điện năng được sinh ra và phần bụi bẩn bám phía
                 trên mặt kính của tấm Pin mặt trời là tác nhân chủ yếu gây giảm
@@ -61,21 +61,23 @@ const VeSinhPinMatTroi = () => {
               </div>
             </div>
           </div>
-          <Image
-            width={400}
-            height={300}
-            className="w-[800px] h-[500px]"
-            src={"/avt-ve-sinh-pin-mat-troi.webp"}
-            alt="anh-ve-sinh-pin-mat-troi"
-          />
+          <div>
+            <Image
+              width={400}
+              height={300}
+              className="w-auto h-auto max-lg:w-full"
+              src={"/avt-ve-sinh-pin-mat-troi.webp"}
+              alt="anh-ve-sinh-pin-mat-troi"
+            />
+          </div>
         </div>
         <div className="mt-10 space-x-10 flex">
           <div>
             <div>
-              <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme ">
+              <h3 className="text-xl max-sm:text-base font-bold text-greenTheme ">
                 Lợi ích của việc làm sạch tấm Pin năng lượng mặt trời
               </h3>
-              <ul className="text-xl list-disc px-5 mt-5 space-y-5">
+              <ul className="text-xl list-disc px-5 mt-3 max-sm:text-base space-y-3">
                 <li>
                   Tuổi thọ của hệ thống pin năng lượng mặt trời sẽ được kéo dài.
                 </li>
@@ -88,12 +90,12 @@ const VeSinhPinMatTroi = () => {
                 <li>Tăng hiệu quả về mặt đầu tư.</li>
               </ul>
             </div>
-            <div className="mt-5">
-              <h3 className="text-xl max-sm:text-lg font-bold text-greenTheme">
+            <div className="mt-3">
+              <h3 className="text-xl max-sm:text-base font-bold text-greenTheme">
                 Khi nào nên làm vệ sinh bề mặt tấm Pin
               </h3>
-              <div className="mt-5">
-                <p className="text-xl">
+              <div className="mt-3">
+                <p className="text-xl max-sm:text-base">
                   Tần suất vệ sinh/rửa hệ thống pin năng lượng mặt trời phụ
                   thuộc vào rất nhiều yếu tố, bao gồm các yếu tố cơ bản như có
                   gần đường giao thông hay không, có gần các khu vực sản xuất
@@ -101,7 +103,7 @@ const VeSinhPinMatTroi = () => {
                   vực rừng núi có nhiều chim chóc hay không..v.v.
                 </p>
                 <br />
-                <p className="text-xl">
+                <p className="text-xl max-sm:text-base">
                   Vệ sinh Trần Lê khuyến nghị khách hàng nên thực hiện vệ sinh
                   chùi rửa các tấm pin năng lượng mặt trời với tần suất khoảng
                   1-3 lần trong năm, tuỳ theo mức độ bám bẩn tại khu vực Dự án
@@ -124,7 +126,7 @@ const VeSinhPinMatTroi = () => {
           />
         </div>
         <div className="mt-10">
-          <p className="text-xl">
+          <p className="text-xl max-sm:text-base">
             <span className="font-bold">Trần Lê</span> cung cấp dịch vụ vệ sinh
             hệ thống pin năng lượng mặt trời đáp ứng các yêu cầu khắt khe về an
             toàn lao động, chất lượng hiệu quả công việc, tiến độ thi công, kỹ

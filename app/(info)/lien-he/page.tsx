@@ -10,9 +10,9 @@ const Contact = () => {
           Trần Lê{" "}
         </h2>
         <div className="space-y-5">
-          <h2 className="text-2xl font-bold max-sm:text-lg">
+          <h3 className="text-xl font-bold max-sm:text-base">
             Thông tin liên hệ
-          </h2>
+          </h3>
           <p className="text-xl max-sm:text-base font-semibold ">
             CÔNG TY TNHH DỊCH VỤ VỆ SINH CÔNG NGHIỆP TRẦN LÊ
           </p>
