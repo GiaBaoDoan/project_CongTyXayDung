@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Cong Ty Xay Dung",
+  title: "Công ty vệ sinh công nghiệp Trần Lê",
   description: "Tìm Kiếm Hợp Đồng Xây Dựng",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 import "./globals.css";
