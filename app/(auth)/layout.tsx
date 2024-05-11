@@ -10,10 +10,10 @@ export default function AuthLayout({
 }>) {
   const { user, loading } = userState();
 
-  useEffect(() => {
-    if (!user && !loading) {
-      _redirect("/");
-    }
-  }, [user, loading]);
+  // useEffect(() => {
+  //   if (!user && !loading) {
+  //     _redirect("/");
+  //   }
+  // }, [user, loading]);
   return <>{children}</>;
 }
