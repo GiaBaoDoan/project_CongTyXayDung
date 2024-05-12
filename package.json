@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.6",
+    "@tinymce/tinymce-react": "^5.0.1",
     "antd": "^5.16.1",
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",
@@ -18,9 +19,9 @@
     "react": "^18",
     "react-dom": "^18",
     "react-otp-input": "^3.1.1",
-    "react-quill": "^2.0.0",
     "react-toastify": "^10.0.5",
     "swiper": "^11.1.1",
+    "tinymce": "^7.1.0",
     "validator": "^13.11.0",
     "zustand": "^4.5.2"
   },

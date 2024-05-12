@@ -2,8 +2,7 @@
 import { _redirect } from "@/action";
 import { instance } from "@/config";
 import Image from "next/image";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import { Editor } from "@tinymce/tinymce-react";
 import { FormEvent, ReactNode, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import isURL from "validator/lib/isURL";
@@ -26,11 +25,10 @@ export default function TaoPost() {
   const [image, setImage] = useState<FileList | null>(null);
   const titleRef = useRef<null | HTMLInputElement>(null);
   const descRef = useRef<null | HTMLInputElement>(null);
-  const contentRef = useRef<null | HTMLTextAreaElement>(null);
+  const contentRef = useRef<any>();
   const imageRef = useRef<null | HTMLInputElement>(null);
   const keywordsRef = useRef<null | HTMLInputElement>(null);
   const linksRef = useRef<null | HTMLInputElement>(null);
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -45,12 +43,11 @@ export default function TaoPost() {
       const res = await instance.postForm("/post/create/", {
         title: titleRef.current?.value!,
         description: descRef.current?.value!,
-        content: content,
+        content: contentRef.current?.value!,
         keywords: keywords.map(({ content }) => content),
         links: links.map(({ content }) => content),
         image: image && Array.from(image),
       });
-
       if (res.data.code === 200) {
         toast.success("Tạo bài viết thành công");
         _redirect("/bai-viet");
@@ -61,7 +58,6 @@ export default function TaoPost() {
       console.error(error);
     }
   };
-  console.log(image && Array.from(image));
   return (
     <div className="w-full lg:px-10 px-5 py-16  gap-8 bg-white">
       <form onSubmit={handleSubmit}>
@@ -102,12 +98,26 @@ export default function TaoPost() {
               Nội dung của bài đăng? <span className="text-red-400">*</span>
             </span>
           </div>
-          <ReactQuill
-            className="rounded max-h-[150px]"
-            theme="snow"
-            placeholder="Nhập nội dung bài đăng"
+          <Editor
+            apiKey="h4ht8ma96k9nrapz5dt003828hufgl7qqvgchqxwqczok9ft"
             value={content}
-            onChange={setContent}
+            onInit={(_evt, editor) => (contentRef.current = editor)}
+            init={{
+              plugins:
+                "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown",
+              toolbar:
+                "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+              tinycomments_mode: "embedded",
+              tinycomments_author: "Author name",
+              mergetags_list: [
+                { value: "First.Name", title: "First Name" },
+                { value: "Email", title: "Email" },
+              ],
+              ai_request: (request: any, respondWith: any) =>
+                respondWith.string(() =>
+                  Promise.reject("See docs to implement AI Assistant"),
+                ),
+            }}
           />
         </label>
         <label className="form-control w-full mt-10">
@@ -120,7 +130,7 @@ export default function TaoPost() {
             onChange={(e) => setImage(e.target.files)}
             ref={imageRef}
             type="file"
-            accept="image/png, image/jpeg,image/webp"
+            accept="image/png,image/jpeg,image/webp"
             multiple
             placeholder="Hình ảnh"
             className="input bg-white input-bordered w-full"
@@ -133,7 +143,7 @@ export default function TaoPost() {
                 <figure className="py-5">
                   <Image
                     src={URL.createObjectURL(item)}
-                    alt={`${title} image`}
+                    alt={`anh-bai-viet`}
                     width={0}
                     height={0}
                     sizes="100"
