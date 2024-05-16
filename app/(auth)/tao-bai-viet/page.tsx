@@ -19,7 +19,7 @@ export default function TaoPost() {
   const [content, setContent] = useState<string>();
   const [keywords, setKeywords] = useState<Array<TArray>>([]);
   const [links, setLinks] = useState<Array<TArray>>([]);
-  const [image, setImage] = useState<FileList | null>(null);
+  const [images, setImages] = useState<File[]>([]);
   const titleRef = useRef<null | HTMLInputElement>(null);
   const descRef = useRef<null | HTMLInputElement>(null);
   const contentRef = useRef<any>();
@@ -28,30 +28,35 @@ export default function TaoPost() {
   const linksRef = useRef<null | HTMLInputElement>(null);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!image) {
+    if (!images) {
       return toast.error("Vui lòng cung cấp hình ảnh");
     }
     if (!title || !desc || !content || !keywords.length || !links.length) {
       return toast.error("Vui lòng nhập đầy đủ những trường bắt buộc");
     }
+
+    console.log(
+      keywords.map(({ content }) => content),
+      links.map(({ content }) => content),
+    );
     try {
-      const res = await instance.postForm("/post/", {
-        title: "cin chaof cacs banj",
-        description: "rat vui vi gap banj",
-        content: "helo cacs banj",
-        keywords: keywords.map(({ content }) => content),
-        links: links.map(({ content }) => content),
-        images: imageRef?.current?.files,
-      });
+      const formData = new FormData();
+      formData.set("title", title);
+      formData.set("description", desc);
+      formData.set("content", content);
+      keywords.forEach((item) => formData.append("keywords", item.content));
+      links.forEach((item) => formData.append("links", item.content));
+      images.forEach((item) => formData.append("images", item, item.name));
+
+      const res = await instance.postForm("/post", formData);
       if (res.status === 200) {
         toast.success("Tạo bài viết thành công");
-        _redirect("/bai-viet");
+        _redirect(`/bai-viet/${res.data.id}`);
       }
     } catch (err: any) {
       toast.error(err.response.data);
     }
   };
-  console.log(imageRef?.current?.files);
   return (
     <div className="w-full lg:px-10 px-5 py-16  gap-8 bg-white">
       <form onSubmit={handleSubmit}>
@@ -127,18 +132,25 @@ export default function TaoPost() {
             </span>
           </div>
           <input
-            onChange={(e) => setImage(e.target.files)}
+            onChange={(e) => {
+              const files = [];
+              if (!e.target.files) return;
+              for (let i = 0; i < e.target.files.length; i++) {
+                files.push(e.target.files[i]);
+              }
+              setImages(files);
+            }}
             ref={imageRef}
             type="file"
             accept="image/png,image/jpeg,image/webp"
-            multiple
+            multiple={true}
             placeholder="Hình ảnh"
             className="input bg-white input-bordered w-full"
           />
         </label>
         <div className="space-y-5">
-          {image &&
-            Array.from(image)?.map((item) => {
+          {images &&
+            images.map((item) => {
               return (
                 <figure className="py-5">
                   <Image
