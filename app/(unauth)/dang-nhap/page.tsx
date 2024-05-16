@@ -12,38 +12,18 @@ const DangNhap = () => {
     if (!email || !password) {
       return toast.error("Vui lòng nhập đầy đủ các trường");
     }
-    const res = await instance.post("/account/signin/", {
-      email,
-      password,
-    });
-    switch (res.data.code) {
-      case 200:
+    try {
+      const res = await instance.post("/account/signin/", {
+        email,
+        password,
+      });
+      if (res.status === 200) {
         toast.success("Đăng nhập thành công");
-        _redirect("/");
-        break;
-      case 404:
-        toast.error("Email không hợp lệ");
-        break;
-      case 403:
-        if (res.data.msg === "User not verify") {
-          toast.info("Tài khoản chưa xác thực");
-          localStorage.setItem("uid", res.data?.data?.id);
-          const _res = await instance.post("/account/reverify/", {
-            id: res.data?.data?.id,
-          });
-          if (_res.data.code === 200) {
-            toast.success("Mã của bạn đã được gửi lại");
-            return _redirect("/xac-minh");
-          } else {
-            return toast.error("Đã xảy ra lỗi bất định");
-          }
-        } else {
-          toast.error("Sai mật khẩu!");
-        }
-        break;
-      default:
-        toast.error("Xảy ra lỗi bất định!");
-        break;
+        return _redirect("/");
+      }
+    } catch (err: any) {
+      console.log(err);
+      toast.error(err.response.data);
     }
   };
 
@@ -72,6 +52,7 @@ const DangNhap = () => {
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 type="text"
+                name="email"
                 className="grow"
                 placeholder="Email"
               />
@@ -93,6 +74,7 @@ const DangNhap = () => {
                 placeholder="*******"
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
+                name="password"
                 className="grow"
               />
             </label>
@@ -123,7 +105,7 @@ const DangNhap = () => {
           </span>
         </button>
         <div className="space-y-2 mt-5">
-          {/* <div className="text-xl max-sm:text-base text-center">
+          <div className="text-xl max-sm:text-base text-center">
             <p className=" ">
               Quên mật khẩu?{" "}
               <Link
@@ -133,8 +115,8 @@ const DangNhap = () => {
                 Lấy lại mật khẩu
               </Link>
             </p>
-          </div> */}
-          {/* <div className="text-center text-xl max-sm:text-base">
+          </div>
+          <div className="text-center text-xl max-sm:text-base">
             <p>
               Tạo tài khoản mới?{" "}
               <Link
@@ -144,7 +126,7 @@ const DangNhap = () => {
                 Đăng ký
               </Link>
             </p>
-          </div> */}
+          </div>
         </div>
       </form>
     </section>

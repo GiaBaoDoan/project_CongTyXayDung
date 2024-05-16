@@ -1,5 +1,4 @@
 "use client";
-import { Form, Input } from "antd";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
@@ -15,17 +14,19 @@ const DangKy = () => {
     if (!name || !password || !email) {
       return toast.error("Vui lòng nhập đầy đủ thông tin");
     }
-    const res = await instance.post("/account/signup/", {
-      name,
-      email,
-      password,
-    });
-    if (res.data.code === 200) {
-      toast.success("Đăng kí thành công");
-      localStorage.setItem("uid", res.data.data.id);
-      _redirect("/xac-minh");
-    } else if (res.data.code === 400) {
-      return toast.error("email đã được đăng kí !!");
+    try {
+      const res = await instance.post("/account/signup/", {
+        email,
+        name,
+        password,
+      });
+      if (res.status === 200) {
+        toast.success("Đăng kí thành công");
+        localStorage.setItem("uid", res.data.id);
+        _redirect("/xac-minh");
+      }
+    } catch (err: any) {
+      toast.error(err.response.data);
     }
   };
 

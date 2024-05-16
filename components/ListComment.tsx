@@ -1,5 +1,5 @@
 import { instance } from "@/config";
-import { commentStore, userState } from "@/store";
+import { commentStore, postState, userState } from "@/store";
 import { CommentType } from "@/types";
 import { format, parseISO } from "date-fns";
 import { useParams } from "next/navigation";
@@ -15,30 +15,33 @@ const ListComment = () => {
     }));
   };
   const params = useParams();
-  const { comments, maxCount, setCommentInpost } = commentStore();
   const [content, setContent] = useState<string>("");
+  const { detailPost, setDetailPost } = postState();
   const [idEdit, setIdEdit] = useState("");
   const [page, setPage] = useState(1);
-  const maxPage = Math.ceil(maxCount / 3);
+  const maxPage =
+    (detailPost && Math.ceil(detailPost?.comment?.length / 3)) || 0;
   const deleteComment = async (id: string) => {
-    const res = await instance.delete(`/comment/delete/?id=${id}`);
-    if (res.data.code === 200) {
-      setCommentInpost(params.id, page);
+    const res = await instance.delete(`/comment?id=${id}`);
+    if (res.status === 200) {
+      setDetailPost(params.id);
       return toast.success("Xóa thành công");
     }
   };
+  const [readMore, setReadMore] = useState(3);
   const editComment = async (cmtId: string) => {
     if (!content) {
       return toast.error("Bạn cần nhập nội dung");
     }
-    const res = await instance.put("/comment/edit", {
+    const res = await instance.put("/comment/", {
       cmtId,
       postId: params.id,
       content,
     });
-    if (res.data.code === 200) {
-      setCommentInpost(params.id, page);
+    if (res.status === 200) {
+      setDetailPost(params.id);
       setIdEdit("");
+      setContent("");
       return toast.success("Cập nhật thành công");
     }
   };
@@ -49,18 +52,19 @@ const ListComment = () => {
     return text;
   };
   useEffect(() => {
-    setCommentInpost(params.id, page);
+    setDetailPost(params.id);
   }, [page, params.id]);
   return (
     <section className="py-10">
-      {comments.length > 0 && (
+      <div>
+        <h3 className="font-bold text-xl max-sm:text-base">
+          Các ý kiến phản hồi
+        </h3>
         <div>
-          <h3 className="font-bold text-xl max-sm:text-base">
-            Các ý kiến phản hồi
-          </h3>
-          <div>
-            <div className={`max-sm:p-2 p-5 mt-5`}>
-              {comments?.map((item: CommentType, index) => {
+          <div className={`max-sm:p-2 p-5 mt-5`}>
+            {detailPost?.comment
+              .slice(0, readMore)
+              .map((item: CommentType, index) => {
                 return (
                   <div key={index}>
                     <div className="flex justify-between items-center">
@@ -156,27 +160,29 @@ const ListComment = () => {
                   </div>
                 );
               })}
-            </div>
-            <div className="join flex justify-center">
-              <button
-                onClick={() => page > 1 && setPage(page - 1)}
-                className="join-item btn"
-              >
-                «
-              </button>
-              <button className="join-item btn">
-                Page {page}/{maxPage}
-              </button>
-              <button
-                onClick={() => page < maxPage && setPage(page + 1)}
-                className="join-item btn"
-              >
-                »
-              </button>
-            </div>
           </div>
+          {detailPost && detailPost?.comment.length > 3 && (
+            <div className="flex justify-center space-x-4 items-center">
+              <button
+                onClick={() =>
+                  detailPost &&
+                  readMore < detailPost?.comment?.length &&
+                  setReadMore(readMore + 3)
+                }
+                className="bg-greenTheme rounded p-3 max-sm:text-base text-white"
+              >
+                Xem thêm
+              </button>
+              <button
+                onClick={() => setReadMore(3)}
+                className="bg-greenTheme rounded max-sm:text-base p-3 text-white"
+              >
+                Thu gon
+              </button>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </section>
   );
 };

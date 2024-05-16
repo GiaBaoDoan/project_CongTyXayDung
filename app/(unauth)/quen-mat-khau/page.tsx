@@ -1,16 +1,7 @@
 "use client";
 import { _redirect } from "@/action";
 import { instance } from "@/config";
-import { Form, Input } from "antd";
-import React, {
-  ChangeEvent,
-  FormEvent,
-  FormEventHandler,
-  MouseEvent,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { MouseEvent, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
@@ -18,22 +9,22 @@ const ForgotPassword = () => {
   const [otp, setOtp] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [count, setCount] = useState<number>(0);
-
   const modelRef = useRef<null | HTMLDialogElement>(null);
   const submitRef = useRef<null | HTMLButtonElement>(null);
-
   const countRef = useRef<number>(0);
 
   const handleSendOtp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(email);
-    const res = await instance.post("/account/forgotCode/", { email });
-    if (res.data.code == 200) {
-      toast.success("Mã xác minh đã được gửi tới email của bạn");
-      modelRef.current?.showModal();
-      return;
-    } else if (res.data.code === 404) {
-      return toast.error("Không tìm thấy tài khoản");
+    try {
+      const res = await instance.get(
+        `/account/recoveryPassword?email=${email}`,
+      );
+      if (res.status === 200) {
+        toast.success("Mã xác minh đã được gửi tới email của bạn");
+        modelRef.current?.showModal();
+      }
+    } catch (err: any) {
+      toast.error(err.response.data);
     }
   };
 
@@ -54,31 +45,37 @@ const ForgotPassword = () => {
 
   const resendCode = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const res = await instance.post("/account/forgotCode/", {
-      email,
-    });
-    countDown(true);
-    if (res.data.code === 200) {
-      return toast.success("Mã của bạn đã được gửi lại");
+    try {
+      const res = await instance.get(
+        `/account/recoveryPassword?email=${email}`,
+      );
+      if (res.status === 200) {
+        countDown(true);
+        toast.success("Mã của bạn đã được gửi lại");
+      }
+    } catch (err: any) {
+      toast.error(err.reposne.data);
     }
   };
 
   const verifyCode = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+
     if (!email || !otp || !password) {
       return toast.error("Vui lòng nhập đầy đủ các trường");
     }
-    const res = await instance.post("/account/verifyForgotCode/", {
-      email,
-      code: otp,
-      password,
-    });
-
-    if (res.data.code === 200) {
-      toast.success("Đổi mật khẩu thành công");
-      _redirect("/dang-nhap");
-    } else {
-      return toast.error("Sai mã xác minh");
+    try {
+      const res = await instance.post("/account/recoveryPassword/", {
+        email,
+        code: otp,
+        password,
+      });
+      if (res.status === 200) {
+        toast.success("Đổi mật khẩu thành công");
+        _redirect("/dang-nhap");
+      }
+    } catch (err: any) {
+      toast.error(err.response.data);
     }
   };
 
@@ -114,7 +111,7 @@ const ForgotPassword = () => {
           <input
             type="text"
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Type here"
+            placeholder="Email"
             className="input input-bordered w-full"
           />
           <button

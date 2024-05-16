@@ -1,10 +1,7 @@
 "use client";
-import CardPost from "@/components/CardPost";
 import Posts from "@/components/Posts";
 import { phoneNumber } from "@/constants";
 import { postState } from "@/store";
-import { PostType } from "@/types";
-import Link from "next/link";
 import React, { useEffect } from "react";
 
 const CacBaiViet = () => {
@@ -12,6 +9,7 @@ const CacBaiViet = () => {
   useEffect(() => {
     setPost(1);
   }, []);
+
   return (
     <section className="py-10 px-5">
       <div className="space-y-3 w-full">
@@ -69,7 +67,7 @@ const CacBaiViet = () => {
           </span>
         </Link> */}
       </div>
-      <Posts />
+      {Posts.length > 0 && <Posts />}
       <br />
       <hr />
       <div className="text-xl max-sm:text-base space-y-3 py-10 ">

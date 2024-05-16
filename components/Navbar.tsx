@@ -33,7 +33,7 @@ const Navbar = () => {
               <div className="flex max-lg:hidden">
                 <ul className="flex space-x-2">
                   <li className="border-r border">
-                    <a href="mailto:info.vesinhcongnghiep@gmail.com">
+                    <a href={email}>
                       <span className="flex space-x-2 items-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

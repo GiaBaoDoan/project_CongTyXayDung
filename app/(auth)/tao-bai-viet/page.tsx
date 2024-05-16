@@ -12,10 +12,7 @@ type TArray = {
 };
 let nextKeywordsId = 0,
   nextLinksId = 0;
-const getText = (html: string) => {
-  const doc = new DOMParser().parseFromString(html, "text/html");
-  return doc.body.textContent;
-};
+
 export default function TaoPost() {
   const [title, setTitle] = useState<string>();
   const [desc, setDesc] = useState<string>();
@@ -31,33 +28,30 @@ export default function TaoPost() {
   const linksRef = useRef<null | HTMLInputElement>(null);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (!image) {
       return toast.error("Vui lòng cung cấp hình ảnh");
     }
     if (!title || !desc || !content || !keywords.length || !links.length) {
       return toast.error("Vui lòng nhập đầy đủ những trường bắt buộc");
     }
-
     try {
-      const res = await instance.postForm("/post/create/", {
-        title: titleRef.current?.value!,
-        description: descRef.current?.value!,
-        content: contentRef.current?.value!,
+      const res = await instance.postForm("/post/", {
+        title: "cin chaof cacs banj",
+        description: "rat vui vi gap banj",
+        content: "helo cacs banj",
         keywords: keywords.map(({ content }) => content),
         links: links.map(({ content }) => content),
-        image: image && Array.from(image),
+        images: imageRef?.current?.files,
       });
-      if (res.data.code === 200) {
+      if (res.status === 200) {
         toast.success("Tạo bài viết thành công");
         _redirect("/bai-viet");
-      } else {
-        return toast.error("Đã xảy ra lỗi khi đăng bài");
       }
-    } catch (error) {
-      console.error(error);
+    } catch (err: any) {
+      toast.error(err.response.data);
     }
   };
+  console.log(imageRef?.current?.files);
   return (
     <div className="w-full lg:px-10 px-5 py-16  gap-8 bg-white">
       <form onSubmit={handleSubmit}>
@@ -98,7 +92,13 @@ export default function TaoPost() {
               Nội dung của bài đăng? <span className="text-red-400">*</span>
             </span>
           </div>
-          <Editor
+          <textarea
+            onChange={(e) => setContent(e.target.value)}
+            ref={contentRef}
+            name=""
+            id=""
+          ></textarea>
+          {/* <Editor
             apiKey="h4ht8ma96k9nrapz5dt003828hufgl7qqvgchqxwqczok9ft"
             value={content}
             onInit={(_evt, editor) => (contentRef.current = editor)}
@@ -118,7 +118,7 @@ export default function TaoPost() {
                   Promise.reject("See docs to implement AI Assistant"),
                 ),
             }}
-          />
+          /> */}
         </label>
         <label className="form-control w-full mt-10">
           <div className="label">

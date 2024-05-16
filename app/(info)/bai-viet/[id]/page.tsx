@@ -11,7 +11,11 @@ const DetailPage = () => {
   const { detailPost, setDetailPost } = postState();
   useEffect(() => {
     setDetailPost(params?.id);
-  }, []);
+  }, [params?.id]);
+  const getText = (html: string) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent;
+  };
   return (
     <section className="py-10">
       <div className="space-y-3">
@@ -23,23 +27,30 @@ const DetailPage = () => {
           <span className="font-medium text-greenTheme"> Mô tả bài đăng</span>:{" "}
           {detailPost?.description}
         </p>
-        <Image
-          alt="anh-bai-viet"
-          width={300}
-          height={150}
-          className="w-[800px] rounded-md"
-          src={baseUrlImage(detailPost?.image)}
-        />
+        {detailPost?.images.map((image) => {
+          return (
+            <Image
+              alt="anh-bai-viet"
+              width={300}
+              height={150}
+              className="w-[800px] rounded-md"
+              src={baseUrlImage(image)}
+            />
+          );
+        })}
+
         <p className="font-medium text-greenTheme text-xl max-sm:text-base">
           Nội dung bài đăng:
         </p>
-        <p className="text-xl max-sm:text-base">{detailPost?.content}</p>
+        <p className="text-xl max-sm:text-base">
+          {detailPost?.content && getText(detailPost?.content)}
+        </p>
 
         <div className="space-y-2">
           <p className="text-xl text-greenTheme font-medium max-sm:text-base">
             Các từ khóa liên quan:
           </p>
-          {detailPost?.keywords.map((keyword: string) => {
+          {detailPost?.keywords?.map((keyword: string) => {
             return (
               <ul className="text-xl max-sm:text-base px-5 list-disc">
                 <li>
@@ -53,7 +64,7 @@ const DetailPage = () => {
           <p className="text-xl text-greenTheme font-medium max-sm:text-base">
             Các nguồn kham khảo:
           </p>
-          {detailPost?.links.map((link: string) => {
+          {detailPost?.links?.map((link: string) => {
             return (
               <ul className="list-disc px-5">
                 <li>

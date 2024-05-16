@@ -29,9 +29,9 @@ export const userState = create<IUserState>((set) => ({
   user: null,
   loading: false,
   setUser: async () => {
-    const res = await instance.get("/account/");
-    if (res.data.code === 200) {
-      set({ user: res.data.data });
+    const res = await instance.get(`/account/@me`);
+    if (res.status === 200) {
+      set({ user: res.data });
     }
     set({ loading: true });
   },
@@ -47,15 +47,20 @@ export const postState = create<postsStateProps>((set) => ({
     maxCount : 4,
     detailPost : null,
      setPost : async (page : number) => {
-      const res = await instance.get(`/post?count=4&page=${page}`);
-      if (res.data.code === 200) {
+      try {
+      const res = await instance.get(`/post?count=1&page=${page}`);
+      if (res.status === 200) {
         set({ posts: res.data.data });
       }
+      }
+      catch(err:any) {
+        console.log(err.response.data)
+      } 
     },
     setDetailPost : async (id:any) => {
-      const res = await instance.get(`/post?id=${id}`);
-      if (res.data.code  ===200) {
-        set({detailPost : res.data.data})
+      const res = await instance.get(`/post/${id}`);
+      if (res.status === 200) {
+        set({detailPost : res.data})
       }
     }
  
@@ -65,9 +70,9 @@ export const commentStore = create<commentsStateProps>((set) =>({
   maxCount : 0,
   setCommentInpost : async(postId : any,page ?:number) => {
     const res = await instance.get(`/comment?postId=${postId}&count=3&page=${page}`);
-    if (res.data.code === 200) {
-      set({comments : res.data.data })
-      set({maxCount : res.data.count})
+    if (res.status === 200) {
+      set({comments : res.data })
+      // set({maxCount : res.data})
     }
   },
 }))

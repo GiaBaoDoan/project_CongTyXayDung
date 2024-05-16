@@ -49,6 +49,6 @@ export type PostType  = {
   createAt:    string;
   updateAt:    string;
   comment:     CommentType[];
-  image:       string;
+  images:       [string];
   author:      Author;
 } 

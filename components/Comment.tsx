@@ -1,27 +1,30 @@
 "use client";
 import { instance } from "@/config";
-import { commentStore } from "@/store";
+import { postState } from "@/store";
 import { useParams } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
-
 const Comment = () => {
   const params = useParams();
-  const { setCommentInpost } = commentStore();
   const [content, setContent] = useState<string>("");
+  const { setDetailPost } = postState();
   const postComment = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!content) {
       return toast.error("Bạn cần nhập nội dung");
     }
-    const res = await instance.post("/comment/create/", {
-      postId: params.id,
-      content,
-    });
-    if (res.data.code === 200) {
-      setCommentInpost(params.id, 1);
-      setContent("");
-      return toast.success("Đã thêm một bình luận vào bài viết");
+    try {
+      const res = await instance.post("/comment/", {
+        postId: params.id,
+        content,
+      });
+      if (res.status === 200) {
+        setDetailPost(params.id);
+        setContent("");
+        return toast.success("Đã thêm một bình luận vào bài viết");
+      }
+    } catch (err: any) {
+      toast.error(err.response.data);
     }
   };
   return (

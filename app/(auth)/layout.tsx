@@ -9,7 +9,6 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   const { user, loading } = userState();
-
   // useEffect(() => {
   //   if (!user && !loading) {
   //     _redirect("/");

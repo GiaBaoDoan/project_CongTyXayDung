@@ -2,7 +2,6 @@
 import { _redirect } from "@/action";
 import { instance } from "@/config";
 import { userState } from "@/store";
-import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { isStrongPassword } from "validator";
@@ -37,20 +36,16 @@ const ChangePassword = () => {
         oldPassword: oldPass,
         newPassword: newPass,
       });
-      if (res.data.code === 200) {
+      if (res.status === 200) {
         toast.success("Đổi mật khẩu thành công");
         setUser();
         if (oldPassRef.current?.value && newPassRef.current?.value) {
           oldPassRef.current.value = "";
           newPassRef.current.value = "";
         }
-      } else if (res.data.code === 401) {
-        return toast.error("Sai mật khẩu");
-      } else {
-        return toast.error("Đã xảy ra lỗi không xác định");
       }
-    } catch (error) {
-      console.error(error);
+    } catch (error: any) {
+      toast.error(error.response.data);
     }
   };
   return (
@@ -114,15 +109,17 @@ const ChangeName = () => {
     if (!nameRef?.current?.value) {
       return toast.error("Bạn cần nhập tên mới");
     }
-    const res = await instance.put(`/account/changeName/`, {
-      name: nameRef?.current?.value,
-    });
-    if (res.data.code === 200) {
-      setUser();
-      nameRef.current.value = "";
-      toast.success("Cập nhật tên thành công!!");
-    } else {
-      return toast.error("Đã xảy ra lỗi trong quá trình cập nhập");
+    try {
+      const res = await instance.put(`/account/changeName/`, {
+        name: nameRef?.current?.value,
+      });
+      if (res.status === 200) {
+        toast.success("Cập nhật tên thành công!!");
+        setUser();
+        nameRef.current.value = "";
+      }
+    } catch (err: any) {
+      toast.error(err.response.data);
     }
   };
   return (
@@ -244,25 +241,6 @@ const ThongTinCaNhan = () => {
               <path d="m9 12 2 2 4-4" />
             </svg>
             <span>Tài khoản xác thực</span>
-          </p>
-          <p className="text-xl max-sm:text-base flex items-center space-x-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              color="white"
-              viewBox="0 0 24 24"
-              fill="#27a449"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-badge-check"
-            >
-              <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
-              <path d="m9 12 2 2 4-4" />
-            </svg>
-            <span>Tài khoản quản trị viên</span>
           </p>
           <div role="tablist" className="tabs tabs-lifted pr-5">
             <input
