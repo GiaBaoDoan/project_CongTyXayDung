@@ -39,16 +39,21 @@ export type Author  ={
   name: string;
   id  : string,
 }
-export type PostType  = {
+export interface PostType {
+  count: number;
+  data:  PostData[];
+}
+
+export interface PostData {
   id:          string;
   title:       string;
   description: string;
   content:     string;
   keywords:    string[];
   links:       string[];
-  createAt:    string;
-  updateAt:    string;
-  comment:     CommentType[];
-  images:       [string];
+  createAt:    Date;
+  updateAt:    Date;
+  comment:     Comment[];
+  images:      string[];
   author:      Author;
-} 
+}

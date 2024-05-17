@@ -14,8 +14,10 @@ const DetailPage = () => {
   }, [params?.id]);
   const getText = (html: string) => {
     const doc = new DOMParser().parseFromString(html, "text/html");
+    console.log(doc.body.children[0]);
     return doc.body.textContent;
   };
+  console.log(detailPost?.content);
   return (
     <section className="py-10">
       <div className="space-y-3">
@@ -27,7 +29,7 @@ const DetailPage = () => {
           <span className="font-medium text-greenTheme"> Mô tả bài đăng</span>:{" "}
           {detailPost?.description}
         </p>
-        {detailPost?.images.map((image) => {
+        {detailPost?.images.map((image: any) => {
           return (
             <Image
               alt="anh-bai-viet"
@@ -42,9 +44,12 @@ const DetailPage = () => {
         <p className="font-medium text-greenTheme text-xl max-sm:text-base">
           Nội dung bài đăng:
         </p>
-        <p className="text-xl max-sm:text-base">
-          {detailPost?.content && getText(detailPost?.content)}
-        </p>
+        {detailPost && (
+          <div dangerouslySetInnerHTML={{ __html: detailPost?.content }} />
+        )}
+
+        {/* <p className="text-xl max-sm:text-base">
+        </p> */}
 
         <div className="space-y-2">
           <p className="text-xl text-greenTheme font-medium max-sm:text-base">

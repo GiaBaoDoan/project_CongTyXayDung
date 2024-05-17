@@ -3,17 +3,20 @@ import { _redirect } from "@/action";
 import { instance } from "@/config";
 import Image from "next/image";
 import { Editor } from "@tinymce/tinymce-react";
-import { FormEvent, ReactNode, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import isURL from "validator/lib/isURL";
+import { postState } from "@/store";
+import { useParams } from "next/navigation";
 type TArray = {
   id: number;
   content: string;
 };
 let nextKeywordsId = 0,
   nextLinksId = 0;
-
-export default function TaoPost() {
+export default function SuaBaiViet() {
+  const { detailPost, setDetailPost } = postState();
+  const params = useParams();
   const [title, setTitle] = useState<string>();
   const [desc, setDesc] = useState<string>();
   const [content, setContent] = useState<string>();
@@ -42,6 +45,7 @@ export default function TaoPost() {
     }
     try {
       const formData = new FormData();
+      // formData.set("id", "clvs8hl2m0000uddtd6bywjjo");
       formData.set("title", title);
       formData.set("description", desc);
       formData.set("content", contentRef.current.getContent());
@@ -50,18 +54,21 @@ export default function TaoPost() {
       images.forEach((item) => formData.append("images", item, item.name));
       const res = await instance.postForm("/post/", formData);
       if (res.status === 200) {
-        toast.success("Tạo bài viết thành công");
+        toast.success("Cập nhật thành công");
         _redirect(`/bai-viet/${res.data.id}`);
       }
     } catch (err: any) {
       toast.error(err.response.data);
     }
   };
+  useEffect(() => {
+    setDetailPost(params.id);
+  }, [params.id]);
   return (
     <div className="w-full lg:px-10 px-5 py-16  gap-8 bg-white">
       <form onSubmit={handleSubmit}>
         <div className="text-center text-2xl max-sm:text-lg text-black/90 font-semibold">
-          Tạo bài đăng mới
+          Chỉnh sửa bài viết
         </div>
         <label className="form-control w-full">
           <div className="label">
@@ -72,6 +79,7 @@ export default function TaoPost() {
           <input
             onChange={() => setTitle(titleRef.current?.value!)}
             ref={titleRef}
+            // value={title?.length ? title : detailPost?.title}
             type="text"
             placeholder="Tiêu đề"
             className="input bg-white input-bordered w-full"
@@ -86,6 +94,7 @@ export default function TaoPost() {
           <input
             onChange={() => setDesc(descRef.current?.value!)}
             ref={descRef}
+            // value={desc?.length ? desc : detailPost?.desc}
             type="text"
             placeholder="Mô tả"
             className="input bg-white input-bordered w-full"
@@ -199,7 +208,7 @@ export default function TaoPost() {
               </button>
             </div>
             <ul className="menu bg-white mt-3 w-full rounded-box divide-y-[1px] divide-black/20">
-              {keywords.map(({ id, content }, i) => {
+              {keywords?.map(({ id, content }, i) => {
                 return (
                   <li key={i} className="flex flex-row gap-1 py-1">
                     <span className="flex-1">{content}</span>
@@ -260,7 +269,7 @@ export default function TaoPost() {
               </button>
             </div>
             <ul className="menu bg-white mt-3 w-full rounded-box divide-y-[1px] divide-black/20">
-              {links.map(({ id, content }, i) => {
+              {links?.map(({ id, content }, i) => {
                 return (
                   <li key={i} className="flex flex-row gap-1 py-1">
                     <span className="flex-1">{content}</span>
@@ -286,7 +295,7 @@ export default function TaoPost() {
           type="submit"
           className="btn bg-greenTheme px-3 max-sm:text-base text-white rounded-lg"
         >
-          Đăng bài
+          Cap Nhat
         </button>
       </form>
     </div>

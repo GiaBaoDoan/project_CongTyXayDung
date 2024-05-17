@@ -62,104 +62,102 @@ const ListComment = () => {
         </h3>
         <div>
           <div className={`max-sm:p-2 p-5 mt-5`}>
-            {detailPost?.comment
-              .slice(0, readMore)
-              .map((item: CommentType, index) => {
-                return (
-                  <div key={index}>
-                    <div className="flex justify-between items-center">
-                      <div className="flex space-x-4 items-start flex-1">
-                        <p className="capitalize w-[50px] h-[50px] bg-slate-200  items-center p-3 rounded-full cursor-pointer transition-all text-[#272727 ] text-xl  font-bold">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="lucide lucide-user"
-                          >
-                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                            <circle cx="12" cy="7" r="4" />
-                          </svg>
-                        </p>
-                        <div className="space-y-3 flex-1">
-                          <p className="text-xl max-sm:text-base flex justify-between">
-                            <span>{item?.author.name}</span>
-                            {!idEdit && (
-                              <div
-                                className={`action space-x-2 ${item?.author.id === user?.id ? "" : "hidden"}`}
+            {detailPost?.comment.slice(0, readMore).map((item: CommentType) => {
+              return (
+                <div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex space-x-4 items-start flex-1">
+                      <p className="capitalize w-[50px] h-[50px] bg-slate-200  items-center p-3 rounded-full cursor-pointer transition-all text-[#272727 ] text-xl  font-bold">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="lucide lucide-user"
+                        >
+                          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </svg>
+                      </p>
+                      <div className="space-y-3 flex-1">
+                        <p className="text-xl max-sm:text-base flex justify-between">
+                          <span>{item?.author.name}</span>
+                          {!idEdit && (
+                            <div
+                              className={`action space-x-2 ${item?.author.id === user?.id ? "" : "hidden"}`}
+                            >
+                              <span
+                                className="text-greenTheme text-lg cursor-pointer"
+                                onClick={() => setIdEdit(item.id)}
                               >
-                                <span
-                                  className="text-greenTheme text-lg cursor-pointer"
-                                  onClick={() => setIdEdit(item.id)}
+                                Sửa
+                              </span>
+                              <span
+                                onClick={() => deleteComment(item.id)}
+                                className="text-red-500 text-lg cursor-pointer"
+                              >
+                                Xóa
+                              </span>
+                            </div>
+                          )}
+                        </p>
+                        <p className="text-gray-400 text-base">
+                          <span>Ngày đăng: </span>
+                          {format(parseISO(item.updateAt), "dd-MM-yyyy")}
+                        </p>
+                        {idEdit === item.id && idEdit ? (
+                          <div className="flex-1 flex-col justify-end">
+                            <textarea
+                              onChange={(e) => setContent(e.target.value)}
+                              className="textarea w-full  h-[200px] textarea-bordered"
+                              placeholder="Nội dung bình luận"
+                            ></textarea>
+                            <div>
+                              <div className="flex space-x-2 items-center">
+                                <button
+                                  onClick={() => editComment(item.id)}
+                                  className="px-3 py-2 max-sm:py-1 text-base rounded bg-greenTheme text-white"
                                 >
-                                  Sửa
-                                </span>
-                                <span
-                                  onClick={() => deleteComment(item.id)}
-                                  className="text-red-500 text-lg cursor-pointer"
+                                  Cập nhật
+                                </button>
+                                <button
+                                  onClick={() => setIdEdit("")}
+                                  className="px-3 py-2 rounded max-sm:py-1 bg-red-500 text-base text-white"
                                 >
-                                  Xóa
-                                </span>
-                              </div>
-                            )}
-                          </p>
-                          <p className="text-gray-400 text-base">
-                            <span>Ngày đăng: </span>
-                            {format(parseISO(item.updateAt), "dd-MM-yyyy")}
-                          </p>
-                          {idEdit === item.id && idEdit ? (
-                            <div className="flex-1 flex-col justify-end">
-                              <textarea
-                                onChange={(e) => setContent(e.target.value)}
-                                className="textarea w-full  h-[200px] textarea-bordered"
-                                placeholder="Nội dung bình luận"
-                              ></textarea>
-                              <div>
-                                <div className="flex space-x-2 items-center">
-                                  <button
-                                    onClick={() => editComment(item.id)}
-                                    className="px-3 py-2 max-sm:py-1 text-base rounded bg-greenTheme text-white"
-                                  >
-                                    Cập nhật
-                                  </button>
-                                  <button
-                                    onClick={() => setIdEdit("")}
-                                    className="px-3 py-2 rounded max-sm:py-1 bg-red-500 text-base text-white"
-                                  >
-                                    Bỏ chỉnh sửa
-                                  </button>
-                                </div>
+                                  Bỏ chỉnh sửa
+                                </button>
                               </div>
                             </div>
-                          ) : (
-                            <p
-                              onClick={() => handleCommentToggle(item.id)}
-                              className="text-xl cursor-pointer max-sm:text-base"
-                            >
-                              {handelTextContent(item.content, item.id)}
-                              <span className="text-greenTheme underline ml-1">
-                                {item.content.length > 500
-                                  ? !commentStates[item.id]
-                                    ? "Đọc thêm..."
-                                    : "Ẩn bớt"
-                                  : ""}
-                              </span>
-                            </p>
-                          )}
-                        </div>
+                          </div>
+                        ) : (
+                          <p
+                            onClick={() => handleCommentToggle(item.id)}
+                            className="text-xl cursor-pointer max-sm:text-base"
+                          >
+                            {handelTextContent(item.content, item.id)}
+                            <span className="text-greenTheme underline ml-1">
+                              {item.content.length > 500
+                                ? !commentStates[item.id]
+                                  ? "Đọc thêm..."
+                                  : "Ẩn bớt"
+                                : ""}
+                            </span>
+                          </p>
+                        )}
                       </div>
                     </div>
-                    <br />
-                    <hr />
-                    <br />
                   </div>
-                );
-              })}
+                  <br />
+                  <hr />
+                  <br />
+                </div>
+              );
+            })}
           </div>
           {detailPost && detailPost?.comment.length > 3 && (
             <div className="flex justify-center space-x-4 items-center">

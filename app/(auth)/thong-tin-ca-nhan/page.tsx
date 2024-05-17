@@ -2,6 +2,7 @@
 import { _redirect } from "@/action";
 import { instance } from "@/config";
 import { userState } from "@/store";
+import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { isStrongPassword } from "validator";
@@ -144,6 +145,7 @@ const ChangeName = () => {
 const ThongTinCaNhan = () => {
   const [tab, setTab] = useState(true);
   const { user, logout } = userState();
+  console.log(user);
   return (
     <section className="py-10 flex max-lg:space-y-5 px-5 lg:h-[600px] max-lg:flex-col justify-center lg:space-x-3">
       <div
@@ -177,6 +179,14 @@ const ThongTinCaNhan = () => {
                 Tên đăng nhập : {user?.name}
               </p>
               <p className="text-xl max-sm:text-base">Email : {user?.email}</p>
+            </div>
+            <div className="flex justify-center py-3 text-xl max-ms:text-base items-center">
+              <Link
+                className="text-greenTheme underline"
+                href={"/bai-viet-cua-toi"}
+              >
+                Bài viết của tôi
+              </Link>
             </div>
             <div className="flex justify-center space-x-3">
               <button

@@ -10,9 +10,10 @@ interface IUserState {
   setUser: () => Promise<void>;
 }
 interface postsStateProps {
-  posts : PostType[],
-  detailPost : PostType | null,
-  maxCount : number,
+  posts : PostType, 
+  myPost : any
+  detailPost : any,
+  setMyPost  : (uid : string,page:number) => Promise<void>
   setPost : (page:number) => Promise<void>,
   setDetailPost : (id : any) => Promise<void>
 }
@@ -30,10 +31,17 @@ export const userState = create<IUserState>((set) => ({
   loading: false,
   setUser: async () => {
     const res = await instance.get(`/account/@me`);
-    if (res.status === 200) {
-      set({ user: res.data });
-    }
     set({ loading: true });
+    try {
+      if (res.status === 200) {
+        set({ user: res.data });
+        set({loading : false})
+      }
+    }
+    catch(err) {
+       console.log(err)
+       set({loading : false})
+    }
   },
   logout : async () => {
     await instance.post('/account/logout/');
@@ -43,25 +51,34 @@ export const userState = create<IUserState>((set) => ({
   }
 }));
 export const postState = create<postsStateProps>((set) => ({
-    posts : [],
-    maxCount : 4,
+    posts : {count : 0,data :[]},
     detailPost : null,
+    myPost : null,
      setPost : async (page : number) => {
       try {
-      const res = await instance.get(`/post?count=1&page=${page}`);
+      const res = await instance.get(`/post?count=4&page=${page}`);
       if (res.status === 200) {
-        set({ posts: res.data.data });
+        set({ posts: res.data });
       }
       }
       catch(err:any) {
         console.log(err.response.data)
       } 
     },
-    setDetailPost : async (id:any) => {
+    setDetailPost : async (id:string) => {
       const res = await instance.get(`/post/${id}`);
       if (res.status === 200) {
         set({detailPost : res.data})
       }
+    },
+    setMyPost : async (uid : string,page ? :number) => {
+      try {
+            const res = await instance.get(`/post/me/?userId=${uid}&page=${page}&count=4`)
+            set({myPost : res.data})
+          }
+          catch(err) {
+            console.log(err)
+          }
     }
  
 }))
